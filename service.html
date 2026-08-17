@@ -1,0 +1,900 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Services - MyPresento</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background: #fffdf7;
+        color: #111827;
+        overflow-x: hidden;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Outfit", sans-serif;
+      }
+
+      :root {
+        --yellow: #ffbf00;
+        --cream: #f2cf7e;
+        --light: #ffe642;
+        --orange: #ff7900;
+      }
+
+      .primary-gradient {
+        background: linear-gradient(
+          135deg,
+          var(--yellow) 0%,
+          var(--orange) 100%
+        );
+      }
+
+      .secondary-gradient {
+        background: linear-gradient(135deg, var(--cream) 0%, var(--light) 100%);
+      }
+
+      .primary-text {
+        background: linear-gradient(
+          135deg,
+          var(--yellow) 0%,
+          var(--orange) 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .glass-card {
+        background: rgba(255, 255, 255, 0.72);
+        backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 191, 0, 0.12);
+        box-shadow: 0 10px 40px rgba(255, 191, 0, 0.08);
+      }
+
+      .premium-border {
+        border: 1px solid rgba(255, 121, 0, 0.15);
+      }
+
+      .hover-glow {
+        transition: 0.4s ease;
+      }
+
+      .hover-glow:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 50px rgba(255, 121, 0, 0.15);
+      }
+
+      .premium-btn {
+        background: linear-gradient(
+          135deg,
+          var(--yellow) 0%,
+          var(--orange) 100%
+        );
+        transition: 0.35s ease;
+        box-shadow: 0 10px 30px rgba(255, 121, 0, 0.18);
+      }
+
+      .premium-btn:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 25px 50px rgba(255, 121, 0, 0.25);
+      }
+
+      .blur-circle {
+        position: absolute;
+        border-radius: 999px;
+        filter: blur(120px);
+        opacity: 0.35;
+      }
+
+      /* PANEL */
+
+      .register-panel {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        max-width: 520px;
+        height: 100vh;
+        background: #ffffff;
+        z-index: 10001;
+        transition: all 0.4s ease;
+        overflow-y: auto;
+        box-shadow: -10px 0 50px rgba(0, 0, 0, 0.12);
+      }
+
+      .register-panel.active {
+        right: 0;
+      }
+
+      .register-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 10000;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .register-overlay.active {
+        opacity: 1;
+        visibility: visible;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- OVERLAY -->
+
+    <div id="registerOverlay" class="register-overlay"></div>
+
+    <!-- PANEL -->
+
+    <div id="registerPanel" class="register-panel">
+      <div class="p-8">
+        <div class="flex items-center justify-between mb-10">
+          <div>
+            <h2 class="text-4xl font-bold mb-2 text-slate-900">
+              Book A Strategy Call
+            </h2>
+
+            <p class="text-slate-500">
+              Let’s discuss your transformation goals.
+            </p>
+          </div>
+
+          <button
+            onclick="closeRegisterPanel()"
+            class="w-12 h-12 rounded-full bg-slate-100 hover:bg-slate-200 transition text-2xl text-slate-900"
+          >
+            ×
+          </button>
+        </div>
+
+        <form class="space-y-5">
+          <input
+            type="text"
+            placeholder="Full Name"
+            class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 outline-none"
+          />
+
+          <input
+            type="email"
+            placeholder="Email Address"
+            class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 outline-none"
+          />
+
+          <input
+            type="tel"
+            placeholder="WhatsApp Number"
+            class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 outline-none"
+          />
+
+          <textarea
+            rows="5"
+            placeholder="Tell us about your goals..."
+            class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 outline-none resize-none"
+          ></textarea>
+
+          <button
+            type="submit"
+            class="premium-btn text-white w-full py-5 rounded-2xl uppercase tracking-[3px] text-sm font-semibold"
+          >
+            Apply Now
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- HEADER -->
+
+    <header
+      class="fixed top-0 left-0 w-full bg-white/70 backdrop-blur-2xl border-b border-white/20 z-50"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between"
+      >
+        <h1 class="text-3xl font-bold primary-text">MyPresento</h1>
+
+        <nav
+          class="hidden lg:flex gap-8 uppercase tracking-wide text-sm text-slate-700"
+        >
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html" class="text-[#FF7900] font-semibold"
+            >Services</a
+          >
+          <a href="programs.html">Programs</a>
+          <a href="testimonials.html">Testimonials</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+
+        <button
+          onclick="openRegisterPanel()"
+          class="premium-btn text-white px-7 py-3 rounded-full uppercase tracking-wide text-sm font-semibold"
+        >
+          Book A Call
+        </button>
+      </div>
+    </header>
+
+    <!-- HERO -->
+
+    <section class="pt-44 pb-28 relative overflow-hidden">
+      <div
+        class="blur-circle w-[500px] h-[500px] bg-[#FFE642] top-[-200px] left-[-150px]"
+      ></div>
+
+      <div
+        class="blur-circle w-[450px] h-[450px] bg-[#FFBF00] bottom-[-200px] right-[-100px]"
+      ></div>
+
+      <div class="max-w-6xl mx-auto px-6 text-center relative z-10">
+        <div
+          class="inline-flex items-center gap-3 glass-card premium-border px-5 py-3 mb-8 rounded-full"
+        >
+          <div class="w-2 h-2 rounded-full bg-[#FF7900]"></div>
+
+          <p
+            class="uppercase tracking-[4px] text-xs font-semibold text-[#FF7900]"
+          >
+            Premium Coaching Services
+          </p>
+        </div>
+
+        <h1
+          class="text-6xl lg:text-8xl leading-[0.95] font-bold mb-8 text-slate-900"
+        >
+          Transformation
+          <span class="primary-text"> Services </span>
+        </h1>
+
+        <p
+          class="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto mb-12"
+        >
+          Helping professionals, leaders, entrepreneurs, and individuals unlock
+          emotional intelligence, confidence, clarity, and transformational
+          growth.
+        </p>
+
+        <div class="flex flex-wrap justify-center gap-5">
+          <button
+            onclick="openRegisterPanel()"
+            class="premium-btn text-white px-8 py-5 rounded-full uppercase tracking-wide text-sm font-semibold"
+          >
+            Book A Call
+          </button>
+
+          <a
+            href="#services"
+            class="glass-card premium-border px-8 py-5 rounded-full uppercase tracking-wide text-sm font-semibold hover:border-[#FF7900] transition"
+          >
+            Explore Services
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="py-28 bg-white relative overflow-hidden">
+      <!-- BLURS -->
+
+      <div
+        class="blur-circle w-[500px] h-[500px] bg-[#FFE642] top-[-180px] right-[-120px] opacity-20"
+      ></div>
+
+      <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <!-- TOP -->
+
+        <div class="text-center max-w-4xl mx-auto mb-20">
+          <p
+            class="uppercase tracking-[0.3em] text-[#FF7900] text-sm font-semibold mb-5"
+          >
+            Premium Services
+          </p>
+
+          <h2
+            class="text-5xl lg:text-6xl font-bold leading-tight text-slate-900 mb-8"
+          >
+            Designed For
+            <span class="primary-text"> Deep Transformation </span>
+          </h2>
+
+          <p class="text-xl text-slate-600 leading-relaxed">
+            Personalized transformational experiences designed to unlock
+            confidence, emotional mastery, leadership presence, and personal
+            growth.
+          </p>
+        </div>
+
+        <!-- GRID -->
+
+        <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
+          <!-- CARD -->
+
+          <div
+            class="glass-card premium-border rounded-[40px] overflow-hidden hover-glow"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop"
+              class="w-full h-72 object-cover"
+            />
+
+            <div class="p-10">
+              <div
+                class="w-16 h-16 rounded-2xl secondary-gradient flex items-center justify-center text-3xl mb-6"
+              >
+                ✨
+              </div>
+
+              <h3 class="text-3xl font-bold mb-5 text-slate-900">
+                Confidence Coaching
+              </h3>
+
+              <p class="text-slate-600 leading-relaxed mb-8">
+                Break fear, self-doubt, overthinking, and emotional limitations
+                with transformational coaching systems.
+              </p>
+
+              <!-- FEATURES -->
+
+              <div class="space-y-4 mb-10">
+                <div class="flex items-center gap-3 text-slate-600">
+                  <span>✔</span>
+                  <span>Mindset Reset</span>
+                </div>
+
+                <div class="flex items-center gap-3 text-slate-600">
+                  <span>✔</span>
+                  <span>Confidence Building</span>
+                </div>
+
+                <div class="flex items-center gap-3 text-slate-600">
+                  <span>✔</span>
+                  <span>Personal Growth</span>
+                </div>
+              </div>
+
+              <button
+                onclick="openRegisterPanel()"
+                class="premium-btn text-white w-full py-4 rounded-2xl uppercase tracking-[3px] text-sm font-semibold"
+              >
+                Learn More
+              </button>
+            </div>
+          </div>
+
+          <!-- CARD -->
+
+          <div
+            class="glass-card premium-border rounded-[40px] overflow-hidden hover-glow bg-gradient-to-br from-[#FFBF00] to-[#FF7900] text-white"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop"
+              class="w-full h-72 object-cover"
+            />
+
+            <div class="p-10">
+              <div
+                class="w-16 h-16 rounded-2xl bg-white/15 flex items-center justify-center text-3xl mb-6"
+              >
+                👑
+              </div>
+
+              <h3 class="text-3xl font-bold mb-5">Leadership Mentorship</h3>
+
+              <p class="leading-relaxed mb-8 text-white/90">
+                Executive mentoring designed for professionals and entrepreneurs
+                to build authority and transformational leadership.
+              </p>
+
+              <!-- FEATURES -->
+
+              <div class="space-y-4 mb-10">
+                <div class="flex items-center gap-3 text-white/90">
+                  <span>✔</span>
+                  <span>Leadership Presence</span>
+                </div>
+
+                <div class="flex items-center gap-3 text-white/90">
+                  <span>✔</span>
+                  <span>Executive Communication</span>
+                </div>
+
+                <div class="flex items-center gap-3 text-white/90">
+                  <span>✔</span>
+                  <span>High Performance Growth</span>
+                </div>
+              </div>
+
+              <button
+                onclick="openRegisterPanel()"
+                class="bg-white text-[#FF7900] w-full py-4 rounded-2xl uppercase tracking-[3px] text-sm font-semibold"
+              >
+                Learn More
+              </button>
+            </div>
+          </div>
+
+          <!-- CARD -->
+
+          <div
+            class="glass-card premium-border rounded-[40px] overflow-hidden hover-glow"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1200&auto=format&fit=crop"
+              class="w-full h-72 object-cover"
+            />
+
+            <div class="p-10">
+              <div
+                class="w-16 h-16 rounded-2xl secondary-gradient flex items-center justify-center text-3xl mb-6"
+              >
+                💖
+              </div>
+
+              <h3 class="text-3xl font-bold mb-5 text-slate-900">
+                Emotional Healing
+              </h3>
+
+              <p class="text-slate-600 leading-relaxed mb-8">
+                Release emotional overwhelm, stress, anxiety, and emotional
+                heaviness through healing systems.
+              </p>
+
+              <!-- FEATURES -->
+
+              <div class="space-y-4 mb-10">
+                <div class="flex items-center gap-3 text-slate-600">
+                  <span>✔</span>
+                  <span>Healing Practices</span>
+                </div>
+
+                <div class="flex items-center gap-3 text-slate-600">
+                  <span>✔</span>
+                  <span>Emotional Clarity</span>
+                </div>
+
+                <div class="flex items-center gap-3 text-slate-600">
+                  <span>✔</span>
+                  <span>Inner Peace</span>
+                </div>
+              </div>
+
+              <button
+                onclick="openRegisterPanel()"
+                class="premium-btn text-white w-full py-4 rounded-2xl uppercase tracking-[3px] text-sm font-semibold"
+              >
+                Learn More
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="py-28 bg-gradient-to-br from-[#FFF9E8] to-[#FFF3DD] relative overflow-hidden"
+    >
+      <div
+        class="blur-circle w-[500px] h-[500px] bg-[#FFBF00] bottom-[-200px] left-[-150px] opacity-20"
+      ></div>
+
+      <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="grid lg:grid-cols-2 gap-20 items-center">
+          <!-- LEFT -->
+
+          <div>
+            <p
+              class="uppercase tracking-[0.3em] text-[#FF7900] text-sm font-semibold mb-5"
+            >
+              Why Choose Us
+            </p>
+
+            <h2
+              class="text-5xl lg:text-6xl font-bold leading-tight text-slate-900 mb-8"
+            >
+              Transformation Beyond
+              <span class="primary-text"> Motivation </span>
+            </h2>
+
+            <p class="text-xl text-slate-600 leading-relaxed mb-10">
+              Every mentorship experience is designed to create deep emotional
+              transformation, confidence evolution, and leadership growth.
+            </p>
+
+            <!-- FEATURES -->
+
+            <div class="space-y-6">
+              <div class="flex items-start gap-5">
+                <div
+                  class="w-14 h-14 rounded-2xl secondary-gradient flex items-center justify-center text-2xl shrink-0"
+                >
+                  ✨
+                </div>
+
+                <div>
+                  <h3 class="text-2xl font-bold mb-2 text-slate-900">
+                    Personalized Guidance
+                  </h3>
+
+                  <p class="text-slate-600 leading-relaxed">
+                    Every transformation journey is tailored around your
+                    emotional and leadership goals.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-5">
+                <div
+                  class="w-14 h-14 rounded-2xl secondary-gradient flex items-center justify-center text-2xl shrink-0"
+                >
+                  💖
+                </div>
+
+                <div>
+                  <h3 class="text-2xl font-bold mb-2 text-slate-900">
+                    Emotional Intelligence
+                  </h3>
+
+                  <p class="text-slate-600 leading-relaxed">
+                    Build resilience, clarity, emotional balance, and confidence
+                    with transformational systems.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-5">
+                <div
+                  class="w-14 h-14 rounded-2xl secondary-gradient flex items-center justify-center text-2xl shrink-0"
+                >
+                  👑
+                </div>
+
+                <div>
+                  <h3 class="text-2xl font-bold mb-2 text-slate-900">
+                    Leadership Evolution
+                  </h3>
+
+                  <p class="text-slate-600 leading-relaxed">
+                    Unlock executive communication, authority, visibility, and
+                    transformational presence.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ====================================== -->
+    <!-- READY FOR CHANGE SECTION -->
+    <!-- ====================================== -->
+
+    <section class="py-32 bg-white relative overflow-hidden">
+      <!-- BLURS -->
+
+      <div
+        class="blur-circle w-[550px] h-[550px] bg-[#FFE642] top-[-220px] right-[-150px] opacity-20"
+      ></div>
+
+      <div
+        class="blur-circle w-[450px] h-[450px] bg-[#FFBF00] bottom-[-180px] left-[-100px] opacity-15"
+      ></div>
+
+      <div class="max-w-6xl mx-auto px-6 relative z-10">
+        <div
+          class="relative overflow-hidden rounded-[50px] p-16 lg:p-24 bg-gradient-to-br from-[#FFBF00] to-[#FF7900] text-white"
+        >
+          <!-- INNER BLURS -->
+
+          <div
+            class="absolute top-[-120px] left-[-120px] w-[350px] h-[350px] rounded-full bg-white/10 blur-3xl"
+          ></div>
+
+          <div
+            class="absolute bottom-[-140px] right-[-120px] w-[350px] h-[350px] rounded-full bg-[#FFE642]/20 blur-3xl"
+          ></div>
+
+          <div class="relative z-10 text-center">
+            <!-- TAG -->
+
+            <div
+              class="inline-flex items-center gap-3 bg-white/10 backdrop-blur-xl px-5 py-3 rounded-full mb-8 border border-white/10"
+            >
+              <div class="w-2 h-2 rounded-full bg-white"></div>
+
+              <p class="uppercase tracking-[4px] text-xs font-semibold">
+                Ready For Change?
+              </p>
+            </div>
+
+            <!-- TITLE -->
+
+            <h2 class="text-5xl lg:text-7xl font-bold leading-[1.05] mb-8">
+              Your Transformation Starts Today
+            </h2>
+
+            <!-- DESCRIPTION -->
+
+            <p
+              class="text-xl leading-relaxed text-white/90 max-w-3xl mx-auto mb-12"
+            >
+              Step into confidence, emotional mastery, leadership growth, and
+              transformational clarity through premium mentorship experiences
+              designed for your next level.
+            </p>
+
+            <!-- BUTTONS -->
+
+            <div class="flex flex-wrap justify-center gap-5">
+              <button
+                onclick="openRegisterPanel()"
+                class="bg-white text-[#FF7900] px-10 py-5 rounded-full uppercase tracking-[3px] text-sm font-semibold hover:scale-105 transition duration-300"
+              >
+                Book A Strategy Call
+              </button>
+
+              <a
+                href="programs.html"
+                class="border border-white/20 bg-white/10 backdrop-blur-xl px-10 py-5 rounded-full uppercase tracking-[3px] text-sm font-semibold hover:bg-white hover:text-[#FF7900] transition duration-300"
+              >
+                Explore Programs
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================== -->
+    <!-- FOOTER -->
+    <!-- ====================================== -->
+
+    <footer class="bg-[#111111] py-24 relative overflow-hidden text-white">
+      <!-- BLURS -->
+
+      <div
+        class="blur-circle w-[500px] h-[500px] bg-[#FF7900] top-[-220px] right-[-120px] opacity-10"
+      ></div>
+
+      <div
+        class="blur-circle w-[400px] h-[400px] bg-[#FFBF00] bottom-[-180px] left-[-120px] opacity-10"
+      ></div>
+
+      <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <!-- TOP -->
+
+        <div
+          class="grid md:grid-cols-2 lg:grid-cols-4 gap-14 pb-16 border-b border-white/10"
+        >
+          <!-- BRAND -->
+
+          <div>
+            <h2 class="text-4xl font-bold mb-6 primary-text">MyPresento</h2>
+
+            <p class="text-white/70 leading-relaxed mb-8 text-lg">
+              Premium transformational coaching experiences designed for
+              leaders, professionals, entrepreneurs, and emotional healing
+              journeys.
+            </p>
+
+            <!-- SOCIALS -->
+
+            <div class="flex items-center gap-4">
+              <a
+                href="#"
+                class="w-12 h-12 rounded-full bg-white/10 hover:bg-[#FF7900] transition duration-300 flex items-center justify-center text-lg"
+              >
+                f
+              </a>
+
+              <a
+                href="#"
+                class="w-12 h-12 rounded-full bg-white/10 hover:bg-[#FF7900] transition duration-300 flex items-center justify-center text-lg"
+              >
+                in
+              </a>
+
+              <a
+                href="#"
+                class="w-12 h-12 rounded-full bg-white/10 hover:bg-[#FF7900] transition duration-300 flex items-center justify-center text-lg"
+              >
+                ig
+              </a>
+
+              <a
+                href="#"
+                class="w-12 h-12 rounded-full bg-white/10 hover:bg-[#FF7900] transition duration-300 flex items-center justify-center text-lg"
+              >
+                yt
+              </a>
+            </div>
+          </div>
+
+          <!-- QUICK LINKS -->
+
+          <div>
+            <h3 class="text-2xl font-bold mb-6">Quick Links</h3>
+
+            <ul class="space-y-4 text-white/70 text-lg">
+              <li>
+                <a
+                  href="index.html"
+                  class="hover:text-white transition duration-300"
+                >
+                  Home
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="about.html"
+                  class="hover:text-white transition duration-300"
+                >
+                  About
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="services.html"
+                  class="hover:text-white transition duration-300"
+                >
+                  Services
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="programs.html"
+                  class="hover:text-white transition duration-300"
+                >
+                  Programs
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="contact.html"
+                  class="hover:text-white transition duration-300"
+                >
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- SERVICES -->
+
+          <div>
+            <h3 class="text-2xl font-bold mb-6">Services</h3>
+
+            <ul class="space-y-4 text-white/70 text-lg">
+              <li
+                class="hover:text-white transition duration-300 cursor-pointer"
+              >
+                Confidence Coaching
+              </li>
+
+              <li
+                class="hover:text-white transition duration-300 cursor-pointer"
+              >
+                Leadership Mentorship
+              </li>
+
+              <li
+                class="hover:text-white transition duration-300 cursor-pointer"
+              >
+                Emotional Healing
+              </li>
+
+              <li
+                class="hover:text-white transition duration-300 cursor-pointer"
+              >
+                Private Mentorship
+              </li>
+
+              <li
+                class="hover:text-white transition duration-300 cursor-pointer"
+              >
+                Executive Coaching
+              </li>
+            </ul>
+          </div>
+
+          <!-- CONTACT -->
+
+          <div>
+            <h3 class="text-2xl font-bold mb-6">Contact</h3>
+
+            <div class="space-y-5 text-white/70 text-lg">
+              <p>hello@mypresento.com</p>
+
+              <p>+91 9876543210</p>
+
+              <p>Kochi, Kerala, India</p>
+            </div>
+
+            <!-- BUTTON -->
+
+            <button
+              onclick="openRegisterPanel()"
+              class="premium-btn text-white px-8 py-4 rounded-full font-semibold mt-8"
+            >
+              Book A Session
+            </button>
+          </div>
+        </div>
+
+        <!-- BOTTOM -->
+
+        <div
+          class="pt-10 flex flex-col md:flex-row items-center justify-between gap-5 text-white/40 text-sm"
+        >
+          <p>© 2026 MyPresento. All rights reserved.</p>
+
+          <div class="flex items-center gap-8">
+            <a href="#" class="hover:text-white transition duration-300">
+              Privacy Policy
+            </a>
+
+            <a href="#" class="hover:text-white transition duration-300">
+              Terms & Conditions
+            </a>
+
+            <a href="#" class="hover:text-white transition duration-300">
+              Cookie Policy
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ====================================== -->
+    <!-- SCRIPT -->
+    <!-- ====================================== -->
+
+    <script>
+      const registerPanel = document.getElementById("registerPanel");
+      const registerOverlay = document.getElementById("registerOverlay");
+
+      function openRegisterPanel() {
+        registerPanel.classList.add("active");
+        registerOverlay.classList.add("active");
+
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeRegisterPanel() {
+        registerPanel.classList.remove("active");
+        registerOverlay.classList.remove("active");
+
+        document.body.style.overflow = "auto";
+      }
+
+      registerOverlay.addEventListener("click", closeRegisterPanel);
+    </script>
+  </body>
+</html>

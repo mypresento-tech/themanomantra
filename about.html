@@ -1,0 +1,1302 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>About - MyPresento</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background: #fffdf7;
+        color: #111827;
+        overflow-x: hidden;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Outfit", sans-serif;
+      }
+
+      :root {
+        --yellow: #ffbf00;
+        --cream: #f2cf7e;
+        --light: #ffe642;
+        --orange: #ff7900;
+      }
+
+      .primary-gradient {
+        background: linear-gradient(
+          135deg,
+          var(--yellow) 0%,
+          var(--orange) 100%
+        );
+      }
+
+      .secondary-gradient {
+        background: linear-gradient(135deg, var(--cream) 0%, var(--light) 100%);
+      }
+
+      .primary-text {
+        background: linear-gradient(
+          135deg,
+          var(--yellow) 0%,
+          var(--orange) 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .glass-card {
+        background: rgba(255, 255, 255, 0.72);
+        backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 191, 0, 0.12);
+        box-shadow: 0 10px 40px rgba(255, 191, 0, 0.08);
+      }
+
+      .premium-border {
+        border: 1px solid rgba(255, 121, 0, 0.15);
+      }
+
+      .hover-glow:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 50px rgba(255, 121, 0, 0.15);
+      }
+
+      .premium-btn {
+        background: linear-gradient(
+          135deg,
+          var(--yellow) 0%,
+          var(--orange) 100%
+        );
+        transition: 0.35s ease;
+        box-shadow: 0 10px 30px rgba(255, 121, 0, 0.18);
+      }
+
+      .premium-btn:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 25px 50px rgba(255, 121, 0, 0.25);
+      }
+
+      .blur-circle {
+        position: absolute;
+        border-radius: 999px;
+        filter: blur(120px);
+        opacity: 0.35;
+      }
+
+      /* PANEL */
+
+      .call-panel {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        max-width: 520px;
+        height: 100vh;
+        background: #ffffff;
+        z-index: 10001;
+        transition: all 0.4s ease;
+        overflow-y: auto;
+        box-shadow: -10px 0 50px rgba(0, 0, 0, 0.12);
+      }
+
+      .call-panel.active {
+        right: 0;
+      }
+
+      .call-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.55);
+        z-index: 10000;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .call-overlay.active {
+        opacity: 1;
+        visibility: visible;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ====================================== -->
+    <!-- OVERLAY -->
+    <!-- ====================================== -->
+
+    <div id="callOverlay" class="call-overlay"></div>
+
+    <!-- ====================================== -->
+    <!-- CALL PANEL -->
+    <!-- ====================================== -->
+
+    <div id="callPanel" class="call-panel">
+      <div class="p-8">
+        <div class="flex items-center justify-between mb-10">
+          <div>
+            <h2 class="text-5xl font-bold mb-2 text-slate-900">
+              Book A Private Session
+            </h2>
+
+            <p class="text-slate-500 text-lg">
+              Let’s discuss your transformation journey.
+            </p>
+          </div>
+
+          <button
+            onclick="closeCallPanel()"
+            class="w-12 h-12 rounded-full bg-slate-100 hover:bg-slate-200 transition text-2xl text-slate-900"
+          >
+            ×
+          </button>
+        </div>
+
+        <!-- FORM -->
+
+        <form id="bookCallForm" class="space-y-6">
+          <input
+            type="text"
+            placeholder="Full Name"
+            class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 outline-none focus:border-[#FF7900]"
+          />
+
+          <input
+            type="email"
+            placeholder="Email Address"
+            class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 outline-none focus:border-[#FF7900]"
+          />
+
+          <input
+            type="tel"
+            placeholder="WhatsApp Number"
+            class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 outline-none focus:border-[#FF7900]"
+          />
+
+          <textarea
+            rows="6"
+            placeholder="Tell us about your transformation goals..."
+            class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 outline-none focus:border-[#FF7900] resize-none"
+          ></textarea>
+
+          <button
+            type="submit"
+            class="w-full premium-btn text-white py-5 rounded-2xl font-bold text-lg"
+          >
+            Apply Now
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- ====================================== -->
+    <!-- NAVBAR -->
+    <!-- ====================================== -->
+
+    <header
+      class="fixed top-0 left-0 w-full z-50 bg-white/70 backdrop-blur-2xl border-b border-white/20"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between"
+      >
+        <!-- LOGO -->
+
+        <h1 class="text-3xl font-bold primary-text">MyPresento</h1>
+
+        <!-- MENU -->
+
+        <div class="flex items-center gap-10">
+          <nav class="hidden lg:flex items-center gap-8 text-sm text-slate-700">
+            <a href="index.html" class="hover:text-[#FF7900] transition">
+              Home
+            </a>
+
+            <a href="about.html" class="text-[#FF7900] font-semibold">
+              About
+            </a>
+
+            <a href="programs.html" class="hover:text-[#FF7900] transition">
+              Programs
+            </a>
+
+            <a href="testimonials.html" class="hover:text-[#FF7900] transition">
+              Testimonials
+            </a>
+
+            <a href="contact.html" class="hover:text-[#FF7900] transition">
+              Contact
+            </a>
+          </nav>
+
+          <!-- CTA -->
+
+          <button
+            onclick="openCallPanel()"
+            class="premium-btn text-white px-7 py-3 rounded-full font-semibold"
+          >
+            Apply For Mentorship
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ====================================== -->
+    <!-- HERO BANNER -->
+    <!-- ====================================== -->
+
+    <section
+      class="relative pt-40 pb-24 overflow-hidden bg-gradient-to-br from-[#FFF7E8] via-[#FFFDF7] to-[#FFF3DD] border-b border-[#FFBF00]/10"
+    >
+      <!-- BLURS -->
+
+      <div
+        class="blur-circle w-[500px] h-[500px] bg-[#FFBF00] top-[-200px] left-[-150px]"
+      ></div>
+
+      <div
+        class="blur-circle w-[450px] h-[450px] bg-[#FFE642] bottom-[-200px] right-[-100px]"
+      ></div>
+
+      <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="text-center max-w-4xl mx-auto">
+          <div
+            class="inline-flex items-center gap-3 px-5 py-2 rounded-full border border-[#FF7900]/20 bg-[#FF7900]/10 mb-6"
+          >
+            <div class="w-2 h-2 rounded-full bg-[#FF7900]"></div>
+
+            <span class="text-[#FF7900] text-sm tracking-[0.2em] uppercase">
+              Premium Executive Mentorship
+            </span>
+          </div>
+
+          <h1
+            class="text-5xl lg:text-7xl font-bold leading-tight mb-6 text-slate-900"
+          >
+            About
+            <span class="primary-text"> Me </span>
+          </h1>
+
+          <p class="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
+            Helping professionals, leaders, and entrepreneurs unlock confidence,
+            emotional intelligence, leadership presence, and transformational
+            growth.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================== -->
+    <!-- PROFILE SECTION -->
+    <!-- ====================================== -->
+
+    <section class="py-28 bg-white relative overflow-hidden">
+      <!-- BLURS -->
+
+      <div
+        class="blur-circle w-[500px] h-[500px] bg-[#FFE642] top-[-180px] left-[-120px] opacity-25"
+      ></div>
+
+      <div
+        class="blur-circle w-[450px] h-[450px] bg-[#FFBF00] bottom-[-180px] right-[-100px] opacity-20"
+      ></div>
+
+      <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="grid lg:grid-cols-2 gap-20 items-center">
+          <!-- IMAGE SIDE -->
+
+          <div class="relative">
+            <!-- IMAGE CARD -->
+
+            <div
+              class="glass-card premium-border rounded-[40px] p-5 relative z-10"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1200&auto=format&fit=crop"
+                class="rounded-[30px] w-full h-[700px] object-cover"
+              />
+            </div>
+
+            <!-- FLOATING EXPERIENCE CARD -->
+
+            <div
+              class="absolute -bottom-8 -left-8 glass-card premium-border rounded-[30px] p-8 max-w-xs z-20"
+            >
+              <h3 class="text-5xl font-bold primary-text mb-3">12+</h3>
+
+              <p class="text-slate-600 leading-relaxed text-lg">
+                Years helping professionals transform confidence, leadership,
+                and emotional wellbeing.
+              </p>
+            </div>
+
+            <!-- FLOATING STATS -->
+
+            <div
+              class="absolute top-10 -right-10 glass-card premium-border rounded-[30px] px-8 py-6 z-20"
+            >
+              <h3 class="text-4xl font-bold primary-text mb-2">10K+</h3>
+
+              <p class="text-slate-500">Lives Impacted</p>
+            </div>
+          </div>
+
+          <!-- CONTENT SIDE -->
+
+          <div>
+            <!-- TAG -->
+
+            <p
+              class="uppercase tracking-[0.3em] text-[#FF7900] text-sm font-semibold mb-5"
+            >
+              About The Mentor
+            </p>
+
+            <!-- TITLE -->
+
+            <h2
+              class="text-5xl lg:text-6xl font-bold leading-tight text-slate-900 mb-8"
+            >
+              Transforming Lives Through
+              <span class="primary-text"> Confidence, </span>
+
+              Leadership & Emotional Healing
+            </h2>
+
+            <!-- DESCRIPTION -->
+
+            <p class="text-xl text-slate-600 leading-relaxed mb-8">
+              Through transformational coaching systems, emotional intelligence
+              frameworks, mindset breakthroughs, and leadership mentoring —
+              helping individuals unlock their highest potential with clarity
+              and confidence.
+            </p>
+
+            <p class="text-lg text-slate-500 leading-relaxed mb-10">
+              Over the years, professionals, entrepreneurs, and leaders have
+              experienced emotional breakthroughs, mindset transformation,
+              confidence growth, and leadership evolution through premium
+              mentorship experiences designed for lasting impact.
+            </p>
+
+            <!-- FEATURE LIST -->
+
+            <div class="space-y-6 mb-12">
+              <!-- ITEM -->
+
+              <div class="flex items-start gap-5">
+                <div
+                  class="w-16 h-16 rounded-2xl secondary-gradient flex items-center justify-center text-3xl shrink-0"
+                >
+                  ✨
+                </div>
+
+                <div>
+                  <h3 class="text-2xl font-bold mb-2 text-slate-900">
+                    Confidence Transformation
+                  </h3>
+
+                  <p class="text-slate-600 leading-relaxed">
+                    Break self-doubt and emotional fear with transformational
+                    coaching systems.
+                  </p>
+                </div>
+              </div>
+
+              <!-- ITEM -->
+
+              <div class="flex items-start gap-5">
+                <div
+                  class="w-16 h-16 rounded-2xl secondary-gradient flex items-center justify-center text-3xl shrink-0"
+                >
+                  💖
+                </div>
+
+                <div>
+                  <h3 class="text-2xl font-bold mb-2 text-slate-900">
+                    Emotional Intelligence
+                  </h3>
+
+                  <p class="text-slate-600 leading-relaxed">
+                    Build emotional clarity, resilience, and healing through
+                    guided transformation.
+                  </p>
+                </div>
+              </div>
+
+              <!-- ITEM -->
+
+              <div class="flex items-start gap-5">
+                <div
+                  class="w-16 h-16 rounded-2xl secondary-gradient flex items-center justify-center text-3xl shrink-0"
+                >
+                  👑
+                </div>
+
+                <div>
+                  <h3 class="text-2xl font-bold mb-2 text-slate-900">
+                    Leadership Evolution
+                  </h3>
+
+                  <p class="text-slate-600 leading-relaxed">
+                    Develop executive communication, leadership confidence, and
+                    transformational presence.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- BUTTONS -->
+
+            <div class="flex flex-wrap gap-5">
+              <button
+                onclick="openCallPanel()"
+                class="premium-btn text-white px-10 py-5 rounded-full font-bold text-lg"
+              >
+                Apply For Mentorship
+              </button>
+
+              <button
+                class="bg-white border border-[#FFBF00]/20 hover:border-[#FF7900] hover:text-[#FF7900] transition px-10 py-5 rounded-full font-bold text-lg"
+              >
+                Explore Programs
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================== -->
+    <!-- JOURNEY SECTION -->
+    <!-- ====================================== -->
+
+    <section
+      class="py-28 bg-gradient-to-br from-[#FFF9E8] to-[#FFF3DD] relative overflow-hidden"
+    >
+      <div
+        class="blur-circle w-[500px] h-[500px] bg-[#FFBF00] top-[-200px] right-[-150px] opacity-20"
+      ></div>
+
+      <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <!-- TOP -->
+
+        <div class="text-center max-w-4xl mx-auto mb-20">
+          <p
+            class="uppercase tracking-[0.3em] text-[#FF7900] text-sm font-semibold mb-5"
+          >
+            Journey & Experience
+          </p>
+
+          <h2
+            class="text-5xl lg:text-6xl font-bold leading-tight text-slate-900 mb-8"
+          >
+            The Journey Behind
+            <span class="primary-text"> The Transformation </span>
+          </h2>
+
+          <p class="text-xl text-slate-600 leading-relaxed">
+            A transformational journey built through emotional healing,
+            leadership development, coaching systems, and years of empowering
+            professionals and individuals.
+          </p>
+        </div>
+
+        <!-- TIMELINE -->
+
+        <div class="space-y-10">
+          <!-- ITEM -->
+
+          <div
+            class="glass-card premium-border rounded-[35px] p-10 flex flex-col lg:flex-row gap-8 items-start hover-glow transition duration-500"
+          >
+            <div class="min-w-[140px]">
+              <span
+                class="inline-flex px-5 py-3 rounded-full secondary-gradient font-bold text-slate-900"
+              >
+                2014
+              </span>
+            </div>
+
+            <div>
+              <h3 class="text-3xl font-bold mb-5 text-slate-900">
+                Started The Coaching Journey
+              </h3>
+
+              <p class="text-slate-600 leading-relaxed text-lg">
+                Began helping individuals overcome self-doubt, emotional
+                overwhelm, and confidence struggles through transformational
+                coaching systems.
+              </p>
+            </div>
+          </div>
+
+          <!-- ITEM -->
+
+          <div
+            class="glass-card premium-border rounded-[35px] p-10 flex flex-col lg:flex-row gap-8 items-start hover-glow transition duration-500"
+          >
+            <div class="min-w-[140px]">
+              <span
+                class="inline-flex px-5 py-3 rounded-full secondary-gradient font-bold text-slate-900"
+              >
+                2018
+              </span>
+            </div>
+
+            <div>
+              <h3 class="text-3xl font-bold mb-5 text-slate-900">
+                Leadership Mentorship Expansion
+              </h3>
+
+              <p class="text-slate-600 leading-relaxed text-lg">
+                Expanded coaching systems into leadership development, executive
+                confidence, and transformational mentoring experiences.
+              </p>
+            </div>
+          </div>
+
+          <!-- ITEM -->
+
+          <div
+            class="glass-card premium-border rounded-[35px] p-10 flex flex-col lg:flex-row gap-8 items-start hover-glow transition duration-500"
+          >
+            <div class="min-w-[140px]">
+              <span
+                class="inline-flex px-5 py-3 rounded-full secondary-gradient font-bold text-slate-900"
+              >
+                2024
+              </span>
+            </div>
+
+            <div>
+              <h3 class="text-3xl font-bold mb-5 text-slate-900">
+                Premium Global Transformation Programs
+              </h3>
+
+              <p class="text-slate-600 leading-relaxed text-lg">
+                Launching premium transformational experiences for
+                professionals, entrepreneurs, leaders, and emotional healing
+                journeys worldwide.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================== -->
+    <!-- CERTIFICATIONS SECTION -->
+    <!-- ====================================== -->
+
+    <section class="py-28 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <!-- TOP -->
+
+        <div class="text-center max-w-4xl mx-auto mb-20">
+          <p
+            class="uppercase tracking-[0.3em] text-[#FF7900] text-sm font-semibold mb-5"
+          >
+            Certifications & Expertise
+          </p>
+
+          <h2
+            class="text-5xl lg:text-6xl font-bold leading-tight text-slate-900 mb-8"
+          >
+            Expertise Backed By
+            <span class="primary-text"> Transformation </span>
+          </h2>
+
+          <p class="text-xl text-slate-600 leading-relaxed">
+            Years of transformational learning, mentorship frameworks,
+            leadership coaching systems, and emotional intelligence development.
+          </p>
+        </div>
+
+        <!-- GRID -->
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- CARD -->
+
+          <div
+            class="glass-card premium-border rounded-[35px] p-10 text-center hover-glow transition duration-500"
+          >
+            <div
+              class="w-20 h-20 rounded-3xl secondary-gradient flex items-center justify-center text-4xl mx-auto mb-8"
+            >
+              🎓
+            </div>
+
+            <h3 class="text-2xl font-bold mb-4 text-slate-900">
+              NLP Practitioner
+            </h3>
+
+            <p class="text-slate-600 leading-relaxed">
+              Neuro linguistic programming and transformational coaching
+              expertise.
+            </p>
+          </div>
+
+          <!-- CARD -->
+
+          <div
+            class="glass-card premium-border rounded-[35px] p-10 text-center hover-glow transition duration-500"
+          >
+            <div
+              class="w-20 h-20 rounded-3xl secondary-gradient flex items-center justify-center text-4xl mx-auto mb-8"
+            >
+              💖
+            </div>
+
+            <h3 class="text-2xl font-bold mb-4 text-slate-900">
+              Emotional Healing
+            </h3>
+
+            <p class="text-slate-600 leading-relaxed">
+              Emotional intelligence and transformational healing systems.
+            </p>
+          </div>
+
+          <!-- CARD -->
+
+          <div
+            class="glass-card premium-border rounded-[35px] p-10 text-center hover-glow transition duration-500"
+          >
+            <div
+              class="w-20 h-20 rounded-3xl secondary-gradient flex items-center justify-center text-4xl mx-auto mb-8"
+            >
+              👑
+            </div>
+
+            <h3 class="text-2xl font-bold mb-4 text-slate-900">
+              Leadership Coaching
+            </h3>
+
+            <p class="text-slate-600 leading-relaxed">
+              Executive leadership and transformational mentoring expertise.
+            </p>
+          </div>
+
+          <!-- CARD -->
+
+          <div
+            class="glass-card premium-border rounded-[35px] p-10 text-center hover-glow transition duration-500"
+          >
+            <div
+              class="w-20 h-20 rounded-3xl secondary-gradient flex items-center justify-center text-4xl mx-auto mb-8"
+            >
+              ✨
+            </div>
+
+            <h3 class="text-2xl font-bold mb-4 text-slate-900">
+              Mindset Transformation
+            </h3>
+
+            <p class="text-slate-600 leading-relaxed">
+              Powerful mindset reset systems for confidence and growth.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================== -->
+    <!-- PROFESSIONAL CERTIFICATIONS SECTION -->
+    <!-- ====================================== -->
+
+    <section
+      class="py-28 bg-gradient-to-br from-[#FFF9E8] via-[#FFFDF7] to-[#FFF3DD] relative overflow-hidden"
+    >
+      <!-- BLURS -->
+
+      <div
+        class="blur-circle w-[500px] h-[500px] bg-[#FFE642] top-[-180px] left-[-120px] opacity-20"
+      ></div>
+
+      <div
+        class="blur-circle w-[450px] h-[450px] bg-[#FFBF00] bottom-[-180px] right-[-100px] opacity-15"
+      ></div>
+
+      <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <!-- TOP -->
+
+        <div class="text-center max-w-4xl mx-auto mb-20">
+          <p
+            class="uppercase tracking-[0.3em] text-[#FF7900] text-sm font-semibold mb-5"
+          >
+            Professional Certifications
+          </p>
+
+          <h2
+            class="text-5xl lg:text-6xl font-bold leading-tight text-slate-900 mb-8"
+          >
+            Expertise Built Through
+            <span class="primary-text"> Learning, </span>
+
+            Healing & Leadership
+          </h2>
+
+          <p class="text-xl text-slate-600 leading-relaxed">
+            Years of transformational learning, coaching systems, leadership
+            frameworks, emotional intelligence mastery, and premium mentorship
+            development.
+          </p>
+        </div>
+
+        <!-- GRID -->
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- CARD -->
+
+          <div
+            class="glass-card premium-border rounded-[35px] p-10 hover-glow transition duration-500"
+          >
+            <div
+              class="w-20 h-20 rounded-3xl secondary-gradient flex items-center justify-center text-4xl mb-8"
+            >
+              🎓
+            </div>
+
+            <h3 class="text-3xl font-bold mb-5 text-slate-900">
+              NLP Master Practitioner
+            </h3>
+
+            <p class="text-slate-600 leading-relaxed mb-6">
+              Advanced neuro linguistic programming systems for transformational
+              mindset coaching and emotional breakthroughs.
+            </p>
+
+            <div class="flex items-center gap-3 text-[#FF7900] font-semibold">
+              <span>✔</span>
+              <span>Certified Expertise</span>
+            </div>
+          </div>
+
+          <!-- CARD -->
+
+          <div
+            class="glass-card premium-border rounded-[35px] p-10 hover-glow transition duration-500 bg-gradient-to-br from-[#FFBF00] to-[#FF7900] text-white"
+          >
+            <div
+              class="w-20 h-20 rounded-3xl bg-white/15 flex items-center justify-center text-4xl mb-8"
+            >
+              💖
+            </div>
+
+            <h3 class="text-3xl font-bold mb-5">Emotional Healing Systems</h3>
+
+            <p class="leading-relaxed mb-6 text-white/90">
+              Specialized healing frameworks for emotional intelligence,
+              clarity, inner peace, and transformational growth.
+            </p>
+
+            <div class="flex items-center gap-3 text-white font-semibold">
+              <span>✔</span>
+              <span>Healing Frameworks</span>
+            </div>
+          </div>
+
+          <!-- CARD -->
+
+          <div
+            class="glass-card premium-border rounded-[35px] p-10 hover-glow transition duration-500"
+          >
+            <div
+              class="w-20 h-20 rounded-3xl secondary-gradient flex items-center justify-center text-4xl mb-8"
+            >
+              👑
+            </div>
+
+            <h3 class="text-3xl font-bold mb-5 text-slate-900">
+              Leadership Coaching
+            </h3>
+
+            <p class="text-slate-600 leading-relaxed mb-6">
+              Executive leadership mentoring systems designed for professionals,
+              entrepreneurs, and transformational leaders.
+            </p>
+
+            <div class="flex items-center gap-3 text-[#FF7900] font-semibold">
+              <span>✔</span>
+              <span>Executive Development</span>
+            </div>
+          </div>
+
+          <!-- CARD -->
+
+          <div
+            class="glass-card premium-border rounded-[35px] p-10 hover-glow transition duration-500"
+          >
+            <div
+              class="w-20 h-20 rounded-3xl secondary-gradient flex items-center justify-center text-4xl mb-8"
+            >
+              ✨
+            </div>
+
+            <h3 class="text-3xl font-bold mb-5 text-slate-900">
+              Confidence Transformation
+            </h3>
+
+            <p class="text-slate-600 leading-relaxed mb-6">
+              Proven systems for overcoming self-doubt, fear, emotional blocks,
+              and confidence limitations.
+            </p>
+
+            <div class="flex items-center gap-3 text-[#FF7900] font-semibold">
+              <span>✔</span>
+              <span>Transformation Systems</span>
+            </div>
+          </div>
+
+          <!-- CARD -->
+
+          <div
+            class="glass-card premium-border rounded-[35px] p-10 hover-glow transition duration-500"
+          >
+            <div
+              class="w-20 h-20 rounded-3xl secondary-gradient flex items-center justify-center text-4xl mb-8"
+            >
+              🌱
+            </div>
+
+            <h3 class="text-3xl font-bold mb-5 text-slate-900">
+              Mindset Reprogramming
+            </h3>
+
+            <p class="text-slate-600 leading-relaxed mb-6">
+              Deep mindset reset systems focused on clarity, growth, emotional
+              resilience, and personal evolution.
+            </p>
+
+            <div class="flex items-center gap-3 text-[#FF7900] font-semibold">
+              <span>✔</span>
+              <span>Growth Frameworks</span>
+            </div>
+          </div>
+
+          <!-- CARD -->
+
+          <div
+            class="glass-card premium-border rounded-[35px] p-10 hover-glow transition duration-500"
+          >
+            <div
+              class="w-20 h-20 rounded-3xl secondary-gradient flex items-center justify-center text-4xl mb-8"
+            >
+              🚀
+            </div>
+
+            <h3 class="text-3xl font-bold mb-5 text-slate-900">
+              Premium Mentorship
+            </h3>
+
+            <p class="text-slate-600 leading-relaxed mb-6">
+              Personalized transformational mentoring experiences designed for
+              next-level emotional and leadership growth.
+            </p>
+
+            <div class="flex items-center gap-3 text-[#FF7900] font-semibold">
+              <span>✔</span>
+              <span>1:1 Coaching Systems</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================== -->
+    <!-- PRIVATE MENTORSHIP SECTION -->
+    <!-- ====================================== -->
+
+    <section class="py-32 bg-white relative overflow-hidden">
+      <!-- BLURS -->
+
+      <div
+        class="blur-circle w-[550px] h-[550px] bg-[#FFE642] top-[-220px] right-[-150px] opacity-20"
+      ></div>
+
+      <div
+        class="blur-circle w-[450px] h-[450px] bg-[#FFBF00] bottom-[-180px] left-[-100px] opacity-15"
+      ></div>
+
+      <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="grid lg:grid-cols-2 gap-20 items-center">
+          <!-- CONTENT -->
+
+          <div>
+            <p
+              class="uppercase tracking-[0.3em] text-[#FF7900] text-sm font-semibold mb-5"
+            >
+              Private Mentorship
+            </p>
+
+            <h2
+              class="text-5xl lg:text-6xl font-bold leading-tight text-slate-900 mb-8"
+            >
+              Your Next Level Begins With
+              <span class="primary-text"> One Decision </span>
+            </h2>
+
+            <p class="text-xl text-slate-600 leading-relaxed mb-10">
+              Step into clarity, confidence, emotional mastery, leadership
+              growth, and transformational evolution through a premium
+              mentorship experience designed around your goals.
+            </p>
+
+            <!-- FEATURES -->
+
+            <div class="space-y-6 mb-12">
+              <div class="flex items-start gap-5">
+                <div
+                  class="w-16 h-16 rounded-2xl secondary-gradient flex items-center justify-center text-3xl shrink-0"
+                >
+                  ✨
+                </div>
+
+                <div>
+                  <h3 class="text-2xl font-bold mb-2 text-slate-900">
+                    Personalized Growth Strategy
+                  </h3>
+
+                  <p class="text-slate-600 leading-relaxed">
+                    A transformational roadmap designed specifically around your
+                    emotional, personal, and leadership goals.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-5">
+                <div
+                  class="w-16 h-16 rounded-2xl secondary-gradient flex items-center justify-center text-3xl shrink-0"
+                >
+                  💖
+                </div>
+
+                <div>
+                  <h3 class="text-2xl font-bold mb-2 text-slate-900">
+                    Emotional Mastery
+                  </h3>
+
+                  <p class="text-slate-600 leading-relaxed">
+                    Release emotional overwhelm, build resilience, and create
+                    emotional clarity with healing systems.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-5">
+                <div
+                  class="w-16 h-16 rounded-2xl secondary-gradient flex items-center justify-center text-3xl shrink-0"
+                >
+                  👑
+                </div>
+
+                <div>
+                  <h3 class="text-2xl font-bold mb-2 text-slate-900">
+                    Leadership Presence
+                  </h3>
+
+                  <p class="text-slate-600 leading-relaxed">
+                    Build executive communication, authority, visibility, and
+                    transformational confidence.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- BUTTONS -->
+
+            <div class="flex flex-wrap gap-5">
+              <button
+                onclick="openCallPanel()"
+                class="premium-btn text-white px-10 py-5 rounded-full font-bold text-lg"
+              >
+                Apply For Mentorship
+              </button>
+
+              <button
+                class="bg-white border border-[#FFBF00]/20 hover:border-[#FF7900] hover:text-[#FF7900] transition px-10 py-5 rounded-full font-bold text-lg"
+              >
+                Learn More
+              </button>
+            </div>
+          </div>
+
+          <!-- IMAGE -->
+
+          <div class="relative">
+            <div
+              class="glass-card premium-border rounded-[40px] p-5 relative z-10"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1200&auto=format&fit=crop"
+                class="rounded-[30px] w-full h-[720px] object-cover"
+              />
+            </div>
+
+            <!-- FLOATING CARD -->
+
+            <div
+              class="absolute -bottom-10 -left-8 glass-card premium-border rounded-[30px] p-8 max-w-sm z-20"
+            >
+              <h3 class="text-5xl font-bold primary-text mb-3">1:1</h3>
+
+              <p class="text-slate-600 leading-relaxed text-lg">
+                Personalized transformational mentorship designed to help you
+                unlock your highest potential.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================== -->
+    <!-- FOOTER -->
+    <!-- ====================================== -->
+
+    <footer class="bg-[#111111] py-24 relative overflow-hidden text-white">
+      <!-- BLURS -->
+
+      <div
+        class="blur-circle w-[500px] h-[500px] bg-[#FF7900] top-[-220px] right-[-120px] opacity-10"
+      ></div>
+
+      <div
+        class="blur-circle w-[400px] h-[400px] bg-[#FFBF00] bottom-[-180px] left-[-120px] opacity-10"
+      ></div>
+
+      <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <!-- TOP GRID -->
+
+        <div
+          class="grid md:grid-cols-2 lg:grid-cols-4 gap-14 pb-16 border-b border-white/10"
+        >
+          <!-- BRAND -->
+
+          <div>
+            <h2 class="text-4xl font-bold mb-6 primary-text">MyPresento</h2>
+
+            <p class="text-white/70 leading-relaxed mb-8 text-lg">
+              Premium transformational coaching experiences designed for
+              leaders, professionals, entrepreneurs, and emotional healing
+              journeys.
+            </p>
+
+            <!-- SOCIALS -->
+
+            <div class="flex items-center gap-4">
+              <a
+                href="#"
+                class="w-12 h-12 rounded-full bg-white/10 hover:bg-[#FF7900] transition duration-300 flex items-center justify-center text-lg"
+              >
+                f
+              </a>
+
+              <a
+                href="#"
+                class="w-12 h-12 rounded-full bg-white/10 hover:bg-[#FF7900] transition duration-300 flex items-center justify-center text-lg"
+              >
+                in
+              </a>
+
+              <a
+                href="#"
+                class="w-12 h-12 rounded-full bg-white/10 hover:bg-[#FF7900] transition duration-300 flex items-center justify-center text-lg"
+              >
+                ig
+              </a>
+
+              <a
+                href="#"
+                class="w-12 h-12 rounded-full bg-white/10 hover:bg-[#FF7900] transition duration-300 flex items-center justify-center text-lg"
+              >
+                yt
+              </a>
+            </div>
+          </div>
+
+          <!-- QUICK LINKS -->
+
+          <div>
+            <h3 class="text-2xl font-bold mb-6">Quick Links</h3>
+
+            <ul class="space-y-4 text-white/70 text-lg">
+              <li>
+                <a
+                  href="index.html"
+                  class="hover:text-white transition duration-300"
+                >
+                  Home
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="about.html"
+                  class="hover:text-white transition duration-300"
+                >
+                  About
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="programs.html"
+                  class="hover:text-white transition duration-300"
+                >
+                  Programs
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="testimonials.html"
+                  class="hover:text-white transition duration-300"
+                >
+                  Testimonials
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="contact.html"
+                  class="hover:text-white transition duration-300"
+                >
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- PROGRAMS -->
+
+          <div>
+            <h3 class="text-2xl font-bold mb-6">Programs</h3>
+
+            <ul class="space-y-4 text-white/70 text-lg">
+              <li
+                class="hover:text-white transition duration-300 cursor-pointer"
+              >
+                Break The LOOP
+              </li>
+
+              <li
+                class="hover:text-white transition duration-300 cursor-pointer"
+              >
+                Leadership Ascension
+              </li>
+
+              <li
+                class="hover:text-white transition duration-300 cursor-pointer"
+              >
+                Neuro Peace System
+              </li>
+
+              <li
+                class="hover:text-white transition duration-300 cursor-pointer"
+              >
+                Confidence Reset
+              </li>
+
+              <li
+                class="hover:text-white transition duration-300 cursor-pointer"
+              >
+                Private Mentorship
+              </li>
+            </ul>
+          </div>
+
+          <!-- CONTACT -->
+
+          <div>
+            <h3 class="text-2xl font-bold mb-6">Contact</h3>
+
+            <div class="space-y-5 text-white/70 text-lg">
+              <p>hello@mypresento.com</p>
+
+              <p>+91 9876543210</p>
+
+              <p>Kochi, Kerala, India</p>
+            </div>
+
+            <!-- BUTTON -->
+
+            <button
+              onclick="openCallPanel()"
+              class="premium-btn text-white px-8 py-4 rounded-full font-semibold mt-8"
+            >
+              Book A Session
+            </button>
+          </div>
+        </div>
+
+        <!-- BOTTOM -->
+
+        <div
+          class="pt-10 flex flex-col md:flex-row items-center justify-between gap-5 text-white/40 text-sm"
+        >
+          <p>© 2026 MyPresento. All rights reserved.</p>
+
+          <div class="flex items-center gap-8">
+            <a href="#" class="hover:text-white transition duration-300">
+              Privacy Policy
+            </a>
+
+            <a href="#" class="hover:text-white transition duration-300">
+              Terms & Conditions
+            </a>
+
+            <a href="#" class="hover:text-white transition duration-300">
+              Cookie Policy
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ====================================== -->
+    <!-- SCRIPT -->
+    <!-- ====================================== -->
+
+    <script>
+      const callPanel = document.getElementById("callPanel");
+      const callOverlay = document.getElementById("callOverlay");
+
+      function openCallPanel() {
+        callPanel.classList.add("active");
+        callOverlay.classList.add("active");
+
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeCallPanel() {
+        callPanel.classList.remove("active");
+        callOverlay.classList.remove("active");
+
+        document.body.style.overflow = "auto";
+      }
+
+      callOverlay.addEventListener("click", closeCallPanel);
+    </script>
+  </body>
+</html>
