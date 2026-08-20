@@ -105,7 +105,7 @@ body {
   margin: 0;
   max-width: 650px;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(52px, 5.4vw, 82px);
+  font-size: 65px;
   line-height: 0.98;
   letter-spacing: -0.045em;
   color: var(--brown);
@@ -113,6 +113,7 @@ body {
 
 .faq-heading h2 span {
   color: var(--green);
+  font-style: italic;
 }
 
 .faq-heading > p {

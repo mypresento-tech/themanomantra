@@ -4,1299 +4,1076 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>About - MyPresento</title>
+    <title>About Sreeja Vijayan | The Manomantra</title>
 
-    <!-- Tailwind -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta
+      name="description"
+      content="Discover the story, philosophy and purpose behind The Manomantra and Sreeja Vijayan."
+    />
 
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap"
       rel="stylesheet"
     />
 
-    <style>
-      html {
-        scroll-behavior: smooth;
-      }
+    <!-- Existing global styles -->
+    <link rel="stylesheet" href="assets/css/header.css" />
+    <link rel="stylesheet" href="assets/css/footer.css" />
 
-      body {
-        font-family: "Inter", sans-serif;
-        background: #fffdf7;
-        color: #111827;
-        overflow-x: hidden;
-      }
-
-      h1,
-      h2,
-      h3,
-      h4 {
-        font-family: "Outfit", sans-serif;
-      }
-
-      :root {
-        --yellow: #ffbf00;
-        --cream: #f2cf7e;
-        --light: #ffe642;
-        --orange: #ff7900;
-      }
-
-      .primary-gradient {
-        background: linear-gradient(
-          135deg,
-          var(--yellow) 0%,
-          var(--orange) 100%
-        );
-      }
-
-      .secondary-gradient {
-        background: linear-gradient(135deg, var(--cream) 0%, var(--light) 100%);
-      }
-
-      .primary-text {
-        background: linear-gradient(
-          135deg,
-          var(--yellow) 0%,
-          var(--orange) 100%
-        );
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-
-      .glass-card {
-        background: rgba(255, 255, 255, 0.72);
-        backdrop-filter: blur(16px);
-        border: 1px solid rgba(255, 191, 0, 0.12);
-        box-shadow: 0 10px 40px rgba(255, 191, 0, 0.08);
-      }
-
-      .premium-border {
-        border: 1px solid rgba(255, 121, 0, 0.15);
-      }
-
-      .hover-glow:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 20px 50px rgba(255, 121, 0, 0.15);
-      }
-
-      .premium-btn {
-        background: linear-gradient(
-          135deg,
-          var(--yellow) 0%,
-          var(--orange) 100%
-        );
-        transition: 0.35s ease;
-        box-shadow: 0 10px 30px rgba(255, 121, 0, 0.18);
-      }
-
-      .premium-btn:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 25px 50px rgba(255, 121, 0, 0.25);
-      }
-
-      .blur-circle {
-        position: absolute;
-        border-radius: 999px;
-        filter: blur(120px);
-        opacity: 0.35;
-      }
-
-      /* PANEL */
-
-      .call-panel {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 100%;
-        max-width: 520px;
-        height: 100vh;
-        background: #ffffff;
-        z-index: 10001;
-        transition: all 0.4s ease;
-        overflow-y: auto;
-        box-shadow: -10px 0 50px rgba(0, 0, 0, 0.12);
-      }
-
-      .call-panel.active {
-        right: 0;
-      }
-
-      .call-overlay {
-        position: fixed;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.55);
-        z-index: 10000;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-      }
-
-      .call-overlay.active {
-        opacity: 1;
-        visibility: visible;
-      }
-    </style>
+    <!-- About page only -->
+    <link rel="stylesheet" href="assets/css/about.css" />
   </head>
 
   <body>
-    <!-- ====================================== -->
-    <!-- OVERLAY -->
-    <!-- ====================================== -->
+    <!-- ================================
+       HEADER
+  ================================= -->
+    <header class="site-header" id="siteHeader">
+      <div class="container nav-wrap">
+        <a href="#home" class="brand" aria-label="The Manomantra Home">
+          <img src="assets/images/logo.png" alt="The Manomantra logo" />
+        </a>
 
-    <div id="callOverlay" class="call-overlay"></div>
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Open menu"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
 
-    <!-- ====================================== -->
-    <!-- CALL PANEL -->
-    <!-- ====================================== -->
-
-    <div id="callPanel" class="call-panel">
-      <div class="p-8">
-        <div class="flex items-center justify-between mb-10">
-          <div>
-            <h2 class="text-5xl font-bold mb-2 text-slate-900">
-              Book A Private Session
-            </h2>
-
-            <p class="text-slate-500 text-lg">
-              Let’s discuss your transformation journey.
-            </p>
-          </div>
-
+        <nav class="main-nav" id="mainNav">
+          <a href="index.html">Home</a>
+          <a href="about.html" class="active">About</a>
+          <a href="#services">Services</a>
+          <a href="#programs">Programs</a>
+          <a href="#testimonials">Testimonials</a>
+          <a href="#contact">Contact</a>
           <button
-            onclick="closeCallPanel()"
-            class="w-12 h-12 rounded-full bg-slate-100 hover:bg-slate-200 transition text-2xl text-slate-900"
+            class="btn btn-primary nav-cta"
+            type="button"
+            data-open-booking
           >
-            ×
+            <span class="calendar-icon">▣</span> Book a Session
           </button>
-        </div>
-
-        <!-- FORM -->
-
-        <form id="bookCallForm" class="space-y-6">
-          <input
-            type="text"
-            placeholder="Full Name"
-            class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 outline-none focus:border-[#FF7900]"
-          />
-
-          <input
-            type="email"
-            placeholder="Email Address"
-            class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 outline-none focus:border-[#FF7900]"
-          />
-
-          <input
-            type="tel"
-            placeholder="WhatsApp Number"
-            class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 outline-none focus:border-[#FF7900]"
-          />
-
-          <textarea
-            rows="6"
-            placeholder="Tell us about your transformation goals..."
-            class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 outline-none focus:border-[#FF7900] resize-none"
-          ></textarea>
-
-          <button
-            type="submit"
-            class="w-full premium-btn text-white py-5 rounded-2xl font-bold text-lg"
-          >
-            Apply Now
-          </button>
-        </form>
-      </div>
-    </div>
-
-    <!-- ====================================== -->
-    <!-- NAVBAR -->
-    <!-- ====================================== -->
-
-    <header
-      class="fixed top-0 left-0 w-full z-50 bg-white/70 backdrop-blur-2xl border-b border-white/20"
-    >
-      <div
-        class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between"
-      >
-        <!-- LOGO -->
-
-        <h1 class="text-3xl font-bold primary-text">MyPresento</h1>
-
-        <!-- MENU -->
-
-        <div class="flex items-center gap-10">
-          <nav class="hidden lg:flex items-center gap-8 text-sm text-slate-700">
-            <a href="index.html" class="hover:text-[#FF7900] transition">
-              Home
-            </a>
-
-            <a href="about.html" class="text-[#FF7900] font-semibold">
-              About
-            </a>
-
-            <a href="programs.html" class="hover:text-[#FF7900] transition">
-              Programs
-            </a>
-
-            <a href="testimonials.html" class="hover:text-[#FF7900] transition">
-              Testimonials
-            </a>
-
-            <a href="contact.html" class="hover:text-[#FF7900] transition">
-              Contact
-            </a>
-          </nav>
-
-          <!-- CTA -->
-
-          <button
-            onclick="openCallPanel()"
-            class="premium-btn text-white px-7 py-3 rounded-full font-semibold"
-          >
-            Apply For Mentorship
-          </button>
-        </div>
+        </nav>
       </div>
     </header>
 
-    <!-- ====================================== -->
-    <!-- HERO BANNER -->
-    <!-- ====================================== -->
+    <main>
+      <!-- =====================================================
+     ABOUT HERO
+===================================================== -->
 
-    <section
-      class="relative pt-40 pb-24 overflow-hidden bg-gradient-to-br from-[#FFF7E8] via-[#FFFDF7] to-[#FFF3DD] border-b border-[#FFBF00]/10"
-    >
-      <!-- BLURS -->
+      <!-- =========================================
+     ABOUT PAGE BANNER
+========================================= -->
 
-      <div
-        class="blur-circle w-[500px] h-[500px] bg-[#FFBF00] top-[-200px] left-[-150px]"
-      ></div>
+      <section class="about-banner" id="about-banner">
+        <div class="about-banner-content">
+          <!-- Eyebrow -->
+          <div class="about-banner-eyebrow">ABOUT THE MANOMANTRA</div>
 
-      <div
-        class="blur-circle w-[450px] h-[450px] bg-[#FFE642] bottom-[-200px] right-[-100px]"
-      ></div>
-
-      <div class="max-w-7xl mx-auto px-6 relative z-10">
-        <div class="text-center max-w-4xl mx-auto">
-          <div
-            class="inline-flex items-center gap-3 px-5 py-2 rounded-full border border-[#FF7900]/20 bg-[#FF7900]/10 mb-6"
-          >
-            <div class="w-2 h-2 rounded-full bg-[#FF7900]"></div>
-
-            <span class="text-[#FF7900] text-sm tracking-[0.2em] uppercase">
-              Premium Executive Mentorship
-            </span>
-          </div>
-
-          <h1
-            class="text-5xl lg:text-7xl font-bold leading-tight mb-6 text-slate-900"
-          >
-            About
-            <span class="primary-text"> Me </span>
+          <!-- Main Heading -->
+          <h1>
+            Human Development<br />
+            Through
+            <br /><span class="green-text">Conscious Living.</span>
           </h1>
 
-          <p class="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
-            Helping professionals, leaders, and entrepreneurs unlock confidence,
-            emotional intelligence, leadership presence, and transformational
-            growth.
+          <!-- Description -->
+          <p class="about-banner-description">
+            The story, purpose and philosophy behind The Manomantra and the work
+            we do.
           </p>
+
+          <!-- Decorative Line -->
+          <div class="about-banner-decoration">
+            <span>✦</span>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ====================================== -->
-    <!-- PROFILE SECTION -->
-    <!-- ====================================== -->
+      <!-- =====================================================
+     MEET THE FOUNDER
+===================================================== -->
 
-    <section class="py-28 bg-white relative overflow-hidden">
-      <!-- BLURS -->
+      <section class="founder-section">
+        <div class="founder-decoration founder-left"></div>
+        <div class="founder-decoration founder-right"></div>
 
-      <div
-        class="blur-circle w-[500px] h-[500px] bg-[#FFE642] top-[-180px] left-[-120px] opacity-25"
-      ></div>
+        <div class="about-container founder-grid">
+          <!-- =================================================
+             IMAGE SIDE
+        ================================================== -->
 
-      <div
-        class="blur-circle w-[450px] h-[450px] bg-[#FFBF00] bottom-[-180px] right-[-100px] opacity-20"
-      ></div>
+          <div class="founder-visual reveal-about">
+            <div class="founder-ring ring-gold"></div>
+            <div class="founder-ring ring-green"></div>
 
-      <div class="max-w-7xl mx-auto px-6 relative z-10">
-        <div class="grid lg:grid-cols-2 gap-20 items-center">
-          <!-- IMAGE SIDE -->
-
-          <div class="relative">
-            <!-- IMAGE CARD -->
-
-            <div
-              class="glass-card premium-border rounded-[40px] p-5 relative z-10"
-            >
+            <div class="founder-photo">
               <img
-                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1200&auto=format&fit=crop"
-                class="rounded-[30px] w-full h-[700px] object-cover"
+                src="assets/images/sreeja-vijayan-profile2.png"
+                alt="Sreeja Vijayan - Founder of The Manomantra"
               />
             </div>
 
-            <!-- FLOATING EXPERIENCE CARD -->
+            <div class="founder-quote">
+              <span class="quote-mark">“</span>
 
-            <div
-              class="absolute -bottom-8 -left-8 glass-card premium-border rounded-[30px] p-8 max-w-xs z-20"
-            >
-              <h3 class="text-5xl font-bold primary-text mb-3">12+</h3>
+              <div class="quote-line brown">Grow with Awareness.</div>
 
-              <p class="text-slate-600 leading-relaxed text-lg">
-                Years helping professionals transform confidence, leadership,
-                and emotional wellbeing.
-              </p>
-            </div>
+              <div class="quote-line green">Live with Purpose.</div>
 
-            <!-- FLOATING STATS -->
+              <div class="quote-line brown">Flourish with Serenity.</div>
 
-            <div
-              class="absolute top-10 -right-10 glass-card premium-border rounded-[30px] px-8 py-6 z-20"
-            >
-              <h3 class="text-4xl font-bold primary-text mb-2">10K+</h3>
-
-              <p class="text-slate-500">Lives Impacted</p>
+              <div class="quote-decoration">
+                <span></span>
+                <b>❧</b>
+                <span></span>
+              </div>
             </div>
           </div>
 
-          <!-- CONTENT SIDE -->
+          <!-- =================================================
+             CONTENT SIDE
+        ================================================== -->
 
-          <div>
-            <!-- TAG -->
+          <div class="founder-content reveal-about">
+            <div class="section-eyebrow">
+              <span></span>
 
-            <p
-              class="uppercase tracking-[0.3em] text-[#FF7900] text-sm font-semibold mb-5"
-            >
-              About The Mentor
-            </p>
+              MEET THE FOUNDER
+            </div>
 
-            <!-- TITLE -->
-
-            <h2
-              class="text-5xl lg:text-6xl font-bold leading-tight text-slate-900 mb-8"
-            >
-              Transforming Lives Through
-              <span class="primary-text"> Confidence, </span>
-
-              Leadership & Emotional Healing
+            <h2>
+              Meet
+              <strong>Sreeja Vijayan</strong>
             </h2>
 
-            <!-- DESCRIPTION -->
-
-            <p class="text-xl text-slate-600 leading-relaxed mb-8">
-              Through transformational coaching systems, emotional intelligence
-              frameworks, mindset breakthroughs, and leadership mentoring —
-              helping individuals unlock their highest potential with clarity
-              and confidence.
+            <p class="founder-subtitle">
+              The person behind
+              <em>The Manomantra.</em>
             </p>
 
-            <p class="text-lg text-slate-500 leading-relaxed mb-10">
-              Over the years, professionals, entrepreneurs, and leaders have
-              experienced emotional breakthroughs, mindset transformation,
-              confidence growth, and leadership evolution through premium
-              mentorship experiences designed for lasting impact.
-            </p>
-
-            <!-- FEATURE LIST -->
-
-            <div class="space-y-6 mb-12">
-              <!-- ITEM -->
-
-              <div class="flex items-start gap-5">
-                <div
-                  class="w-16 h-16 rounded-2xl secondary-gradient flex items-center justify-center text-3xl shrink-0"
-                >
-                  ✨
-                </div>
-
-                <div>
-                  <h3 class="text-2xl font-bold mb-2 text-slate-900">
-                    Confidence Transformation
-                  </h3>
-
-                  <p class="text-slate-600 leading-relaxed">
-                    Break self-doubt and emotional fear with transformational
-                    coaching systems.
-                  </p>
-                </div>
-              </div>
-
-              <!-- ITEM -->
-
-              <div class="flex items-start gap-5">
-                <div
-                  class="w-16 h-16 rounded-2xl secondary-gradient flex items-center justify-center text-3xl shrink-0"
-                >
-                  💖
-                </div>
-
-                <div>
-                  <h3 class="text-2xl font-bold mb-2 text-slate-900">
-                    Emotional Intelligence
-                  </h3>
-
-                  <p class="text-slate-600 leading-relaxed">
-                    Build emotional clarity, resilience, and healing through
-                    guided transformation.
-                  </p>
-                </div>
-              </div>
-
-              <!-- ITEM -->
-
-              <div class="flex items-start gap-5">
-                <div
-                  class="w-16 h-16 rounded-2xl secondary-gradient flex items-center justify-center text-3xl shrink-0"
-                >
-                  👑
-                </div>
-
-                <div>
-                  <h3 class="text-2xl font-bold mb-2 text-slate-900">
-                    Leadership Evolution
-                  </h3>
-
-                  <p class="text-slate-600 leading-relaxed">
-                    Develop executive communication, leadership confidence, and
-                    transformational presence.
-                  </p>
-                </div>
-              </div>
+            <div class="gold-divider">
+              <span></span>
+              <b>✦</b>
+              <span></span>
             </div>
 
-            <!-- BUTTONS -->
+            <div class="founder-credentials">
+              <span>COUNSELLING PSYCHOLOGIST</span>
 
-            <div class="flex flex-wrap gap-5">
-              <button
-                onclick="openCallPanel()"
-                class="premium-btn text-white px-10 py-5 rounded-full font-bold text-lg"
-              >
-                Apply For Mentorship
-              </button>
+              <b>•</b>
 
-              <button
-                class="bg-white border border-[#FFBF00]/20 hover:border-[#FF7900] hover:text-[#FF7900] transition px-10 py-5 rounded-full font-bold text-lg"
-              >
-                Explore Programs
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+              <span>ICF ACC CERTIFIED LIFE COACH</span>
 
-    <!-- ====================================== -->
-    <!-- JOURNEY SECTION -->
-    <!-- ====================================== -->
+              <br />
 
-    <section
-      class="py-28 bg-gradient-to-br from-[#FFF9E8] to-[#FFF3DD] relative overflow-hidden"
-    >
-      <div
-        class="blur-circle w-[500px] h-[500px] bg-[#FFBF00] top-[-200px] right-[-150px] opacity-20"
-      ></div>
+              <span>PARENTING &amp; GEN Z COACH</span>
 
-      <div class="max-w-7xl mx-auto px-6 relative z-10">
-        <!-- TOP -->
+              <b>•</b>
 
-        <div class="text-center max-w-4xl mx-auto mb-20">
-          <p
-            class="uppercase tracking-[0.3em] text-[#FF7900] text-sm font-semibold mb-5"
-          >
-            Journey & Experience
-          </p>
-
-          <h2
-            class="text-5xl lg:text-6xl font-bold leading-tight text-slate-900 mb-8"
-          >
-            The Journey Behind
-            <span class="primary-text"> The Transformation </span>
-          </h2>
-
-          <p class="text-xl text-slate-600 leading-relaxed">
-            A transformational journey built through emotional healing,
-            leadership development, coaching systems, and years of empowering
-            professionals and individuals.
-          </p>
-        </div>
-
-        <!-- TIMELINE -->
-
-        <div class="space-y-10">
-          <!-- ITEM -->
-
-          <div
-            class="glass-card premium-border rounded-[35px] p-10 flex flex-col lg:flex-row gap-8 items-start hover-glow transition duration-500"
-          >
-            <div class="min-w-[140px]">
-              <span
-                class="inline-flex px-5 py-3 rounded-full secondary-gradient font-bold text-slate-900"
-              >
-                2014
-              </span>
+              <span>FOUNDER, THE MANOMANTRA</span>
             </div>
 
-            <div>
-              <h3 class="text-3xl font-bold mb-5 text-slate-900">
-                Started The Coaching Journey
-              </h3>
-
-              <p class="text-slate-600 leading-relaxed text-lg">
-                Began helping individuals overcome self-doubt, emotional
-                overwhelm, and confidence struggles through transformational
-                coaching systems.
+            <div class="founder-copy">
+              <p>
+                Sreeja Vijayan is a Counselling Psychologist, ICF ACC Certified
+                Life Coach, Parenting &amp; Gen Z Coach, and the Founder of The
+                Manomantra.
               </p>
-            </div>
-          </div>
 
-          <!-- ITEM -->
-
-          <div
-            class="glass-card premium-border rounded-[35px] p-10 flex flex-col lg:flex-row gap-8 items-start hover-glow transition duration-500"
-          >
-            <div class="min-w-[140px]">
-              <span
-                class="inline-flex px-5 py-3 rounded-full secondary-gradient font-bold text-slate-900"
-              >
-                2018
-              </span>
-            </div>
-
-            <div>
-              <h3 class="text-3xl font-bold mb-5 text-slate-900">
-                Leadership Mentorship Expansion
-              </h3>
-
-              <p class="text-slate-600 leading-relaxed text-lg">
-                Expanded coaching systems into leadership development, executive
-                confidence, and transformational mentoring experiences.
+              <p>
+                With over 14 years of experience in counselling, coaching,
+                education and training, she has worked extensively with
+                children, adolescents, young adults, parents, educators and
+                professionals.
               </p>
-            </div>
-          </div>
 
-          <!-- ITEM -->
+              <p>
+                Her work integrates evidence-based psychology, coaching,
+                neuroscience, mindfulness and Indian wisdom to help individuals
+                navigate life's transitions with greater awareness, purpose and
+                emotional wellbeing.
+              </p>
 
-          <div
-            class="glass-card premium-border rounded-[35px] p-10 flex flex-col lg:flex-row gap-8 items-start hover-glow transition duration-500"
-          >
-            <div class="min-w-[140px]">
-              <span
-                class="inline-flex px-5 py-3 rounded-full secondary-gradient font-bold text-slate-900"
-              >
-                2024
-              </span>
-            </div>
-
-            <div>
-              <h3 class="text-3xl font-bold mb-5 text-slate-900">
-                Premium Global Transformation Programs
-              </h3>
-
-              <p class="text-slate-600 leading-relaxed text-lg">
-                Launching premium transformational experiences for
-                professionals, entrepreneurs, leaders, and emotional healing
-                journeys worldwide.
+              <p>
+                Driven by a deep passion for human development, Sreeja founded
+                The Manomantra to create a space where people can discover their
+                strengths, build meaningful relationships and flourish across
+                every stage of life.
               </p>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ====================================== -->
-    <!-- CERTIFICATIONS SECTION -->
-    <!-- ====================================== -->
+      <!-- =========================================
+     MANOMANTRA — KEY HIGHLIGHTS
+========================================= -->
 
-    <section class="py-28 bg-white">
-      <div class="max-w-7xl mx-auto px-6">
-        <!-- TOP -->
+      <section class="key-highlights" id="key-highlights">
+        <div class="highlights-container">
+          <!-- 01 -->
+          <div class="highlight-item">
+            <div class="highlight-icon">♡</div>
 
-        <div class="text-center max-w-4xl mx-auto mb-20">
-          <p
-            class="uppercase tracking-[0.3em] text-[#FF7900] text-sm font-semibold mb-5"
-          >
-            Certifications & Expertise
-          </p>
+            <h3>14+ Years</h3>
 
-          <h2
-            class="text-5xl lg:text-6xl font-bold leading-tight text-slate-900 mb-8"
-          >
-            Expertise Backed By
-            <span class="primary-text"> Transformation </span>
-          </h2>
-
-          <p class="text-xl text-slate-600 leading-relaxed">
-            Years of transformational learning, mentorship frameworks,
-            leadership coaching systems, and emotional intelligence development.
-          </p>
-        </div>
-
-        <!-- GRID -->
-
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <!-- CARD -->
-
-          <div
-            class="glass-card premium-border rounded-[35px] p-10 text-center hover-glow transition duration-500"
-          >
-            <div
-              class="w-20 h-20 rounded-3xl secondary-gradient flex items-center justify-center text-4xl mx-auto mb-8"
-            >
-              🎓
-            </div>
-
-            <h3 class="text-2xl font-bold mb-4 text-slate-900">
-              NLP Practitioner
-            </h3>
-
-            <p class="text-slate-600 leading-relaxed">
-              Neuro linguistic programming and transformational coaching
-              expertise.
-            </p>
+            <p>Experience</p>
           </div>
 
-          <!-- CARD -->
+          <!-- 02 -->
+          <div class="highlight-item">
+            <div class="highlight-icon">◉</div>
 
-          <div
-            class="glass-card premium-border rounded-[35px] p-10 text-center hover-glow transition duration-500"
-          >
-            <div
-              class="w-20 h-20 rounded-3xl secondary-gradient flex items-center justify-center text-4xl mx-auto mb-8"
-            >
-              💖
-            </div>
+            <h3>Evidence-Based</h3>
 
-            <h3 class="text-2xl font-bold mb-4 text-slate-900">
-              Emotional Healing
-            </h3>
-
-            <p class="text-slate-600 leading-relaxed">
-              Emotional intelligence and transformational healing systems.
-            </p>
+            <p>Approach</p>
           </div>
 
-          <!-- CARD -->
+          <!-- 03 -->
+          <div class="highlight-item">
+            <div class="highlight-icon">❋</div>
 
-          <div
-            class="glass-card premium-border rounded-[35px] p-10 text-center hover-glow transition duration-500"
-          >
-            <div
-              class="w-20 h-20 rounded-3xl secondary-gradient flex items-center justify-center text-4xl mx-auto mb-8"
-            >
-              👑
-            </div>
+            <h3>Mindfulness</h3>
 
-            <h3 class="text-2xl font-bold mb-4 text-slate-900">
-              Leadership Coaching
-            </h3>
-
-            <p class="text-slate-600 leading-relaxed">
-              Executive leadership and transformational mentoring expertise.
-            </p>
+            <p>Centred</p>
           </div>
 
-          <!-- CARD -->
+          <!-- 04 -->
+          <div class="highlight-item">
+            <div class="highlight-icon">◎</div>
 
-          <div
-            class="glass-card premium-border rounded-[35px] p-10 text-center hover-glow transition duration-500"
-          >
-            <div
-              class="w-20 h-20 rounded-3xl secondary-gradient flex items-center justify-center text-4xl mx-auto mb-8"
-            >
-              ✨
-            </div>
+            <h3>Purpose</h3>
 
-            <h3 class="text-2xl font-bold mb-4 text-slate-900">
-              Mindset Transformation
-            </h3>
-
-            <p class="text-slate-600 leading-relaxed">
-              Powerful mindset reset systems for confidence and growth.
-            </p>
+            <p>Driven</p>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ====================================== -->
-    <!-- PROFESSIONAL CERTIFICATIONS SECTION -->
-    <!-- ====================================== -->
+      <!-- =====================================================
+     MY STORY
+===================================================== -->
 
-    <section
-      class="py-28 bg-gradient-to-br from-[#FFF9E8] via-[#FFFDF7] to-[#FFF3DD] relative overflow-hidden"
-    >
-      <!-- BLURS -->
+      <section class="story-section" id="my-story">
+        <div class="story-bg-leaf story-bg-one"></div>
+        <div class="story-bg-leaf story-bg-two"></div>
 
-      <div
-        class="blur-circle w-[500px] h-[500px] bg-[#FFE642] top-[-180px] left-[-120px] opacity-20"
-      ></div>
+        <div class="about-container story-grid">
+          <!-- TEXT -->
+          <div class="story-content reveal-about">
+            <div class="section-eyebrow">
+              <span></span>
 
-      <div
-        class="blur-circle w-[450px] h-[450px] bg-[#FFBF00] bottom-[-180px] right-[-100px] opacity-15"
-      ></div>
-
-      <div class="max-w-7xl mx-auto px-6 relative z-10">
-        <!-- TOP -->
-
-        <div class="text-center max-w-4xl mx-auto mb-20">
-          <p
-            class="uppercase tracking-[0.3em] text-[#FF7900] text-sm font-semibold mb-5"
-          >
-            Professional Certifications
-          </p>
-
-          <h2
-            class="text-5xl lg:text-6xl font-bold leading-tight text-slate-900 mb-8"
-          >
-            Expertise Built Through
-            <span class="primary-text"> Learning, </span>
-
-            Healing & Leadership
-          </h2>
-
-          <p class="text-xl text-slate-600 leading-relaxed">
-            Years of transformational learning, coaching systems, leadership
-            frameworks, emotional intelligence mastery, and premium mentorship
-            development.
-          </p>
-        </div>
-
-        <!-- GRID -->
-
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- CARD -->
-
-          <div
-            class="glass-card premium-border rounded-[35px] p-10 hover-glow transition duration-500"
-          >
-            <div
-              class="w-20 h-20 rounded-3xl secondary-gradient flex items-center justify-center text-4xl mb-8"
-            >
-              🎓
+              MY STORY
             </div>
 
-            <h3 class="text-3xl font-bold mb-5 text-slate-900">
-              NLP Master Practitioner
-            </h3>
+            <h2>
+              My Story.
 
-            <p class="text-slate-600 leading-relaxed mb-6">
-              Advanced neuro linguistic programming systems for transformational
-              mindset coaching and emotional breakthroughs.
-            </p>
+              <br />
 
-            <div class="flex items-center gap-3 text-[#FF7900] font-semibold">
-              <span>✔</span>
-              <span>Certified Expertise</span>
-            </div>
-          </div>
-
-          <!-- CARD -->
-
-          <div
-            class="glass-card premium-border rounded-[35px] p-10 hover-glow transition duration-500 bg-gradient-to-br from-[#FFBF00] to-[#FF7900] text-white"
-          >
-            <div
-              class="w-20 h-20 rounded-3xl bg-white/15 flex items-center justify-center text-4xl mb-8"
-            >
-              💖
-            </div>
-
-            <h3 class="text-3xl font-bold mb-5">Emotional Healing Systems</h3>
-
-            <p class="leading-relaxed mb-6 text-white/90">
-              Specialized healing frameworks for emotional intelligence,
-              clarity, inner peace, and transformational growth.
-            </p>
-
-            <div class="flex items-center gap-3 text-white font-semibold">
-              <span>✔</span>
-              <span>Healing Frameworks</span>
-            </div>
-          </div>
-
-          <!-- CARD -->
-
-          <div
-            class="glass-card premium-border rounded-[35px] p-10 hover-glow transition duration-500"
-          >
-            <div
-              class="w-20 h-20 rounded-3xl secondary-gradient flex items-center justify-center text-4xl mb-8"
-            >
-              👑
-            </div>
-
-            <h3 class="text-3xl font-bold mb-5 text-slate-900">
-              Leadership Coaching
-            </h3>
-
-            <p class="text-slate-600 leading-relaxed mb-6">
-              Executive leadership mentoring systems designed for professionals,
-              entrepreneurs, and transformational leaders.
-            </p>
-
-            <div class="flex items-center gap-3 text-[#FF7900] font-semibold">
-              <span>✔</span>
-              <span>Executive Development</span>
-            </div>
-          </div>
-
-          <!-- CARD -->
-
-          <div
-            class="glass-card premium-border rounded-[35px] p-10 hover-glow transition duration-500"
-          >
-            <div
-              class="w-20 h-20 rounded-3xl secondary-gradient flex items-center justify-center text-4xl mb-8"
-            >
-              ✨
-            </div>
-
-            <h3 class="text-3xl font-bold mb-5 text-slate-900">
-              Confidence Transformation
-            </h3>
-
-            <p class="text-slate-600 leading-relaxed mb-6">
-              Proven systems for overcoming self-doubt, fear, emotional blocks,
-              and confidence limitations.
-            </p>
-
-            <div class="flex items-center gap-3 text-[#FF7900] font-semibold">
-              <span>✔</span>
-              <span>Transformation Systems</span>
-            </div>
-          </div>
-
-          <!-- CARD -->
-
-          <div
-            class="glass-card premium-border rounded-[35px] p-10 hover-glow transition duration-500"
-          >
-            <div
-              class="w-20 h-20 rounded-3xl secondary-gradient flex items-center justify-center text-4xl mb-8"
-            >
-              🌱
-            </div>
-
-            <h3 class="text-3xl font-bold mb-5 text-slate-900">
-              Mindset Reprogramming
-            </h3>
-
-            <p class="text-slate-600 leading-relaxed mb-6">
-              Deep mindset reset systems focused on clarity, growth, emotional
-              resilience, and personal evolution.
-            </p>
-
-            <div class="flex items-center gap-3 text-[#FF7900] font-semibold">
-              <span>✔</span>
-              <span>Growth Frameworks</span>
-            </div>
-          </div>
-
-          <!-- CARD -->
-
-          <div
-            class="glass-card premium-border rounded-[35px] p-10 hover-glow transition duration-500"
-          >
-            <div
-              class="w-20 h-20 rounded-3xl secondary-gradient flex items-center justify-center text-4xl mb-8"
-            >
-              🚀
-            </div>
-
-            <h3 class="text-3xl font-bold mb-5 text-slate-900">
-              Premium Mentorship
-            </h3>
-
-            <p class="text-slate-600 leading-relaxed mb-6">
-              Personalized transformational mentoring experiences designed for
-              next-level emotional and leadership growth.
-            </p>
-
-            <div class="flex items-center gap-3 text-[#FF7900] font-semibold">
-              <span>✔</span>
-              <span>1:1 Coaching Systems</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ====================================== -->
-    <!-- PRIVATE MENTORSHIP SECTION -->
-    <!-- ====================================== -->
-
-    <section class="py-32 bg-white relative overflow-hidden">
-      <!-- BLURS -->
-
-      <div
-        class="blur-circle w-[550px] h-[550px] bg-[#FFE642] top-[-220px] right-[-150px] opacity-20"
-      ></div>
-
-      <div
-        class="blur-circle w-[450px] h-[450px] bg-[#FFBF00] bottom-[-180px] left-[-100px] opacity-15"
-      ></div>
-
-      <div class="max-w-7xl mx-auto px-6 relative z-10">
-        <div class="grid lg:grid-cols-2 gap-20 items-center">
-          <!-- CONTENT -->
-
-          <div>
-            <p
-              class="uppercase tracking-[0.3em] text-[#FF7900] text-sm font-semibold mb-5"
-            >
-              Private Mentorship
-            </p>
-
-            <h2
-              class="text-5xl lg:text-6xl font-bold leading-tight text-slate-900 mb-8"
-            >
-              Your Next Level Begins With
-              <span class="primary-text"> One Decision </span>
+              <em>My Purpose.</em>
             </h2>
 
-            <p class="text-xl text-slate-600 leading-relaxed mb-10">
-              Step into clarity, confidence, emotional mastery, leadership
-              growth, and transformational evolution through a premium
-              mentorship experience designed around your goals.
-            </p>
-
-            <!-- FEATURES -->
-
-            <div class="space-y-6 mb-12">
-              <div class="flex items-start gap-5">
-                <div
-                  class="w-16 h-16 rounded-2xl secondary-gradient flex items-center justify-center text-3xl shrink-0"
-                >
-                  ✨
-                </div>
-
-                <div>
-                  <h3 class="text-2xl font-bold mb-2 text-slate-900">
-                    Personalized Growth Strategy
-                  </h3>
-
-                  <p class="text-slate-600 leading-relaxed">
-                    A transformational roadmap designed specifically around your
-                    emotional, personal, and leadership goals.
-                  </p>
-                </div>
-              </div>
-
-              <div class="flex items-start gap-5">
-                <div
-                  class="w-16 h-16 rounded-2xl secondary-gradient flex items-center justify-center text-3xl shrink-0"
-                >
-                  💖
-                </div>
-
-                <div>
-                  <h3 class="text-2xl font-bold mb-2 text-slate-900">
-                    Emotional Mastery
-                  </h3>
-
-                  <p class="text-slate-600 leading-relaxed">
-                    Release emotional overwhelm, build resilience, and create
-                    emotional clarity with healing systems.
-                  </p>
-                </div>
-              </div>
-
-              <div class="flex items-start gap-5">
-                <div
-                  class="w-16 h-16 rounded-2xl secondary-gradient flex items-center justify-center text-3xl shrink-0"
-                >
-                  👑
-                </div>
-
-                <div>
-                  <h3 class="text-2xl font-bold mb-2 text-slate-900">
-                    Leadership Presence
-                  </h3>
-
-                  <p class="text-slate-600 leading-relaxed">
-                    Build executive communication, authority, visibility, and
-                    transformational confidence.
-                  </p>
-                </div>
-              </div>
+            <div class="gold-divider left-divider">
+              <span></span>
+              <b>✦</b>
+              <span></span>
             </div>
 
-            <!-- BUTTONS -->
+            <div class="story-copy">
+              <p>
+                For me, The Manomantra is more than a professional practice—it
+                is the expression of a lifelong commitment to helping people
+                understand themselves, navigate transitions and grow into their
+                potential.
+              </p>
 
-            <div class="flex flex-wrap gap-5">
-              <button
-                onclick="openCallPanel()"
-                class="premium-btn text-white px-10 py-5 rounded-full font-bold text-lg"
-              >
-                Apply For Mentorship
-              </button>
+              <p>
+                My journey across psychology, counselling, coaching, education,
+                career guidance and human development has shown me that people
+                do not need more pressure to change. They need a safe space to
+                become aware, find meaning and take aligned action.
+              </p>
 
-              <button
-                class="bg-white border border-[#FFBF00]/20 hover:border-[#FF7900] hover:text-[#FF7900] transition px-10 py-5 rounded-full font-bold text-lg"
-              >
-                Learn More
-              </button>
+              <p>
+                I believe every transition in life carries an invitation— to
+                understand ourselves more deeply and consciously choose who we
+                want to become.
+              </p>
+
+              <p>
+                This belief shaped The Manomantra: a human-development ecosystem
+                where children grow with confidence, young people discover
+                direction, parents build connection, women return to themselves,
+                couples strengthen their relationships and professionals
+                flourish with clarity and wellbeing.
+              </p>
+
+              <p>
+                My approach is psychologically informed, deeply human and
+                practically grounded. It honours each person's story while
+                helping them build the awareness, skills and inner steadiness
+                required for lasting growth.
+              </p>
             </div>
           </div>
 
-          <!-- IMAGE -->
-
-          <div class="relative">
-            <div
-              class="glass-card premium-border rounded-[40px] p-5 relative z-10"
-            >
+          <!-- VISUAL -->
+          <div class="story-visual reveal-about">
+            <div class="story-image-frame">
               <img
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1200&auto=format&fit=crop"
-                class="rounded-[30px] w-full h-[720px] object-cover"
+                src="assets/images/sreeja-vijayan-story1.png"
+                alt="A calm reflective space representing The Manomantra"
               />
             </div>
 
-            <!-- FLOATING CARD -->
+            <div class="story-image-accent"></div>
 
-            <div
-              class="absolute -bottom-10 -left-8 glass-card premium-border rounded-[30px] p-8 max-w-sm z-20"
-            >
-              <h3 class="text-5xl font-bold primary-text mb-3">1:1</h3>
+            <div class="story-caption">
+              <span>THE MANOMANTRA</span>
 
-              <p class="text-slate-600 leading-relaxed text-lg">
-                Personalized transformational mentorship designed to help you
-                unlock your highest potential.
-              </p>
+              <strong> A space to pause, reflect &amp; grow. </strong>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ====================================== -->
-    <!-- FOOTER -->
-    <!-- ====================================== -->
+      <!-- =====================================================
+     MY CALLING
+===================================================== -->
 
-    <footer class="bg-[#111111] py-24 relative overflow-hidden text-white">
-      <!-- BLURS -->
+      <section class="calling-section">
+        <div class="calling-leaf calling-leaf-one"></div>
+        <div class="calling-leaf calling-leaf-two"></div>
 
-      <div
-        class="blur-circle w-[500px] h-[500px] bg-[#FF7900] top-[-220px] right-[-120px] opacity-10"
-      ></div>
+        <div class="about-container calling-inner">
+          <div class="calling-icon">
+            <span>❧</span>
+          </div>
 
-      <div
-        class="blur-circle w-[400px] h-[400px] bg-[#FFBF00] bottom-[-180px] left-[-120px] opacity-10"
-      ></div>
+          <div class="calling-label">MY CALLING</div>
 
-      <div class="max-w-7xl mx-auto px-6 relative z-10">
-        <!-- TOP GRID -->
+          <div class="calling-divider"></div>
 
-        <div
-          class="grid md:grid-cols-2 lg:grid-cols-4 gap-14 pb-16 border-b border-white/10"
-        >
-          <!-- BRAND -->
+          <div class="calling-quote">
+            <span class="large-quote">“</span>
 
-          <div>
-            <h2 class="text-4xl font-bold mb-6 primary-text">MyPresento</h2>
-
-            <p class="text-white/70 leading-relaxed mb-8 text-lg">
-              Premium transformational coaching experiences designed for
-              leaders, professionals, entrepreneurs, and emotional healing
-              journeys.
+            <p>
+              My calling is to awaken the
+              <strong>true potential</strong>
+              within every individual, empowering them to embrace life's
+              transitions with courage and consciously create a life of
+              <strong>purpose, wellbeing, and meaning.</strong>
             </p>
 
-            <!-- SOCIALS -->
-
-            <div class="flex items-center gap-4">
-              <a
-                href="#"
-                class="w-12 h-12 rounded-full bg-white/10 hover:bg-[#FF7900] transition duration-300 flex items-center justify-center text-lg"
-              >
-                f
-              </a>
-
-              <a
-                href="#"
-                class="w-12 h-12 rounded-full bg-white/10 hover:bg-[#FF7900] transition duration-300 flex items-center justify-center text-lg"
-              >
-                in
-              </a>
-
-              <a
-                href="#"
-                class="w-12 h-12 rounded-full bg-white/10 hover:bg-[#FF7900] transition duration-300 flex items-center justify-center text-lg"
-              >
-                ig
-              </a>
-
-              <a
-                href="#"
-                class="w-12 h-12 rounded-full bg-white/10 hover:bg-[#FF7900] transition duration-300 flex items-center justify-center text-lg"
-              >
-                yt
-              </a>
-            </div>
+            <span class="large-quote closing">”</span>
           </div>
+        </div>
+      </section>
 
-          <!-- QUICK LINKS -->
+      <!-- =========================================
+     THE MANOMANTRA
+     PROFESSIONAL BACKGROUND
+========================================= -->
 
-          <div>
-            <h3 class="text-2xl font-bold mb-6">Quick Links</h3>
+      <section class="professional-background" id="professional-background">
+        <!-- Decorative background elements -->
+        <span class="pb-leaf pb-leaf-left"></span>
+        <span class="pb-leaf pb-leaf-right"></span>
 
-            <ul class="space-y-4 text-white/70 text-lg">
-              <li>
-                <a
-                  href="index.html"
-                  class="hover:text-white transition duration-300"
-                >
-                  Home
-                </a>
-              </li>
+        <div class="pb-container">
+          <!-- =====================================
+             SECTION HEADER
+        ====================================== -->
 
-              <li>
-                <a
-                  href="about.html"
-                  class="hover:text-white transition duration-300"
-                >
-                  About
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="programs.html"
-                  class="hover:text-white transition duration-300"
-                >
-                  Programs
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="testimonials.html"
-                  class="hover:text-white transition duration-300"
-                >
-                  Testimonials
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="contact.html"
-                  class="hover:text-white transition duration-300"
-                >
-                  Contact
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <!-- PROGRAMS -->
-
-          <div>
-            <h3 class="text-2xl font-bold mb-6">Programs</h3>
-
-            <ul class="space-y-4 text-white/70 text-lg">
-              <li
-                class="hover:text-white transition duration-300 cursor-pointer"
-              >
-                Break The LOOP
-              </li>
-
-              <li
-                class="hover:text-white transition duration-300 cursor-pointer"
-              >
-                Leadership Ascension
-              </li>
-
-              <li
-                class="hover:text-white transition duration-300 cursor-pointer"
-              >
-                Neuro Peace System
-              </li>
-
-              <li
-                class="hover:text-white transition duration-300 cursor-pointer"
-              >
-                Confidence Reset
-              </li>
-
-              <li
-                class="hover:text-white transition duration-300 cursor-pointer"
-              >
-                Private Mentorship
-              </li>
-            </ul>
-          </div>
-
-          <!-- CONTACT -->
-
-          <div>
-            <h3 class="text-2xl font-bold mb-6">Contact</h3>
-
-            <div class="space-y-5 text-white/70 text-lg">
-              <p>hello@mypresento.com</p>
-
-              <p>+91 9876543210</p>
-
-              <p>Kochi, Kerala, India</p>
+          <div class="pb-header">
+            <div class="pb-heading-decoration">
+              <span></span>
+              <b>✦</b>
+              <span></span>
             </div>
 
-            <!-- BUTTON -->
+            <div class="pb-eyebrow">MY PROFESSIONAL JOURNEY</div>
 
-            <button
-              onclick="openCallPanel()"
-              class="premium-btn text-white px-8 py-4 rounded-full font-semibold mt-8"
-            >
-              Book A Session
-            </button>
+            <h2>
+              Professional
+              <em>Background</em>
+            </h2>
+
+            <p>
+              A strong foundation of knowledge, experience and practice that
+              shapes the work I do at The Manomantra.
+            </p>
+          </div>
+
+          <!-- =====================================
+             PROFESSIONAL CARDS
+        ====================================== -->
+
+          <div class="pb-grid">
+            <!-- 01 -->
+            <article class="pb-card">
+              <div class="pb-card-icon">
+                <span>♧</span>
+              </div>
+
+              <div class="pb-card-content">
+                <h3>Counselling Psychologist</h3>
+
+                <div class="pb-card-line"></div>
+
+                <p>
+                  Supporting emotional wellbeing and mental health through
+                  therapeutic guidance.
+                </p>
+              </div>
+            </article>
+
+            <!-- 02 -->
+            <article class="pb-card">
+              <div class="pb-card-icon">
+                <span>✦</span>
+              </div>
+
+              <div class="pb-card-content">
+                <h3>ICF ACC Certified Life Coach</h3>
+
+                <div class="pb-card-line"></div>
+
+                <p>
+                  Empowering individuals to clarify goals, overcome challenges
+                  and create meaningful progress.
+                </p>
+              </div>
+            </article>
+
+            <!-- 03 -->
+            <article class="pb-card">
+              <div class="pb-card-icon">
+                <span>✿</span>
+              </div>
+
+              <div class="pb-card-content">
+                <h3>Emotional Wellness & Professional Growth Coach</h3>
+
+                <div class="pb-card-line"></div>
+
+                <p>
+                  Helping people build emotional resilience and grow both
+                  personally and professionally.
+                </p>
+              </div>
+            </article>
+
+            <!-- 04 -->
+            <article class="pb-card">
+              <div class="pb-card-icon">
+                <span>♧</span>
+              </div>
+
+              <div class="pb-card-content">
+                <h3>Mindfulness Coach for teens and young adults</h3>
+
+                <div class="pb-card-line"></div>
+
+                <p>
+                  Guiding young minds to manage stress, improve focus and
+                  cultivate inner calm.
+                </p>
+              </div>
+            </article>
+
+            <!-- 05 -->
+            <article class="pb-card">
+              <div class="pb-card-icon">
+                <span>↗</span>
+              </div>
+
+              <div class="pb-card-content">
+                <h3>Life Skills Trainer and Career Strategist</h3>
+
+                <div class="pb-card-line"></div>
+
+                <p>
+                  Equipping individuals with essential life skills and career
+                  clarity for a brighter future.
+                </p>
+              </div>
+            </article>
+
+            <!-- 06 -->
+            <article class="pb-card">
+              <div class="pb-card-icon">
+                <span>⌘</span>
+              </div>
+
+              <div class="pb-card-content">
+                <h3>DMIT Practitioner</h3>
+
+                <div class="pb-card-line"></div>
+
+                <p>
+                  Using dermatoglyphics multiple intelligence testing to unlock
+                  individual potential.
+                </p>
+              </div>
+            </article>
+
+            <!-- 07 -->
+            <article class="pb-card">
+              <div class="pb-card-icon">
+                <span>♧</span>
+              </div>
+
+              <div class="pb-card-content">
+                <h3>Family Dispute Resolution Practitioner</h3>
+
+                <div class="pb-card-line"></div>
+
+                <p>
+                  Helping families resolve conflicts and build healthier,
+                  respectful relationships.
+                </p>
+              </div>
+            </article>
+
+            <!-- 08 -->
+            <article class="pb-card">
+              <div class="pb-card-icon">
+                <span>▤</span>
+              </div>
+
+              <div class="pb-card-content">
+                <h3>Former School Psychologist and Lecturer</h3>
+
+                <div class="pb-card-line"></div>
+
+                <p>
+                  Experience in academic settings with students across ages and
+                  diverse needs.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <!-- =====================================
+             EXPERIENCE HIGHLIGHT
+        ====================================== -->
+
+          <div class="pb-experience">
+            <div class="pb-experience-icon">
+              <span>✦</span>
+            </div>
+
+            <div class="pb-experience-divider"></div>
+
+            <div class="pb-experience-text">
+              <span class="pb-experience-label"> EXPERIENCE </span>
+
+              <p>
+                Experience in counselling, education, employee assistance and
+                human development
+                <strong>since 2012.</strong>
+              </p>
+            </div>
+
+            <div class="pb-experience-decoration">✧</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================
+     THE MANOMANTRA
+     CERTIFICATIONS & ACHIEVEMENTS
+========================================= -->
+
+      <section class="certifications-section" id="certifications">
+        <div class="certifications-container">
+          <!-- Section Header -->
+          <div class="certifications-header">
+            <div class="certification-ornament">
+              <span></span>
+              <i>✦</i>
+              <span></span>
+            </div>
+
+            <div class="certification-eyebrow">CREDENTIALS &amp; LEARNING</div>
+
+            <h2>
+              Certifications &
+              <em>Achievements</em>
+            </h2>
+
+            <p>
+              A journey of continuous learning, professional development and
+              deeper understanding of human growth.
+            </p>
+          </div>
+
+          <!-- Certification Grid -->
+          <div class="certification-grid">
+            <!-- 01 -->
+            <article class="certification-card">
+              <div class="certification-top">
+                <div class="certification-badge icf-badge">ICF</div>
+
+                <span class="certification-year"> 2022 </span>
+              </div>
+
+              <div class="certification-content">
+                <h3>ICF ACC Credential</h3>
+
+                <p class="certification-title">Associate Certified Coach</p>
+
+                <p class="certification-institution">
+                  International Coaching Federation (ICF)
+                </p>
+              </div>
+
+              <div class="certification-line"></div>
+            </article>
+
+            <!-- 02 -->
+            <article class="certification-card">
+              <div class="certification-top">
+                <div class="certification-badge university-badge">BU</div>
+
+                <span class="certification-year"> 2011 </span>
+              </div>
+
+              <div class="certification-content">
+                <h3>M.A. in Counselling Psychology</h3>
+
+                <p class="certification-title">Master's Degree</p>
+
+                <p class="certification-institution">Bangalore University</p>
+              </div>
+
+              <div class="certification-line"></div>
+            </article>
+
+            <!-- 03 -->
+            <article class="certification-card">
+              <div class="certification-top">
+                <div class="certification-badge university-badge">BU</div>
+
+                <span class="certification-year"> 2010 </span>
+              </div>
+
+              <div class="certification-content">
+                <h3>PG Diploma in Guidance &amp; Counselling</h3>
+
+                <p class="certification-title">Post Graduate Diploma</p>
+
+                <p class="certification-institution">Bangalore University</p>
+              </div>
+
+              <div class="certification-line"></div>
+            </article>
+
+            <!-- 04 -->
+            <article class="certification-card">
+              <div class="certification-top">
+                <div class="certification-badge mindfulness-badge">MBSR</div>
+
+                <span class="certification-year"> 2021 </span>
+              </div>
+
+              <div class="certification-content">
+                <h3>Certificate in Mindfulness Based Stress Reduction</h3>
+
+                <p class="certification-title">MBSR</p>
+
+                <p class="certification-institution">
+                  Spandana Hospitals, Mysore
+                </p>
+              </div>
+
+              <div class="certification-line"></div>
+            </article>
+
+            <!-- 05 -->
+            <article class="certification-card">
+              <div class="certification-top">
+                <div class="certification-badge dmIT-badge">DMIT</div>
+
+                <span class="certification-year"> 2020 </span>
+              </div>
+
+              <div class="certification-content">
+                <h3>DMIT Practitioner</h3>
+
+                <p class="certification-title">
+                  Dermatoglyphics Multiple Intelligence Test
+                </p>
+
+                <p class="certification-institution">CecureUs</p>
+              </div>
+
+              <div class="certification-line"></div>
+            </article>
+
+            <!-- 06 -->
+            <article class="certification-card">
+              <div class="certification-top">
+                <div class="certification-badge family-badge">FDR</div>
+
+                <span class="certification-year"> 2021 </span>
+              </div>
+
+              <div class="certification-content">
+                <h3>Family Dispute Resolution Practitioner</h3>
+
+                <p class="certification-title">Professional Practice</p>
+
+                <p class="certification-institution">Banjara Academy</p>
+              </div>
+
+              <div class="certification-line"></div>
+            </article>
+          </div>
+
+          <!-- Bottom Statement -->
+
+          <div class="certification-footer">
+            <span class="footer-leaf">✿</span>
+
+            <p>
+              Grounded in knowledge.
+              <strong>Guided by continuous learning.</strong>
+            </p>
+
+            <span class="footer-leaf">✿</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================
+     THE MANOMANTRA
+     CERTIFICATIONS & ACHIEVEMENTS
+========================================= -->
+
+      <section class="certifications-section" id="certifications">
+        <!-- Decorative Background -->
+        <div class="cert-bg-leaf cert-bg-leaf-left"></div>
+        <div class="cert-bg-leaf cert-bg-leaf-right"></div>
+
+        <div class="certifications-wrapper">
+          <!-- =====================================
+             LEFT CONTENT
+        ====================================== -->
+
+          <div class="cert-intro">
+            <div class="cert-eyebrow">
+              <span class="cert-lotus">♧</span>
+              <span>CREDENTIALS &amp; LEARNING</span>
+            </div>
+
+            <div class="cert-title-line">
+              <span></span>
+              <i>◆</i>
+              <span></span>
+            </div>
+
+            <h2>
+              Certifications &amp;
+              <em>Achievements</em>
+            </h2>
+
+            <div class="cert-divider">
+              <span></span>
+              <i>❧</i>
+              <span></span>
+            </div>
+
+            <p class="cert-intro-text">
+              A journey of continuous learning, professional development and
+              deeper understanding of human growth.
+            </p>
+          </div>
+
+          <!-- =====================================
+             RIGHT TIMELINE
+        ====================================== -->
+
+          <div class="cert-timeline">
+            <div class="timeline-line"></div>
+
+            <!-- 01 -->
+            <article class="cert-item">
+              <div class="cert-marker">
+                <span>♧</span>
+              </div>
+
+              <div class="cert-year">2022</div>
+
+              <div class="cert-content">
+                <h3>ICF ACC Credential</h3>
+
+                <h4>Associate Certified Coach</h4>
+
+                <p>International Coaching Federation (ICF)</p>
+              </div>
+            </article>
+
+            <!-- 02 -->
+            <article class="cert-item">
+              <div class="cert-marker">
+                <span>♧</span>
+              </div>
+
+              <div class="cert-year">2011</div>
+
+              <div class="cert-content">
+                <h3>M.A. in Counselling Psychology</h3>
+
+                <h4>Master’s Degree</h4>
+
+                <p>Bangalore University</p>
+              </div>
+            </article>
+
+            <!-- 03 -->
+            <article class="cert-item">
+              <div class="cert-marker">
+                <span>♧</span>
+              </div>
+
+              <div class="cert-year">2010</div>
+
+              <div class="cert-content">
+                <h3>PG Diploma in Guidance &amp; Counselling</h3>
+
+                <h4>Post Graduate Diploma</h4>
+
+                <p>Bangalore University</p>
+              </div>
+            </article>
+
+            <!-- 04 -->
+            <article class="cert-item">
+              <div class="cert-marker">
+                <span>♧</span>
+              </div>
+
+              <div class="cert-year">2021</div>
+
+              <div class="cert-content">
+                <h3>Certificate in Mindfulness Based Stress Reduction</h3>
+
+                <h4>MBSR</h4>
+
+                <p>Spandana Hospitals, Mysore</p>
+              </div>
+            </article>
+
+            <!-- 05 -->
+            <article class="cert-item">
+              <div class="cert-marker">
+                <span>♧</span>
+              </div>
+
+              <div class="cert-year">2020</div>
+
+              <div class="cert-content">
+                <h3>DMIT Practitioner</h3>
+
+                <h4>Dermatoglyphics Multiple Intelligence Test</h4>
+
+                <p>CecureUs</p>
+              </div>
+            </article>
+
+            <!-- 06 -->
+            <article class="cert-item">
+              <div class="cert-marker">
+                <span>♧</span>
+              </div>
+
+              <div class="cert-year">2021</div>
+
+              <div class="cert-content">
+                <h3>Family Dispute Resolution Practitioner</h3>
+
+                <h4>Professional Practice</h4>
+
+                <p>Banjara Academy</p>
+              </div>
+            </article>
           </div>
         </div>
 
-        <!-- BOTTOM -->
+        <!-- =====================================
+         BOTTOM DECORATION
+    ====================================== -->
 
-        <div
-          class="pt-10 flex flex-col md:flex-row items-center justify-between gap-5 text-white/40 text-sm"
-        >
-          <p>© 2026 MyPresento. All rights reserved.</p>
+        <div class="cert-bottom-decoration">
+          <span></span>
 
-          <div class="flex items-center gap-8">
-            <a href="#" class="hover:text-white transition duration-300">
-              Privacy Policy
+          <i>♧</i>
+
+          <span></span>
+        </div>
+      </section>
+
+      <!-- =====================================================
+     FINAL CTA
+===================================================== -->
+
+      <section class="about-final-cta">
+        <div class="about-final-leaf leaf-final-one"></div>
+        <div class="about-final-leaf leaf-final-two"></div>
+
+        <div class="about-container final-cta-inner">
+          <span class="final-eyebrow"> YOUR JOURNEY CAN BEGIN HERE </span>
+
+          <h2>
+            Every journey begins
+            <br />
+
+            with <em>awareness.</em>
+          </h2>
+
+          <p>
+            If something in this story speaks to where you are today, perhaps it
+            is time to begin your own journey with The Manomantra.
+          </p>
+
+          <button class="final-cta-btn" type="button" data-booking>
+            <span>Book a Clarity Call</span>
+            <b>→</b>
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+
+    <footer class="site-footer">
+      <!-- Decorative background -->
+      <div class="footer-glow footer-glow-one"></div>
+      <div class="footer-glow footer-glow-two"></div>
+
+      <div class="footer-leaf footer-leaf-top">⌁</div>
+      <div class="footer-leaf footer-leaf-bottom">⌁</div>
+
+      <div class="footer-container">
+        <!-- Main Footer -->
+        <div class="footer-main">
+          <!-- Brand -->
+          <div class="footer-brand">
+            <a href="#" class="footer-logo">
+              <img src="assets/images/logo.png" alt="The Manomantra" />
             </a>
 
-            <a href="#" class="hover:text-white transition duration-300">
-              Terms & Conditions
+            <p class="brand-description">
+              A space to understand yourself, grow with awareness, and create a
+              life of greater meaning and serenity.
+            </p>
+
+            <a href="#about" class="brand-link">
+              Discover The Manomantra
+              <span>→</span>
+            </a>
+          </div>
+
+          <!-- Explore -->
+          <div class="footer-column">
+            <span class="footer-label">EXPLORE</span>
+
+            <ul>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#support">Who We Support</a></li>
+              <li><a href="#programs">Programmes</a></li>
+              <li><a href="#journey">Your Journey</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Information -->
+          <div class="footer-column">
+            <span class="footer-label">INFORMATION</span>
+
+            <ul>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Use</a></li>
+              <li><a href="#">Cookie Policy</a></li>
+              <li><a href="#faq">FAQs</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div class="footer-column footer-contact">
+            <span class="footer-label">CONNECT</span>
+
+            <a href="tel:+917204378573" class="contact-item">
+              <span class="contact-icon">⌕</span>
+              <span>+91 7204378573</span>
             </a>
 
-            <a href="#" class="hover:text-white transition duration-300">
-              Cookie Policy
+            <a href="mailto:info@manomantra.in" class="contact-item">
+              <span class="contact-icon">@</span>
+              <span>connect@themanomantra.com</span>
             </a>
+
+            <p class="address">
+              The Manomantra<br />
+              Balaji Layout, Chokkanahalli,<br />
+              Bangalore, Karnataka, 560064
+            </p>
+          </div>
+        </div>
+
+        <!-- Brand Statement -->
+        <div class="footer-statement">
+          <span class="statement-line"></span>
+
+          <p>
+            Psychology <span>•</span> Coaching <span>•</span>
+            Conscious Learning
+          </p>
+
+          <span class="statement-line"></span>
+        </div>
+
+        <!-- Bottom -->
+        <div class="footer-bottom">
+          <div class="copyright">
+            © <span id="currentYear"></span>
+            The Manomantra. All rights reserved.
+          </div>
+
+          <div class="social-section">
+            <span>FOLLOW THE JOURNEY</span>
+
+            <div class="social-links">
+              <a href="#" aria-label="Instagram" class="social-link">
+                <span>i</span>
+              </a>
+
+              <a href="#" aria-label="Facebook" class="social-link">
+                <span>f</span>
+              </a>
+
+              <a href="#" aria-label="LinkedIn" class="social-link">
+                <span>in</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </footer>
-
-    <!-- ====================================== -->
-    <!-- SCRIPT -->
-    <!-- ====================================== -->
-
-    <script>
-      const callPanel = document.getElementById("callPanel");
-      const callOverlay = document.getElementById("callOverlay");
-
-      function openCallPanel() {
-        callPanel.classList.add("active");
-        callOverlay.classList.add("active");
-
-        document.body.style.overflow = "hidden";
-      }
-
-      function closeCallPanel() {
-        callPanel.classList.remove("active");
-        callOverlay.classList.remove("active");
-
-        document.body.style.overflow = "auto";
-      }
-
-      callOverlay.addEventListener("click", closeCallPanel);
-    </script>
+    <script src="assets/js/about.js"></script>
+    <script src="assets/js/header.js"></script>
+    <script src="assets/js/footer.js"></script>
   </body>
 </html>

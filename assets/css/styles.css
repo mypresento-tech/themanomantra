@@ -3671,7 +3671,7 @@ a {
 .program-description {
   margin: 20px 0 22px;
   color: #59636c;
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 400;
   line-height: 1.6;
 }
@@ -3703,7 +3703,7 @@ a {
 
   color: #59636c;
 
-  font-size: 16px;
+  font-size: 14px;
 
   font-weight: 400;
 
@@ -3962,7 +3962,7 @@ a {
 }
 
 .why-choose-title h2 span {
-  color: var(--green-dark);
+  color: #2d873b;
   font-style: italic;
 }
 
@@ -6441,7 +6441,7 @@ a {
 
   font-family: Georgia, "Times New Roman", serif;
 
-  font-size: clamp(55px, 5.3vw, 78px);
+  font-size: 65px;
 
   line-height: 0.98;
 
@@ -6454,8 +6454,6 @@ a {
 
 .testimonials-intro h2 em {
   color: #2d8738;
-
-  font-style: normal;
 }
 
 /* =========================================================
@@ -6640,7 +6638,7 @@ a {
 
   color: #344663;
 
-  font-size: 20px;
+  font-size: 15px;
 
   line-height: 1.7;
 
@@ -6753,7 +6751,7 @@ a {
 .client-details h3 {
   margin: 0 0 7px;
 
-  font-size: 27px;
+  font-size: 19px;
 
   line-height: 1.2;
 
@@ -6761,7 +6759,7 @@ a {
 }
 
 .client-details span {
-  font-size: 18px;
+  font-size: 15px;
 
   color: #65738b;
 }
@@ -7169,7 +7167,7 @@ a {
   margin: 0;
   color: var(--cream);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(72px, 6.3vw, 106px);
+  font-size: 70px;
   line-height: 0.92;
   letter-spacing: -0.045em;
   font-weight: 600;
@@ -7177,6 +7175,7 @@ a {
 
 .clarity-copy h1 span {
   color: var(--green);
+  font-style: italic;
 }
 
 .leaf-divider {
