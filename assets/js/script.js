@@ -757,3 +757,25 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const heroButtons = document.querySelectorAll(".hero-btn");
+
+  heroButtons.forEach((button) => {
+    button.addEventListener("click", function (event) {
+      const target = this.getAttribute("href");
+
+      if (target && target.startsWith("#")) {
+        const section = document.querySelector(target);
+
+        if (section) {
+          event.preventDefault();
+
+          section.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
+      }
+    });
+  });
+});
