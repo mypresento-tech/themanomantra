@@ -779,3 +779,85 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+/* =========================================
+   THE MANOMANTRA
+   CLARITY SECTION JS
+========================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+  const claritySection = document.querySelector(".clarity-section");
+
+  if (!claritySection) return;
+
+  /* =====================================
+       SCROLL REVEAL
+    ===================================== */
+
+  const revealElements = [
+    ".clarity-header",
+    ".clarity-card",
+    ".clarity-services",
+    ".clarity-bottom",
+  ];
+
+  revealElements.forEach((selector) => {
+    const element = claritySection.querySelector(selector);
+
+    if (element) {
+      element.classList.add("clarity-reveal");
+    }
+  });
+
+  const observer = new IntersectionObserver(
+    (entries, observerInstance) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+
+          observerInstance.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.15,
+    },
+  );
+
+  claritySection.querySelectorAll(".clarity-reveal").forEach((element) => {
+    observer.observe(element);
+  });
+
+  /* =====================================
+       BUTTON CLICK
+    ===================================== */
+
+  const clarityButton = claritySection.querySelector(".clarity-button");
+
+  if (clarityButton) {
+    clarityButton.addEventListener("click", () => {
+      const contactSection = document.querySelector("#contact");
+
+      if (contactSection) {
+        contactSection.scrollIntoView({
+          behavior: "smooth",
+        });
+      }
+    });
+  }
+
+  /* =====================================
+       SERVICE HOVER
+    ===================================== */
+
+  const services = claritySection.querySelectorAll(".clarity-service");
+
+  services.forEach((service) => {
+    service.addEventListener("mouseenter", () => {
+      service.classList.add("active");
+    });
+
+    service.addEventListener("mouseleave", () => {
+      service.classList.remove("active");
+    });
+  });
+});
