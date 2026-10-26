@@ -1,0 +1,973 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Contact Us - MyPresento</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background: #fffdf7;
+        color: #111827;
+        overflow-x: hidden;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Outfit", sans-serif;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      :root {
+        --yellow: #ffbf00;
+        --cream: #f2cf7e;
+        --light: #ffe642;
+        --orange: #ff7900;
+      }
+
+      .primary-gradient {
+        background: linear-gradient(
+          135deg,
+          var(--yellow) 0%,
+          var(--orange) 100%
+        );
+      }
+
+      .primary-text {
+        background: linear-gradient(
+          135deg,
+          var(--yellow) 0%,
+          var(--orange) 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .glass-card {
+        background: rgba(255, 255, 255, 0.72);
+        backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 191, 0, 0.12);
+        box-shadow: 0 10px 40px rgba(255, 191, 0, 0.08);
+      }
+
+      .premium-border {
+        border: 1px solid rgba(255, 121, 0, 0.15);
+      }
+
+      .premium-btn {
+        background: linear-gradient(
+          135deg,
+          var(--yellow) 0%,
+          var(--orange) 100%
+        );
+        transition: 0.35s ease;
+        box-shadow: 0 10px 30px rgba(255, 121, 0, 0.18);
+      }
+
+      .premium-btn:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 25px 50px rgba(255, 121, 0, 0.25);
+      }
+
+      .blur-circle {
+        position: absolute;
+        border-radius: 999px;
+        filter: blur(120px);
+        opacity: 0.35;
+      }
+
+      /* PANEL */
+
+      .call-panel {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        max-width: 520px;
+        height: 100vh;
+        background: #ffffff;
+        z-index: 10001;
+        transition: all 0.4s ease;
+        overflow-y: auto;
+        box-shadow: -10px 0 50px rgba(0, 0, 0, 0.12);
+      }
+
+      .call-panel.active {
+        right: 0;
+      }
+
+      .call-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 10000;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .call-overlay.active {
+        opacity: 1;
+        visibility: visible;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ====================================== -->
+    <!-- OVERLAY -->
+    <!-- ====================================== -->
+
+    <div id="callOverlay" class="call-overlay"></div>
+
+    <!-- ====================================== -->
+    <!-- BOOK A CALL PANEL -->
+    <!-- ====================================== -->
+
+    <div id="callPanel" class="call-panel">
+      <div class="p-8">
+        <div class="flex items-center justify-between mb-10">
+          <div>
+            <h2 class="text-4xl font-bold mb-2 text-slate-900">Book A Call</h2>
+
+            <p class="text-slate-500 text-lg">
+              Let’s discuss your transformation journey.
+            </p>
+          </div>
+
+          <button
+            onclick="closeCallPanel()"
+            class="w-12 h-12 rounded-full bg-slate-100 hover:bg-slate-200 transition text-2xl"
+          >
+            ×
+          </button>
+        </div>
+
+        <!-- FORM -->
+
+        <form id="bookCallForm" class="space-y-6">
+          <input
+            type="text"
+            placeholder="Full Name"
+            class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 outline-none"
+            required
+          />
+
+          <input
+            type="email"
+            placeholder="Email Address"
+            class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 outline-none"
+            required
+          />
+
+          <input
+            type="tel"
+            placeholder="WhatsApp Number"
+            class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 outline-none"
+            required
+          />
+
+          <input
+            type="text"
+            placeholder="Location"
+            class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 outline-none"
+          />
+
+          <select
+            class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 outline-none"
+          >
+            <option>India</option>
+            <option>United Arab Emirates</option>
+            <option>United States</option>
+            <option>Canada</option>
+          </select>
+
+          <textarea
+            rows="6"
+            placeholder="Write your query..."
+            class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 outline-none resize-none"
+          ></textarea>
+
+          <button
+            type="submit"
+            class="w-full premium-btn text-white py-5 rounded-2xl font-bold text-lg"
+          >
+            Book A Call
+          </button>
+        </form>
+
+        <!-- SUCCESS -->
+
+        <div
+          id="callSuccessMessage"
+          class="hidden mt-6 bg-green-50 border border-green-200 text-green-700 rounded-2xl p-6 leading-relaxed"
+        >
+          ✅ Your call booking request has been submitted successfully.<br /><br />
+
+          Our team will contact you through your WhatsApp number and registered
+          email ID very soon.
+        </div>
+      </div>
+    </div>
+
+    <!-- ====================================== -->
+    <!-- HEADER -->
+    <!-- ====================================== -->
+
+    <header
+      class="fixed top-0 left-0 w-full z-50 border-b border-white/20 bg-white/70 backdrop-blur-2xl"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between"
+      >
+        <h1 class="text-3xl font-bold primary-text">MyPresento</h1>
+
+        <div class="flex items-center gap-8">
+          <nav class="hidden lg:flex items-center gap-8 text-sm text-slate-700">
+            <a href="index.html" class="hover:text-[#FF7900] transition">
+              Home
+            </a>
+
+            <a href="about.html" class="hover:text-[#FF7900] transition">
+              About
+            </a>
+
+            <a href="programs.html" class="hover:text-[#FF7900] transition">
+              Programs
+            </a>
+
+            <a href="testimonials.html" class="hover:text-[#FF7900] transition">
+              Testimonials
+            </a>
+
+            <a href="contact.html" class="text-[#FF7900] font-semibold">
+              Contact
+            </a>
+          </nav>
+
+          <button
+            onclick="openCallPanel()"
+            class="premium-btn text-white px-6 py-3 rounded-2xl font-semibold"
+          >
+            Book A Call
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ====================================== -->
+    <!-- HERO SECTION -->
+    <!-- ====================================== -->
+
+    <section
+      class="relative pt-40 pb-24 overflow-hidden bg-gradient-to-br from-[#FFF7E8] via-[#FFFDF7] to-[#FFF3DD] border-b border-[#FFBF00]/10"
+    >
+      <!-- BLURS -->
+
+      <div
+        class="blur-circle w-[500px] h-[500px] bg-[#FFBF00] top-[-200px] left-[-150px]"
+      ></div>
+
+      <div
+        class="blur-circle w-[450px] h-[450px] bg-[#FFE642] bottom-[-200px] right-[-100px]"
+      ></div>
+
+      <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
+        <!-- TAG -->
+
+        <div
+          class="inline-flex items-center bg-[#FF7900]/10 border border-[#FF7900]/20 text-[#FF7900] px-5 py-2 rounded-full text-sm font-semibold mb-8"
+        >
+          💬 Let’s Connect
+        </div>
+
+        <!-- TITLE -->
+
+        <h1
+          class="text-5xl lg:text-7xl font-bold leading-tight mb-8 text-slate-900"
+        >
+          Contact
+          <span class="primary-text"> Us </span>
+        </h1>
+
+        <!-- DESCRIPTION -->
+
+        <p class="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
+          Reach out for transformational coaching, workshops, emotional healing
+          journeys, leadership mentorship, and premium growth experiences.
+        </p>
+      </div>
+    </section>
+
+    <!-- ====================================== -->
+    <!-- CONTACT SECTION -->
+    <!-- ====================================== -->
+
+    <section class="py-24 bg-white relative overflow-hidden">
+      <!-- BLURS -->
+
+      <div
+        class="blur-circle w-[450px] h-[450px] bg-[#FFE642] top-[-180px] right-[-100px] opacity-20"
+      ></div>
+
+      <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="grid lg:grid-cols-2 gap-14">
+          <!-- LEFT -->
+
+          <section>
+            <!-- TOP -->
+
+            <div class="mb-10">
+              <p
+                class="uppercase tracking-[0.3em] text-[#FF7900] text-sm font-semibold mb-4"
+              >
+                Contact Information
+              </p>
+
+              <h2 class="text-5xl font-bold leading-tight text-slate-900 mb-6">
+                Let’s Start A
+                <span class="primary-text"> Conversation </span>
+              </h2>
+
+              <p class="text-xl text-slate-600 leading-relaxed">
+                Whether you're looking for workshops, emotional healing,
+                leadership mentoring, or transformational coaching — we’re here
+                to support your journey.
+              </p>
+            </div>
+
+            <!-- CARDS -->
+
+            <section class="space-y-6">
+              <!-- CARD -->
+
+              <div
+                class="glass-card premium-border rounded-[32px] p-8 flex gap-5"
+              >
+                <div
+                  class="w-16 h-16 rounded-2xl bg-[#FF7900]/10 flex items-center justify-center text-3xl"
+                >
+                  📞
+                </div>
+
+                <div>
+                  <h3 class="text-2xl font-bold mb-2 text-slate-900">
+                    Phone Number
+                  </h3>
+
+                  <p class="text-slate-600 text-lg">+91 9876543210</p>
+                </div>
+              </div>
+
+              <!-- CARD -->
+
+              <div
+                class="glass-card premium-border rounded-[32px] p-8 flex gap-5"
+              >
+                <div
+                  class="w-16 h-16 rounded-2xl bg-pink-500/10 flex items-center justify-center text-3xl"
+                >
+                  ✉️
+                </div>
+
+                <div>
+                  <h3 class="text-2xl font-bold mb-2 text-slate-900">
+                    Email Address
+                  </h3>
+
+                  <p class="text-slate-600 text-lg">hello@coach.com</p>
+                </div>
+              </div>
+
+              <!-- CARD -->
+
+              <div
+                class="glass-card premium-border rounded-[32px] p-8 flex gap-5"
+              >
+                <div
+                  class="w-16 h-16 rounded-2xl bg-green-500/10 flex items-center justify-center text-3xl"
+                >
+                  📍
+                </div>
+
+                <div>
+                  <h3 class="text-2xl font-bold mb-2 text-slate-900">
+                    Location
+                  </h3>
+
+                  <p class="text-slate-600 text-lg">Kochi, Kerala, India</p>
+                </div>
+              </div>
+
+              <!-- CARD -->
+
+              <div
+                class="glass-card premium-border rounded-[32px] p-8 flex gap-5"
+              >
+                <div
+                  class="w-16 h-16 rounded-2xl bg-purple-500/10 flex items-center justify-center text-3xl"
+                >
+                  🌐
+                </div>
+
+                <div>
+                  <h3 class="text-2xl font-bold mb-2 text-slate-900">
+                    Social Media
+                  </h3>
+
+                  <p class="text-slate-600 text-lg">Instagram: @coachname</p>
+                </div>
+              </div>
+            </section>
+          </section>
+
+          <!-- RIGHT -->
+
+          <section>
+            <div class="glass-card premium-border rounded-[40px] p-10">
+              <!-- TOP -->
+
+              <div class="mb-10">
+                <p
+                  class="uppercase tracking-[0.3em] text-[#FF7900] text-sm font-semibold mb-4"
+                >
+                  Send Enquiry
+                </p>
+
+                <h2 class="text-4xl font-bold mb-4 text-slate-900">
+                  Send A Message
+                </h2>
+
+                <p class="text-slate-600 text-lg">
+                  Fill the form below and our team will contact you soon.
+                </p>
+              </div>
+
+              <!-- FORM -->
+
+              <form id="enquiryForm" class="space-y-6">
+                <input
+                  type="text"
+                  placeholder="Full Name"
+                  class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 outline-none"
+                  required
+                />
+
+                <input
+                  type="email"
+                  placeholder="Email Address"
+                  class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 outline-none"
+                  required
+                />
+
+                <input
+                  type="tel"
+                  placeholder="WhatsApp Number"
+                  class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 outline-none"
+                  required
+                />
+
+                <select
+                  class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 outline-none"
+                >
+                  <option>General Enquiry</option>
+                  <option>Workshop Details</option>
+                  <option>Corporate Training</option>
+                  <option>1:1 Coaching</option>
+                </select>
+
+                <textarea
+                  rows="6"
+                  placeholder="Write your message here..."
+                  class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 outline-none resize-none"
+                ></textarea>
+
+                <button
+                  type="submit"
+                  class="w-full premium-btn text-white py-5 rounded-2xl font-bold text-lg"
+                >
+                  Send Enquiry
+                </button>
+              </form>
+
+              <!-- SUCCESS -->
+
+              <div
+                id="successMessage"
+                class="hidden mt-6 bg-green-50 border border-green-200 text-green-700 rounded-2xl p-6 leading-relaxed"
+              >
+                ✅ Your enquiry has been submitted successfully.<br /><br />
+
+                Our team will contact you through your WhatsApp number or
+                registered email ID very soon.
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================== -->
+    <!-- MAP SECTION -->
+    <!-- ====================================== -->
+
+    <section class="pb-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="glass-card premium-border rounded-[40px] overflow-hidden">
+          <!-- TOP -->
+
+          <section class="p-10 border-b border-[#FF7900]/10">
+            <p
+              class="uppercase tracking-[0.3em] text-[#FF7900] text-sm font-semibold mb-4"
+            >
+              Visit Us
+            </p>
+
+            <h2 class="text-4xl font-bold mb-4 text-slate-900">
+              Visit Our Location
+            </h2>
+
+            <p class="text-slate-600 text-lg">
+              Meet us for workshops, transformational events, coaching sessions,
+              and leadership programs.
+            </p>
+          </section>
+
+          <!-- MAP -->
+
+          <section class="h-[500px] w-full">
+            <iframe
+              src="https://maps.google.com/maps?q=Kochi&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              class="w-full h-full border-0 grayscale"
+              loading="lazy"
+            ></iframe>
+          </section>
+        </div>
+      </div>
+    </section>
+    <!-- ====================================== -->
+    <!-- CTA SECTION -->
+    <!-- ====================================== -->
+
+    <section class="pb-24 bg-white relative overflow-hidden">
+      <!-- BLURS -->
+
+      <div
+        class="blur-circle w-[550px] h-[550px] bg-[#FFBF00] bottom-[-220px] right-[-150px] opacity-20"
+      ></div>
+
+      <div class="max-w-6xl mx-auto px-6 relative z-10">
+        <div
+          class="relative overflow-hidden rounded-[50px] p-16 lg:p-24 bg-gradient-to-br from-[#FFBF00] to-[#FF7900] text-white text-center"
+        >
+          <!-- INNER BLURS -->
+
+          <div
+            class="absolute top-[-120px] left-[-120px] w-[350px] h-[350px] rounded-full bg-white/10 blur-3xl"
+          ></div>
+
+          <div
+            class="absolute bottom-[-140px] right-[-120px] w-[350px] h-[350px] rounded-full bg-[#FFE642]/20 blur-3xl"
+          ></div>
+
+          <div class="relative z-10">
+            <!-- TAG -->
+
+            <div
+              class="inline-flex items-center gap-3 bg-white/10 backdrop-blur-xl px-5 py-3 rounded-full mb-8 border border-white/10"
+            >
+              <div class="w-2 h-2 rounded-full bg-white"></div>
+
+              <p class="uppercase tracking-[4px] text-xs font-semibold">
+                Ready To Begin?
+              </p>
+            </div>
+
+            <!-- TITLE -->
+
+            <h2 class="text-5xl lg:text-7xl font-bold leading-[1.05] mb-8">
+              Your Transformation Starts Here
+            </h2>
+
+            <!-- DESCRIPTION -->
+
+            <p
+              class="text-xl leading-relaxed text-white/90 max-w-3xl mx-auto mb-12"
+            >
+              Connect with us for transformational coaching, workshops,
+              leadership mentorship, emotional healing experiences, and premium
+              growth journeys.
+            </p>
+
+            <!-- BUTTONS -->
+
+            <div class="flex flex-wrap justify-center gap-5">
+              <button
+                onclick="openCallPanel()"
+                class="bg-white text-[#FF7900] px-10 py-5 rounded-full uppercase tracking-[3px] text-sm font-semibold hover:scale-105 transition duration-300"
+              >
+                Book A Call
+              </button>
+
+              <a
+                href="programs.html"
+                class="border border-white/20 bg-white/10 backdrop-blur-xl px-10 py-5 rounded-full uppercase tracking-[3px] text-sm font-semibold hover:bg-white hover:text-[#FF7900] transition duration-300"
+              >
+                Explore Programs
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================== -->
+    <!-- FOOTER SECTION -->
+    <!-- ====================================== -->
+
+    <section class="bg-[#111111] py-24 relative overflow-hidden text-white">
+      <!-- BLURS -->
+
+      <div
+        class="blur-circle w-[500px] h-[500px] bg-[#FF7900] top-[-220px] right-[-120px] opacity-10"
+      ></div>
+
+      <div
+        class="blur-circle w-[400px] h-[400px] bg-[#FFBF00] bottom-[-180px] left-[-120px] opacity-10"
+      ></div>
+
+      <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <!-- TOP GRID -->
+
+        <section
+          class="grid md:grid-cols-2 lg:grid-cols-4 gap-14 pb-16 border-b border-white/10"
+        >
+          <!-- BRAND -->
+
+          <div>
+            <h2 class="text-4xl font-bold mb-6 primary-text">MyPresento</h2>
+
+            <p class="text-white/70 leading-relaxed mb-8 text-lg">
+              Premium transformational coaching experiences designed for
+              confidence, leadership growth, emotional healing, and life
+              transformation.
+            </p>
+
+            <!-- SOCIALS -->
+
+            <div class="flex items-center gap-4">
+              <a
+                href="#"
+                class="w-12 h-12 rounded-full bg-white/10 hover:bg-[#FF7900] transition duration-300 flex items-center justify-center text-lg"
+              >
+                f
+              </a>
+
+              <a
+                href="#"
+                class="w-12 h-12 rounded-full bg-white/10 hover:bg-[#FF7900] transition duration-300 flex items-center justify-center text-lg"
+              >
+                in
+              </a>
+
+              <a
+                href="#"
+                class="w-12 h-12 rounded-full bg-white/10 hover:bg-[#FF7900] transition duration-300 flex items-center justify-center text-lg"
+              >
+                ig
+              </a>
+
+              <a
+                href="#"
+                class="w-12 h-12 rounded-full bg-white/10 hover:bg-[#FF7900] transition duration-300 flex items-center justify-center text-lg"
+              >
+                yt
+              </a>
+            </div>
+          </div>
+
+          <!-- QUICK LINKS -->
+
+          <div>
+            <h3 class="text-2xl font-bold mb-6">Quick Links</h3>
+
+            <ul class="space-y-4 text-white/70 text-lg">
+              <li>
+                <a
+                  href="index.html"
+                  class="hover:text-white transition duration-300"
+                >
+                  Home
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="about.html"
+                  class="hover:text-white transition duration-300"
+                >
+                  About
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="services.html"
+                  class="hover:text-white transition duration-300"
+                >
+                  Services
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="programs.html"
+                  class="hover:text-white transition duration-300"
+                >
+                  Programs
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="testimonials.html"
+                  class="hover:text-white transition duration-300"
+                >
+                  Testimonials
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="contact.html"
+                  class="hover:text-white transition duration-300"
+                >
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- PROGRAMS -->
+
+          <div>
+            <h3 class="text-2xl font-bold mb-6">Popular Programs</h3>
+
+            <ul class="space-y-4 text-white/70 text-lg">
+              <li
+                class="hover:text-white transition duration-300 cursor-pointer"
+              >
+                Break The LOOP Challenge
+              </li>
+
+              <li
+                class="hover:text-white transition duration-300 cursor-pointer"
+              >
+                Leadership Ascension
+              </li>
+
+              <li
+                class="hover:text-white transition duration-300 cursor-pointer"
+              >
+                Neuro Peace Restoration
+              </li>
+
+              <li
+                class="hover:text-white transition duration-300 cursor-pointer"
+              >
+                Emotional Healing Workshop
+              </li>
+
+              <li
+                class="hover:text-white transition duration-300 cursor-pointer"
+              >
+                Private Mentorship
+              </li>
+            </ul>
+          </div>
+
+          <!-- CONTACT -->
+
+          <div>
+            <h3 class="text-2xl font-bold mb-6">Contact</h3>
+
+            <div class="space-y-5 text-white/70 text-lg mb-8">
+              <div class="flex items-start gap-4">
+                <span class="text-[#FF7900] text-xl"> 📧 </span>
+
+                <div>
+                  <p class="text-white">hello@coach.com</p>
+
+                  <p class="text-white/50 text-sm">Email Support</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <span class="text-[#FF7900] text-xl"> 📞 </span>
+
+                <div>
+                  <p class="text-white">+91 9876543210</p>
+
+                  <p class="text-white/50 text-sm">WhatsApp Support</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <span class="text-[#FF7900] text-xl"> 📍 </span>
+
+                <div>
+                  <p class="text-white">Kochi, Kerala, India</p>
+
+                  <p class="text-white/50 text-sm">Offline & Online Programs</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- BUTTON -->
+
+            <button
+              onclick="openCallPanel()"
+              class="premium-btn text-white px-8 py-4 rounded-full font-semibold"
+            >
+              Book A Session
+            </button>
+          </div>
+        </section>
+
+        <!-- NEWSLETTER -->
+
+        <section class="py-12 border-b border-white/10">
+          <div
+            class="flex flex-col lg:flex-row items-center justify-between gap-10"
+          >
+            <div class="max-w-2xl">
+              <p
+                class="uppercase tracking-[0.3em] text-[#FF7900] text-sm font-semibold mb-4"
+              >
+                Stay Connected
+              </p>
+
+              <h3 class="text-4xl font-bold mb-4">
+                Get Updates About New Programs
+              </h3>
+
+              <p class="text-white/60 leading-relaxed">
+                Join our community and receive transformational insights,
+                mentorship updates, and workshop announcements directly in your
+                inbox.
+              </p>
+            </div>
+
+            <!-- FORM -->
+
+            <form class="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                class="bg-white/10 border border-white/10 rounded-full px-6 py-4 outline-none text-white placeholder:text-white/40 min-w-[300px]"
+              />
+
+              <button
+                type="submit"
+                class="premium-btn text-white px-8 py-4 rounded-full font-semibold whitespace-nowrap"
+              >
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- ====================================== -->
+    <!-- JAVASCRIPT -->
+    <!-- ====================================== -->
+
+    <script>
+      const callPanel = document.getElementById("callPanel");
+
+      const callOverlay = document.getElementById("callOverlay");
+
+      const bookCallForm = document.getElementById("bookCallForm");
+
+      const callSuccessMessage = document.getElementById("callSuccessMessage");
+
+      const enquiryForm = document.getElementById("enquiryForm");
+
+      const successMessage = document.getElementById("successMessage");
+
+      // ======================================
+      // OPEN PANEL
+      // ======================================
+
+      function openCallPanel() {
+        callPanel.classList.add("active");
+        callOverlay.classList.add("active");
+
+        document.body.style.overflow = "hidden";
+      }
+
+      // ======================================
+      // CLOSE PANEL
+      // ======================================
+
+      function closeCallPanel() {
+        callPanel.classList.remove("active");
+        callOverlay.classList.remove("active");
+
+        document.body.style.overflow = "auto";
+      }
+
+      // ======================================
+      // CLOSE ON OVERLAY CLICK
+      // ======================================
+
+      callOverlay.addEventListener("click", () => {
+        closeCallPanel();
+      });
+
+      // ======================================
+      // BOOK CALL SUCCESS
+      // ======================================
+
+      bookCallForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        callSuccessMessage.classList.remove("hidden");
+
+        bookCallForm.reset();
+      });
+
+      // ======================================
+      // ENQUIRY SUCCESS
+      // ======================================
+
+      enquiryForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        successMessage.classList.remove("hidden");
+
+        enquiryForm.reset();
+      });
+    </script>
+  </body>
+</html>

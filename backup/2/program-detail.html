@@ -1,0 +1,1167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Program Detail - MyPresento</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background: #fffdf7;
+        color: #111827;
+        overflow-x: hidden;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Outfit", sans-serif;
+      }
+
+      :root {
+        --yellow: #ffbf00;
+        --cream: #f2cf7e;
+        --light: #ffe642;
+        --orange: #ff7900;
+      }
+
+      .primary-gradient {
+        background: linear-gradient(
+          135deg,
+          var(--yellow) 0%,
+          var(--orange) 100%
+        );
+      }
+
+      .secondary-gradient {
+        background: linear-gradient(135deg, var(--cream) 0%, var(--light) 100%);
+      }
+
+      .primary-text {
+        background: linear-gradient(
+          135deg,
+          var(--yellow) 0%,
+          var(--orange) 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .glass-card {
+        background: rgba(255, 255, 255, 0.72);
+        backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 191, 0, 0.12);
+        box-shadow: 0 10px 40px rgba(255, 191, 0, 0.08);
+      }
+
+      .premium-border {
+        border: 1px solid rgba(255, 121, 0, 0.15);
+      }
+
+      .premium-btn {
+        background: linear-gradient(
+          135deg,
+          var(--yellow) 0%,
+          var(--orange) 100%
+        );
+        transition: 0.35s ease;
+        box-shadow: 0 10px 30px rgba(255, 121, 0, 0.18);
+      }
+
+      .premium-btn:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 25px 50px rgba(255, 121, 0, 0.25);
+      }
+
+      .hover-glow {
+        transition: 0.4s ease;
+      }
+
+      .hover-glow:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 50px rgba(255, 121, 0, 0.15);
+      }
+
+      .blur-circle {
+        position: absolute;
+        border-radius: 999px;
+        filter: blur(120px);
+        opacity: 0.35;
+      }
+
+      .avatar-stack img {
+        margin-left: -12px;
+        border: 3px solid white;
+      }
+
+      .avatar-stack img:first-child {
+        margin-left: 0;
+      }
+
+      /* PANELS */
+
+      .panel {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        max-width: 520px;
+        height: 100vh;
+        background: #ffffff;
+        z-index: 10001;
+        transition: all 0.4s ease;
+        overflow-y: auto;
+        box-shadow: -10px 0 50px rgba(0, 0, 0, 0.12);
+      }
+
+      .panel.active {
+        right: 0;
+      }
+
+      .overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 10000;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .overlay.active {
+        opacity: 1;
+        visibility: visible;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ====================================== -->
+    <!-- OVERLAY -->
+    <!-- ====================================== -->
+
+    <div id="overlay" class="overlay"></div>
+
+    <!-- ====================================== -->
+    <!-- BOOK A CALL PANEL -->
+    <!-- ====================================== -->
+
+    <div id="callPanel" class="panel">
+      <div class="p-8">
+        <div class="flex items-center justify-between mb-10">
+          <div>
+            <h2 class="text-4xl font-bold mb-2 text-slate-900">Book A Call</h2>
+
+            <p class="text-slate-500">
+              Let’s discuss your transformation journey.
+            </p>
+          </div>
+
+          <button
+            onclick="closeCallPanel()"
+            class="w-12 h-12 rounded-full bg-slate-100 text-2xl"
+          >
+            ×
+          </button>
+        </div>
+
+        <!-- FORM -->
+
+        <form class="space-y-5">
+          <input
+            type="text"
+            placeholder="Full Name"
+            class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 outline-none"
+          />
+
+          <input
+            type="email"
+            placeholder="Email Address"
+            class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 outline-none"
+          />
+
+          <input
+            type="tel"
+            placeholder="WhatsApp Number"
+            class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 outline-none"
+          />
+
+          <textarea
+            rows="6"
+            placeholder="Write your query..."
+            class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 outline-none resize-none"
+          ></textarea>
+
+          <button
+            type="submit"
+            class="w-full premium-btn text-white py-5 rounded-2xl font-bold text-lg"
+          >
+            Book A Call
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- ====================================== -->
+    <!-- REGISTER PANEL -->
+    <!-- ====================================== -->
+
+    <div id="registerPanel" class="panel">
+      <div class="p-8">
+        <!-- TOP -->
+
+        <div class="flex items-center justify-between mb-10">
+          <div>
+            <h2 class="text-4xl font-bold mb-2 text-slate-900">
+              Register Program
+            </h2>
+
+            <p class="text-slate-500">Reserve your premium seat now.</p>
+          </div>
+
+          <button
+            onclick="closePanel()"
+            class="w-12 h-12 rounded-full bg-slate-100 text-2xl"
+          >
+            ×
+          </button>
+        </div>
+
+        <!-- FORM -->
+
+        <form id="registrationForm" class="space-y-5">
+          <input
+            type="text"
+            placeholder="Full Name"
+            class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 outline-none"
+            required
+          />
+
+          <input
+            type="email"
+            placeholder="Email Address"
+            class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 outline-none"
+            required
+          />
+
+          <input
+            type="tel"
+            placeholder="WhatsApp Number"
+            class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 outline-none"
+            required
+          />
+
+          <input
+            type="text"
+            placeholder="Location"
+            class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 outline-none"
+          />
+
+          <input
+            type="text"
+            placeholder="Country"
+            class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 outline-none"
+          />
+
+          <input
+            type="text"
+            value="Break The LOOP Challenge"
+            readonly
+            class="w-full bg-[#FF7900]/10 border border-[#FF7900]/20 rounded-2xl px-5 py-4 text-[#FF7900]"
+          />
+
+          <input
+            type="text"
+            placeholder="What You Do?"
+            class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 outline-none"
+          />
+
+          <!-- PAYMENT -->
+
+          <div class="glass-card premium-border rounded-2xl p-5">
+            <p class="text-[#FF7900] font-semibold mb-3">Payment Link</p>
+
+            <a href="#" class="primary-text font-semibold break-all">
+              https://rzp.io/rzp/breaktheloop
+            </a>
+          </div>
+
+          <!-- MODE -->
+
+          <select
+            class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 outline-none"
+          >
+            <option>UPI</option>
+            <option>Razorpay</option>
+            <option>Bank Transfer</option>
+          </select>
+
+          <!-- FILE -->
+
+          <input
+            type="file"
+            class="w-full bg-slate-50 border border-dashed border-slate-300 rounded-2xl px-5 py-5 text-slate-500"
+          />
+
+          <!-- BUTTON -->
+
+          <button
+            type="submit"
+            class="w-full premium-btn text-white py-5 rounded-2xl font-bold text-lg"
+          >
+            Register Now
+          </button>
+        </form>
+
+        <!-- SUCCESS -->
+
+        <div
+          id="successMessage"
+          class="hidden mt-6 bg-green-50 border border-green-200 text-green-700 rounded-2xl p-6"
+        >
+          ✅ Registration completed successfully.<br /><br />
+
+          You will receive the registration details on your WhatsApp and
+          registered email ID very soon.
+        </div>
+      </div>
+    </div>
+
+    <!-- ====================================== -->
+    <!-- HEADER -->
+    <!-- ====================================== -->
+
+    <header
+      class="fixed top-0 left-0 w-full z-50 border-b border-white/20 bg-white/70 backdrop-blur-2xl"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between"
+      >
+        <!-- LOGO -->
+
+        <h1 class="text-3xl font-bold primary-text">MyPresento</h1>
+
+        <div class="flex items-center gap-8">
+          <!-- MENU -->
+
+          <nav class="hidden lg:flex items-center gap-8 text-sm text-slate-700">
+            <a href="index.html" class="hover:text-[#FF7900] transition">
+              Home
+            </a>
+
+            <a href="about.html" class="hover:text-[#FF7900] transition">
+              About
+            </a>
+
+            <a href="programs.html" class="text-[#FF7900] font-semibold">
+              Programs
+            </a>
+
+            <a href="contact.html" class="hover:text-[#FF7900] transition">
+              Contact
+            </a>
+          </nav>
+
+          <!-- BUTTON -->
+
+          <button
+            onclick="openCallPanel()"
+            class="premium-btn text-white px-6 py-3 rounded-2xl font-semibold"
+          >
+            Book A Call
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ====================================== -->
+    <!-- HERO SECTION -->
+    <!-- ====================================== -->
+
+    <section
+      class="relative pt-40 pb-24 overflow-hidden bg-gradient-to-br from-[#FFF7E8] via-[#FFFDF7] to-[#FFF3DD] border-b border-[#FFBF00]/10"
+    >
+      <!-- BLURS -->
+
+      <div
+        class="blur-circle w-[500px] h-[500px] bg-[#FFBF00] top-[-200px] left-[-150px]"
+      ></div>
+
+      <div
+        class="blur-circle w-[450px] h-[450px] bg-[#FFE642] bottom-[-200px] right-[-100px]"
+      ></div>
+
+      <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <!-- LEFT -->
+
+          <div>
+            <!-- BADGE -->
+
+            <div
+              class="inline-flex items-center bg-red-500/10 border border-red-500/20 text-red-500 px-5 py-2 rounded-full text-sm font-semibold mb-8"
+            >
+              🔥 Tickets Are Selling Fast
+            </div>
+
+            <!-- TITLE -->
+
+            <h1
+              class="text-5xl lg:text-7xl font-bold leading-tight mb-8 text-slate-900"
+            >
+              Break The LOOP
+              <span class="primary-text"> Challenge </span>
+            </h1>
+
+            <!-- DESC -->
+
+            <p class="text-xl text-slate-600 leading-relaxed mb-10">
+              A transformational emotional healing and confidence-building
+              experience designed to help participants overcome fear, anxiety,
+              overthinking, and emotional overwhelm.
+            </p>
+
+            <!-- RECOMMENDED -->
+
+            <div
+              class="glass-card rounded-3xl p-6 mb-10 flex flex-wrap items-center justify-between gap-6"
+            >
+              <div>
+                <p class="text-sm text-slate-500 mb-1">Recommended By</p>
+
+                <h3 class="font-bold text-3xl primary-text">1,248 People</h3>
+              </div>
+
+              <div class="flex items-center avatar-stack">
+                <img
+                  src="https://randomuser.me/api/portraits/women/21.jpg"
+                  class="w-14 h-14 rounded-full object-cover"
+                />
+
+                <img
+                  src="https://randomuser.me/api/portraits/men/32.jpg"
+                  class="w-14 h-14 rounded-full object-cover"
+                />
+
+                <img
+                  src="https://randomuser.me/api/portraits/women/55.jpg"
+                  class="w-14 h-14 rounded-full object-cover"
+                />
+              </div>
+            </div>
+
+            <!-- BUTTONS -->
+
+            <div class="flex flex-wrap gap-5">
+              <button
+                onclick="openPanel()"
+                class="premium-btn text-white px-8 py-5 rounded-2xl font-bold text-lg"
+              >
+                Book Your Seat
+              </button>
+
+              <button
+                class="bg-pink-500/10 border border-pink-500/20 text-pink-500 px-8 py-5 rounded-2xl font-bold text-lg"
+              >
+                ❤️ Recommend
+              </button>
+            </div>
+          </div>
+
+          <!-- RIGHT -->
+
+          <div>
+            <img
+              src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1400&auto=format&fit=crop"
+              class="rounded-[40px] shadow-2xl w-full"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================== -->
+    <!-- ABOUT PROGRAM SECTION -->
+    <!-- ====================================== -->
+
+    <section class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="glass-card premium-border rounded-[35px] p-10">
+          <h2 class="text-4xl font-bold mb-8 text-slate-900">
+            About This Program
+          </h2>
+
+          <p class="text-slate-600 text-lg leading-relaxed mb-6">
+            Break The LOOP Challenge is a transformational emotional healing and
+            confidence-building experience designed for individuals struggling
+            with emotional overwhelm, fear, anxiety, and overthinking.
+          </p>
+
+          <p class="text-slate-600 text-lg leading-relaxed">
+            This experience combines mindset transformation, emotional healing
+            techniques, EFT practices, journaling exercises, guided coaching
+            sessions, and self-awareness methods.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================== -->
+    <!-- PROGRAM DETAILS SECTION -->
+    <!-- ====================================== -->
+
+    <section class="pb-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="glass-card premium-border rounded-[35px] p-10">
+          <h2 class="text-4xl font-bold mb-10 text-slate-900">
+            Program Details
+          </h2>
+
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="glass-card rounded-2xl p-6">
+              <p class="text-sm text-slate-500 mb-2">Program Date</p>
+
+              <h3 class="font-bold text-xl text-slate-900">25 May 2026</h3>
+            </div>
+
+            <div class="glass-card rounded-2xl p-6">
+              <p class="text-sm text-slate-500 mb-2">Time</p>
+
+              <h3 class="font-bold text-xl text-slate-900">7:00 PM IST</h3>
+            </div>
+
+            <div class="glass-card rounded-2xl p-6">
+              <p class="text-sm text-slate-500 mb-2">Mode</p>
+
+              <h3 class="font-bold text-xl text-slate-900">Offline Workshop</h3>
+            </div>
+
+            <div class="glass-card rounded-2xl p-6">
+              <p class="text-sm text-slate-500 mb-2">Venue</p>
+
+              <h3 class="font-bold text-xl text-slate-900">
+                Kochi Marriott Hotel
+              </h3>
+            </div>
+
+            <div class="glass-card rounded-2xl p-6">
+              <p class="text-sm text-slate-500 mb-2">Original Price</p>
+
+              <h3 class="text-slate-400 text-2xl line-through">₹1999</h3>
+            </div>
+
+            <div class="glass-card premium-border rounded-2xl p-6">
+              <p class="text-sm text-[#FF7900] mb-2">Offer Price</p>
+
+              <h3 class="font-bold text-4xl primary-text">₹499</h3>
+            </div>
+          </div>
+
+          <div class="mt-10">
+            <button
+              onclick="openPanel()"
+              class="premium-btn text-white px-10 py-5 rounded-2xl font-bold text-lg"
+            >
+              Book Your Seat
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================== -->
+    <!-- VENUE DETAILS SECTION -->
+    <!-- ====================================== -->
+
+    <section class="pb-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="glass-card premium-border rounded-[35px] p-10">
+          <h2 class="text-4xl font-bold mb-8 text-slate-900">Venue Details</h2>
+
+          <p class="text-slate-600 text-lg leading-relaxed mb-10">
+            The workshop will be hosted at Kochi Marriott Hotel — a premium
+            luxury venue with modern facilities, peaceful ambience, comfortable
+            seating, and a transformational learning environment.
+          </p>
+
+          <!-- GALLERY -->
+
+          <div class="grid md:grid-cols-3 gap-6 mb-10">
+            <img
+              src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1200&auto=format&fit=crop"
+              class="rounded-3xl h-72 w-full object-cover"
+            />
+
+            <img
+              src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1200&auto=format&fit=crop"
+              class="rounded-3xl h-72 w-full object-cover"
+            />
+
+            <img
+              src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop"
+              class="rounded-3xl h-72 w-full object-cover"
+            />
+          </div>
+
+          <button
+            onclick="openPanel()"
+            class="premium-btn text-white px-10 py-5 rounded-2xl font-bold text-lg"
+          >
+            Book Your Seat
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================== -->
+    <!-- REVIEWS SECTION -->
+    <!-- ====================================== -->
+
+    <section class="pb-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div
+          class="glass-card premium-border rounded-[35px] p-10 overflow-hidden"
+        >
+          <!-- HEADER -->
+
+          <div class="flex items-center justify-between flex-wrap gap-6 mb-10">
+            <div>
+              <h2 class="text-4xl font-bold mb-3 text-slate-900">
+                Previous Participant Reviews
+              </h2>
+
+              <p class="text-slate-500">
+                Real experiences shared by previous participants.
+              </p>
+            </div>
+
+            <div
+              class="bg-green-50 border border-green-200 text-green-700 px-6 py-4 rounded-2xl font-semibold"
+            >
+              ⭐ 186 Reviews
+            </div>
+          </div>
+
+          <!-- REVIEWS GRID -->
+
+          <div class="grid lg:grid-cols-3 gap-8">
+            <!-- REVIEW -->
+
+            <div class="glass-card rounded-3xl p-8 hover-glow">
+              <div class="flex items-center gap-4 mb-6">
+                <img
+                  src="https://randomuser.me/api/portraits/women/45.jpg"
+                  class="w-16 h-16 rounded-full object-cover"
+                />
+
+                <div>
+                  <h3 class="font-bold text-xl text-slate-900">Neha R</h3>
+
+                  <p class="text-slate-500">Entrepreneur</p>
+                </div>
+              </div>
+
+              <p class="text-[#FF7900] text-xl mb-4">★★★★★</p>
+
+              <p class="text-slate-600 leading-relaxed">
+                “This program completely changed my mindset. I finally
+                understood why I was emotionally stuck.”
+              </p>
+            </div>
+
+            <!-- REVIEW -->
+
+            <div class="glass-card rounded-3xl p-8 hover-glow">
+              <div class="flex items-center gap-4 mb-6">
+                <img
+                  src="https://randomuser.me/api/portraits/men/28.jpg"
+                  class="w-16 h-16 rounded-full object-cover"
+                />
+
+                <div>
+                  <h3 class="font-bold text-xl text-slate-900">Arjun M</h3>
+
+                  <p class="text-slate-500">IT Professional</p>
+                </div>
+              </div>
+
+              <p class="text-[#FF7900] text-xl mb-4">★★★★★</p>
+
+              <p class="text-slate-600 leading-relaxed">
+                “I overcame anxiety, gained confidence, and finally started
+                taking action in my life.”
+              </p>
+            </div>
+
+            <!-- REVIEW -->
+
+            <div class="glass-card rounded-3xl p-8 hover-glow">
+              <div class="flex items-center gap-4 mb-6">
+                <img
+                  src="https://randomuser.me/api/portraits/women/22.jpg"
+                  class="w-16 h-16 rounded-full object-cover"
+                />
+
+                <div>
+                  <h3 class="font-bold text-xl text-slate-900">
+                    Sandra Joseph
+                  </h3>
+
+                  <p class="text-slate-500">Teacher</p>
+                </div>
+              </div>
+
+              <p class="text-[#FF7900] text-xl mb-4">★★★★★</p>
+
+              <p class="text-slate-600 leading-relaxed">
+                “The emotional healing techniques helped me regain peace after a
+                difficult phase.”
+              </p>
+            </div>
+          </div>
+
+          <!-- BUTTON -->
+
+          <div class="mt-10">
+            <button
+              onclick="openPanel()"
+              class="premium-btn text-white px-10 py-5 rounded-2xl font-bold text-lg"
+            >
+              Book Your Seat
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================== -->
+    <!-- CTA SECTION -->
+    <!-- ====================================== -->
+
+    <section class="pb-28 bg-white relative overflow-hidden">
+      <!-- BLURS -->
+
+      <div
+        class="blur-circle w-[500px] h-[500px] bg-[#FFE642] bottom-[-220px] left-[-120px] opacity-20"
+      ></div>
+
+      <div class="max-w-6xl mx-auto px-6 relative z-10">
+        <div
+          class="relative overflow-hidden rounded-[50px] p-16 lg:p-24 bg-gradient-to-br from-[#FFBF00] to-[#FF7900] text-white text-center"
+        >
+          <!-- INNER BLURS -->
+
+          <div
+            class="absolute top-[-120px] left-[-120px] w-[350px] h-[350px] rounded-full bg-white/10 blur-3xl"
+          ></div>
+
+          <div
+            class="absolute bottom-[-140px] right-[-120px] w-[350px] h-[350px] rounded-full bg-[#FFE642]/20 blur-3xl"
+          ></div>
+
+          <div class="relative z-10">
+            <!-- TAG -->
+
+            <div
+              class="inline-flex items-center gap-3 bg-white/10 backdrop-blur-xl px-5 py-3 rounded-full mb-8 border border-white/10"
+            >
+              <div class="w-2 h-2 rounded-full bg-white"></div>
+
+              <p class="uppercase tracking-[4px] text-xs font-semibold">
+                Ready For Transformation?
+              </p>
+            </div>
+
+            <!-- TITLE -->
+
+            <h2 class="text-5xl lg:text-7xl font-bold leading-[1.05] mb-8">
+              Your Next Level Starts Today
+            </h2>
+
+            <!-- DESCRIPTION -->
+
+            <p
+              class="text-xl leading-relaxed text-white/90 max-w-3xl mx-auto mb-12"
+            >
+              Step into confidence, emotional healing, clarity, and
+              transformational growth through this premium experience.
+            </p>
+
+            <!-- BUTTONS -->
+
+            <div class="flex flex-wrap justify-center gap-5">
+              <button
+                onclick="openPanel()"
+                class="bg-white text-[#FF7900] px-10 py-5 rounded-full uppercase tracking-[3px] text-sm font-semibold hover:scale-105 transition duration-300"
+              >
+                Book Your Seat
+              </button>
+
+              <button
+                onclick="openCallPanel()"
+                class="border border-white/20 bg-white/10 backdrop-blur-xl px-10 py-5 rounded-full uppercase tracking-[3px] text-sm font-semibold hover:bg-white hover:text-[#FF7900] transition duration-300"
+              >
+                Book A Call
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================== -->
+    <!-- FOOTER -->
+    <!-- ====================================== -->
+
+    <section class="bg-[#111111] py-24 relative overflow-hidden text-white">
+      <!-- BLURS -->
+
+      <div
+        class="blur-circle w-[500px] h-[500px] bg-[#FF7900] top-[-220px] right-[-120px] opacity-10"
+      ></div>
+
+      <div
+        class="blur-circle w-[400px] h-[400px] bg-[#FFBF00] bottom-[-180px] left-[-120px] opacity-10"
+      ></div>
+
+      <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <!-- TOP -->
+
+        <section
+          class="grid md:grid-cols-2 lg:grid-cols-4 gap-14 pb-16 border-b border-white/10"
+        >
+          <!-- BRAND -->
+
+          <div>
+            <h2 class="text-4xl font-bold mb-6 primary-text">MyPresento</h2>
+
+            <p class="text-white/70 leading-relaxed mb-8 text-lg">
+              Premium transformational coaching experiences designed for
+              leaders, professionals, entrepreneurs, and emotional healing
+              journeys.
+            </p>
+
+            <!-- SOCIALS -->
+
+            <div class="flex items-center gap-4">
+              <a
+                href="#"
+                class="w-12 h-12 rounded-full bg-white/10 hover:bg-[#FF7900] transition duration-300 flex items-center justify-center text-lg"
+              >
+                f
+              </a>
+
+              <a
+                href="#"
+                class="w-12 h-12 rounded-full bg-white/10 hover:bg-[#FF7900] transition duration-300 flex items-center justify-center text-lg"
+              >
+                in
+              </a>
+
+              <a
+                href="#"
+                class="w-12 h-12 rounded-full bg-white/10 hover:bg-[#FF7900] transition duration-300 flex items-center justify-center text-lg"
+              >
+                ig
+              </a>
+
+              <a
+                href="#"
+                class="w-12 h-12 rounded-full bg-white/10 hover:bg-[#FF7900] transition duration-300 flex items-center justify-center text-lg"
+              >
+                yt
+              </a>
+            </div>
+          </div>
+
+          <!-- QUICK LINKS -->
+
+          <div>
+            <h3 class="text-2xl font-bold mb-6">Quick Links</h3>
+
+            <ul class="space-y-4 text-white/70 text-lg">
+              <li>
+                <a
+                  href="index.html"
+                  class="hover:text-white transition duration-300"
+                >
+                  Home
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="about.html"
+                  class="hover:text-white transition duration-300"
+                >
+                  About
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="services.html"
+                  class="hover:text-white transition duration-300"
+                >
+                  Services
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="programs.html"
+                  class="hover:text-white transition duration-300"
+                >
+                  Programs
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="testimonials.html"
+                  class="hover:text-white transition duration-300"
+                >
+                  Testimonials
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="contact.html"
+                  class="hover:text-white transition duration-300"
+                >
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- PROGRAMS -->
+
+          <div>
+            <h3 class="text-2xl font-bold mb-6">Programs</h3>
+
+            <ul class="space-y-4 text-white/70 text-lg">
+              <li
+                class="hover:text-white transition duration-300 cursor-pointer"
+              >
+                Break The LOOP Challenge
+              </li>
+
+              <li
+                class="hover:text-white transition duration-300 cursor-pointer"
+              >
+                Leadership Ascension
+              </li>
+
+              <li
+                class="hover:text-white transition duration-300 cursor-pointer"
+              >
+                Emotional Healing Workshop
+              </li>
+
+              <li
+                class="hover:text-white transition duration-300 cursor-pointer"
+              >
+                Neuro Peace Restoration
+              </li>
+
+              <li
+                class="hover:text-white transition duration-300 cursor-pointer"
+              >
+                Private Mentorship
+              </li>
+            </ul>
+          </div>
+
+          <!-- CONTACT -->
+
+          <div>
+            <h3 class="text-2xl font-bold mb-6">Contact</h3>
+
+            <div class="space-y-5 text-white/70 text-lg">
+              <div class="flex items-start gap-4">
+                <span class="text-[#FF7900] text-xl"> 📧 </span>
+
+                <div>
+                  <p class="text-white">hello@mypresento.com</p>
+
+                  <p class="text-white/50 text-sm">Email Support</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <span class="text-[#FF7900] text-xl"> 📞 </span>
+
+                <div>
+                  <p class="text-white">+91 9876543210</p>
+
+                  <p class="text-white/50 text-sm">WhatsApp Support</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <span class="text-[#FF7900] text-xl"> 📍 </span>
+
+                <div>
+                  <p class="text-white">Kochi, Kerala, India</p>
+
+                  <p class="text-white/50 text-sm">
+                    Global Offline & Online Programs
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <button
+              onclick="openCallPanel()"
+              class="premium-btn text-white px-8 py-4 rounded-full font-semibold mt-8"
+            >
+              Book A Session
+            </button>
+          </div>
+        </section>
+
+        <!-- NEWSLETTER -->
+
+        <section class="py-12 border-b border-white/10">
+          <div
+            class="flex flex-col lg:flex-row items-center justify-between gap-10"
+          >
+            <div class="max-w-2xl">
+              <p
+                class="uppercase tracking-[0.3em] text-[#FF7900] text-sm font-semibold mb-4"
+              >
+                Stay Connected
+              </p>
+
+              <h3 class="text-4xl font-bold mb-4">
+                Get Updates About Upcoming Programs
+              </h3>
+
+              <p class="text-white/60 leading-relaxed">
+                Join our community and receive transformational insights,
+                workshop announcements, and mentorship updates.
+              </p>
+            </div>
+
+            <form class="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                class="bg-white/10 border border-white/10 rounded-full px-6 py-4 outline-none text-white placeholder:text-white/40 min-w-[300px]"
+              />
+
+              <button
+                type="submit"
+                class="premium-btn text-white px-8 py-4 rounded-full font-semibold whitespace-nowrap"
+              >
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </section>
+
+        <!-- BOTTOM -->
+
+        <section
+          class="pt-10 flex flex-col lg:flex-row items-center justify-between gap-5 text-white/40 text-sm"
+        >
+          <p>© 2026 MyPresento. All rights reserved.</p>
+
+          <div class="flex flex-wrap items-center justify-center gap-8">
+            <a href="#" class="hover:text-white transition duration-300">
+              Privacy Policy
+            </a>
+
+            <a href="#" class="hover:text-white transition duration-300">
+              Terms & Conditions
+            </a>
+
+            <a href="#" class="hover:text-white transition duration-300">
+              Refund Policy
+            </a>
+
+            <a href="#" class="hover:text-white transition duration-300">
+              Cookie Policy
+            </a>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section>
+      <script>
+        const overlay = document.getElementById("overlay");
+
+        const callPanel = document.getElementById("callPanel");
+
+        const registerPanel = document.getElementById("registerPanel");
+
+        const registrationForm = document.getElementById("registrationForm");
+
+        const successMessage = document.getElementById("successMessage");
+
+        function openPanel() {
+          registerPanel.classList.add("active");
+          overlay.classList.add("active");
+
+          document.body.style.overflow = "hidden";
+        }
+
+        function closePanel() {
+          registerPanel.classList.remove("active");
+          overlay.classList.remove("active");
+
+          document.body.style.overflow = "auto";
+        }
+
+        function openCallPanel() {
+          callPanel.classList.add("active");
+          overlay.classList.add("active");
+
+          document.body.style.overflow = "hidden";
+        }
+
+        function closeCallPanel() {
+          callPanel.classList.remove("active");
+          overlay.classList.remove("active");
+
+          document.body.style.overflow = "auto";
+        }
+
+        overlay.addEventListener("click", () => {
+          closePanel();
+          closeCallPanel();
+        });
+
+        registrationForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          successMessage.classList.remove("hidden");
+
+          registrationForm.reset();
+        });
+      </script>
+    </section>
+  </body>
+</html>

@@ -1,1183 +1,239 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stories of Awareness, Growth & Transformation | THE MANOMANTRA</title>
+  <meta name="description" content="Read reflections and experiences from participants of THE MANOMANTRA's counselling, youth development and workplace learning experiences." />
+  <meta name="theme-color" content="#fbf7ef" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/header.css" />
+  <link rel="stylesheet" href="assets/css/footer.css" />
+  <link rel="stylesheet" href="assets/css/testimonials.css" />
+</head>
+<body>
+<header class="site-header" id="siteHeader">
+      <div class="container nav-wrap">
+        <a href="index.html" class="brand" aria-label="THE MANOMANTRA Home">
+          <img src="assets/images/logo.png" alt="THE MANOMANTRA logo" />
+        </a>
 
-    <title>Testimonials - MyPresento</title>
-
-    <!-- Tailwind -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-
-    <style>
-      body {
-        font-family: "Inter", sans-serif;
-        background: #fffdf7;
-        color: #111827;
-        overflow-x: hidden;
-      }
-
-      h1,
-      h2,
-      h3,
-      h4 {
-        font-family: "Outfit", sans-serif;
-      }
-
-      html {
-        scroll-behavior: smooth;
-      }
-
-      :root {
-        --yellow: #ffbf00;
-        --cream: #f2cf7e;
-        --light: #ffe642;
-        --orange: #ff7900;
-      }
-
-      .primary-gradient {
-        background: linear-gradient(
-          135deg,
-          var(--yellow) 0%,
-          var(--orange) 100%
-        );
-      }
-
-      .primary-text {
-        background: linear-gradient(
-          135deg,
-          var(--yellow) 0%,
-          var(--orange) 100%
-        );
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-
-      .glass-card {
-        background: rgba(255, 255, 255, 0.72);
-        backdrop-filter: blur(16px);
-        border: 1px solid rgba(255, 191, 0, 0.12);
-        box-shadow: 0 10px 40px rgba(255, 191, 0, 0.08);
-      }
-
-      .premium-border {
-        border: 1px solid rgba(255, 121, 0, 0.15);
-      }
-
-      .premium-btn {
-        background: linear-gradient(
-          135deg,
-          var(--yellow) 0%,
-          var(--orange) 100%
-        );
-        transition: 0.35s ease;
-        box-shadow: 0 10px 30px rgba(255, 121, 0, 0.18);
-      }
-
-      .premium-btn:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 25px 50px rgba(255, 121, 0, 0.25);
-      }
-
-      .blur-circle {
-        position: absolute;
-        border-radius: 999px;
-        filter: blur(120px);
-        opacity: 0.35;
-      }
-
-      /* CALL PANEL */
-
-      .call-panel {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 100%;
-        max-width: 520px;
-        height: 100vh;
-        background: #ffffff;
-        z-index: 10001;
-        transition: all 0.4s ease;
-        overflow-y: auto;
-        box-shadow: -10px 0 50px rgba(0, 0, 0, 0.12);
-      }
-
-      .call-panel.active {
-        right: 0;
-      }
-
-      .call-overlay {
-        position: fixed;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.6);
-        z-index: 10000;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-      }
-
-      .call-overlay.active {
-        opacity: 1;
-        visibility: visible;
-      }
-    </style>
-  </head>
-
-  <body>
-    <!-- ====================================== -->
-    <!-- OVERLAY -->
-    <!-- ====================================== -->
-
-    <div id="callOverlay" class="call-overlay"></div>
-
-    <!-- ====================================== -->
-    <!-- BOOK CALL PANEL -->
-    <!-- ====================================== -->
-
-    <div id="callPanel" class="call-panel">
-      <div class="p-8">
-        <!-- TOP -->
-
-        <div class="flex items-center justify-between mb-10">
-          <div>
-            <h2 class="text-4xl font-bold mb-2 text-slate-900">Book A Call</h2>
-
-            <p class="text-slate-500 text-lg">
-              Let’s discuss your transformation journey.
-            </p>
-          </div>
-
-          <button
-            onclick="closeCallPanel()"
-            class="w-12 h-12 rounded-full bg-slate-100 hover:bg-slate-200 transition text-2xl"
-          >
-            ×
-          </button>
-        </div>
-
-        <!-- FORM -->
-
-        <form id="bookCallForm" class="space-y-6">
-          <input
-            type="text"
-            placeholder="Full Name"
-            class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 outline-none"
-            required
-          />
-
-          <input
-            type="email"
-            placeholder="Email Address"
-            class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 outline-none"
-            required
-          />
-
-          <input
-            type="tel"
-            placeholder="WhatsApp Number"
-            class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 outline-none"
-            required
-          />
-
-          <input
-            type="text"
-            placeholder="Location"
-            class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 outline-none"
-          />
-
-          <select
-            class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 outline-none"
-          >
-            <option>India</option>
-            <option>United Arab Emirates</option>
-            <option>United States</option>
-          </select>
-
-          <textarea
-            rows="6"
-            placeholder="Write your query..."
-            class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 outline-none resize-none"
-          ></textarea>
-
-          <button
-            type="submit"
-            class="w-full premium-btn text-white py-5 rounded-2xl font-bold text-lg"
-          >
-            Book A Call
-          </button>
-        </form>
-
-        <!-- SUCCESS -->
-
-        <div
-          id="callSuccessMessage"
-          class="hidden mt-6 bg-green-50 border border-green-200 text-green-700 rounded-2xl p-6"
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Open menu"
+          aria-expanded="false"
         >
-          ✅ Your call booking request has been submitted successfully.<br /><br />
+          <span></span><span></span><span></span>
+        </button>
 
-          Our team will contact you through your WhatsApp number and registered
-          email ID very soon.
-        </div>
-      </div>
-    </div>
-
-    <!-- ====================================== -->
-    <!-- HEADER -->
-    <!-- ====================================== -->
-
-    <header
-      class="fixed top-0 left-0 w-full z-50 border-b border-white/20 bg-white/70 backdrop-blur-2xl"
-    >
-      <div
-        class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between"
-      >
-        <h1 class="text-3xl font-bold primary-text">MyPresento</h1>
-
-        <div class="flex items-center gap-8">
-          <nav class="hidden lg:flex items-center gap-8 text-sm text-slate-700">
-            <a href="index.html" class="hover:text-[#FF7900] transition">
-              Home
-            </a>
-
-            <a href="about.html" class="hover:text-[#FF7900] transition">
-              About
-            </a>
-
-            <a href="programs.html" class="hover:text-[#FF7900] transition">
-              Programs
-            </a>
-
-            <a href="testimonials.html" class="text-[#FF7900] font-semibold">
-              Testimonials
-            </a>
-
-            <a href="contact.html" class="hover:text-[#FF7900] transition">
-              Contact
-            </a>
-          </nav>
-
+        <nav class="main-nav" id="mainNav">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="service.html">Services</a>
+          <a href="programs.html">Programs</a>
+          <a href="testimonials.html" class="active">Testimonials</a>
+          <a href="contact.html">Contact</a>
           <button
-            onclick="openCallPanel()"
-            class="premium-btn text-white px-6 py-3 rounded-2xl font-semibold"
+            class="btn nav-cta btn-book-a-session"
+            type="button"
+            data-open-booking
           >
-            Book A Call
+            <span class="calendar-icon">▣</span> Book a Session
           </button>
-        </div>
+        </nav>
       </div>
     </header>
-
-    <!-- ====================================== -->
-    <!-- HERO -->
-    <!-- ====================================== -->
-
-    <section
-      class="relative pt-40 pb-24 overflow-hidden bg-gradient-to-br from-[#FFF7E8] via-[#FFFDF7] to-[#FFF3DD] border-b border-[#FFBF00]/10"
-    >
-      <div
-        class="blur-circle w-[500px] h-[500px] bg-[#FFBF00] top-[-200px] left-[-150px]"
-      ></div>
-
-      <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
-        <div
-          class="inline-flex items-center bg-[#FF7900]/10 border border-[#FF7900]/20 text-[#FF7900] px-5 py-2 rounded-full text-sm font-semibold mb-8"
-        >
-          ⭐ Trusted By Thousands
-        </div>
-
-        <h1
-          class="text-5xl lg:text-7xl font-bold leading-tight mb-8 text-slate-900"
-        >
-          Transformation
-          <span class="primary-text"> Stories </span>
-        </h1>
-
-        <p class="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
-          Real stories from participants who transformed their confidence,
-          mindset, emotional wellbeing, and life journey.
-        </p>
+<main>
+  <section class="testimonials-hero">
+    <div class="hero-orb hero-orb-one"></div><div class="hero-orb hero-orb-two"></div>
+    <div class="testimonials-container hero-inner">
+      <div class="eyebrow"><span class="eyebrow-line"></span> THE MANOMANTRA • ETHOS OF SERENITY</div>
+      <h1>Stories of Awareness,<br /><em>Growth & Transformation.</em></h1>
+      <p class="hero-copy">Every person’s journey is unique. These reflections share how participants experienced greater clarity, connection, confidence and inner wellbeing through THE MANOMANTRA.</p>
+      <a class="button-primary" href="#stories">Explore the stories <span aria-hidden="true">↓</span></a>
+      <div class="hero-signature"><span></span><p>Grow with Awareness. Live with Purpose. Flourish with Serenity.</p><span></span></div>
+    </div>
+  </section>
+  <section class="stories-section" id="stories">
+    <div class="testimonials-container">
+      <div class="section-intro">
+        <div class="eyebrow"><span class="eyebrow-line"></span> VOICES & EXPERIENCES</div>
+        <h2>Small shifts can make<br /><em>a meaningful difference.</em></h2>
+        <p>From young people finding their voice to teams building healthier workplaces, each experience reflects a different step towards awareness and growth.</p>
       </div>
-    </section>
-
-    <!-- ====================================== -->
-    <!-- TESTIMONIALS SECTION -->
-    <!-- ====================================== -->
-
-    <section class="py-24 overflow-hidden bg-white relative">
-      <!-- BLURS -->
-
-      <div
-        class="blur-circle w-[500px] h-[500px] bg-[#FFE642] top-[-200px] left-[-150px] opacity-20"
-      ></div>
-
-      <div class="max-w-7xl mx-auto px-6 relative z-10">
-        <!-- TOP -->
-
-        <section
-          class="flex items-center justify-between mb-14 flex-wrap gap-6"
-        >
-          <div>
-            <h2 class="text-5xl font-bold mb-3 text-slate-900">
-              Participant
-              <span class="primary-text"> Reviews </span>
-            </h2>
-
-            <p class="text-slate-500 text-lg">
-              Genuine feedback shared by real participants.
-            </p>
-          </div>
-
-          <!-- NAVIGATION -->
-
-          <div class="flex gap-4">
-            <button
-              id="prevReview"
-              class="w-14 h-14 rounded-full glass-card premium-border hover:bg-[#FF7900] hover:text-white transition text-2xl"
-            >
-              ←
-            </button>
-
-            <button
-              id="nextReview"
-              class="w-14 h-14 rounded-full glass-card premium-border hover:bg-[#FF7900] hover:text-white transition text-2xl"
-            >
-              →
-            </button>
-          </div>
-        </section>
-
-        <!-- SLIDER -->
-
-        <section class="overflow-hidden">
-          <div
-            id="testimonialSlider"
-            class="flex transition-all duration-500 ease-in-out"
-          >
-            <!-- ====================================== -->
-            <!-- SLIDE 1 -->
-            <!-- ====================================== -->
-
-            <section class="min-w-full">
-              <div class="grid lg:grid-cols-3 gap-8">
-                <!-- CARD -->
-
-                <div
-                  class="glass-card premium-border rounded-[35px] p-8 hover-glow"
-                >
-                  <div class="flex items-center gap-4 mb-6">
-                    <img
-                      src="https://randomuser.me/api/portraits/women/45.jpg"
-                      class="w-16 h-16 rounded-full object-cover"
-                    />
-
-                    <div>
-                      <h3 class="font-bold text-2xl text-slate-900">Neha R</h3>
-
-                      <p class="text-slate-500">Entrepreneur</p>
-                    </div>
-                  </div>
-
-                  <p class="text-[#FF7900] text-2xl mb-5">★★★★★</p>
-
-                  <p class="text-slate-600 leading-relaxed text-lg">
-                    “This program completely changed my mindset and confidence.”
-                  </p>
-                </div>
-
-                <!-- CARD -->
-
-                <div
-                  class="glass-card premium-border rounded-[35px] p-8 hover-glow"
-                >
-                  <div class="flex items-center gap-4 mb-6">
-                    <img
-                      src="https://randomuser.me/api/portraits/men/28.jpg"
-                      class="w-16 h-16 rounded-full object-cover"
-                    />
-
-                    <div>
-                      <h3 class="font-bold text-2xl text-slate-900">Arjun M</h3>
-
-                      <p class="text-slate-500">IT Professional</p>
-                    </div>
-                  </div>
-
-                  <p class="text-[#FF7900] text-2xl mb-5">★★★★★</p>
-
-                  <p class="text-slate-600 leading-relaxed text-lg">
-                    “I overcame anxiety and finally started taking action in
-                    life.”
-                  </p>
-                </div>
-
-                <!-- CARD -->
-
-                <div
-                  class="glass-card premium-border rounded-[35px] p-8 hover-glow"
-                >
-                  <div class="flex items-center gap-4 mb-6">
-                    <img
-                      src="https://randomuser.me/api/portraits/women/22.jpg"
-                      class="w-16 h-16 rounded-full object-cover"
-                    />
-
-                    <div>
-                      <h3 class="font-bold text-2xl text-slate-900">
-                        Sandra Joseph
-                      </h3>
-
-                      <p class="text-slate-500">Teacher</p>
-                    </div>
-                  </div>
-
-                  <p class="text-[#FF7900] text-2xl mb-5">★★★★★</p>
-
-                  <p class="text-slate-600 leading-relaxed text-lg">
-                    “The healing techniques helped me regain peace after years.”
-                  </p>
-                </div>
-              </div>
-            </section>
-
-            <!-- ====================================== -->
-            <!-- SLIDE 2 -->
-            <!-- ====================================== -->
-
-            <section class="min-w-full">
-              <div class="grid lg:grid-cols-3 gap-8">
-                <!-- CARD -->
-
-                <div
-                  class="glass-card premium-border rounded-[35px] p-8 hover-glow"
-                >
-                  <div class="flex items-center gap-4 mb-6">
-                    <img
-                      src="https://randomuser.me/api/portraits/women/66.jpg"
-                      class="w-16 h-16 rounded-full object-cover"
-                    />
-
-                    <div>
-                      <h3 class="font-bold text-2xl text-slate-900">
-                        Priya Menon
-                      </h3>
-
-                      <p class="text-slate-500">HR Manager</p>
-                    </div>
-                  </div>
-
-                  <p class="text-[#FF7900] text-2xl mb-5">★★★★★</p>
-
-                  <p class="text-slate-600 leading-relaxed text-lg">
-                    “I learned emotional balance and confidence in both personal
-                    and professional life.”
-                  </p>
-                </div>
-
-                <!-- CARD -->
-
-                <div
-                  class="glass-card premium-border rounded-[35px] p-8 hover-glow"
-                >
-                  <div class="flex items-center gap-4 mb-6">
-                    <img
-                      src="https://randomuser.me/api/portraits/men/52.jpg"
-                      class="w-16 h-16 rounded-full object-cover"
-                    />
-
-                    <div>
-                      <h3 class="font-bold text-2xl text-slate-900">
-                        Vishnu Raj
-                      </h3>
-
-                      <p class="text-slate-500">Student</p>
-                    </div>
-                  </div>
-
-                  <p class="text-[#FF7900] text-2xl mb-5">★★★★★</p>
-
-                  <p class="text-slate-600 leading-relaxed text-lg">
-                    “This helped me stop overthinking and become more focused.”
-                  </p>
-                </div>
-
-                <!-- CARD -->
-
-                <div
-                  class="glass-card premium-border rounded-[35px] p-8 hover-glow"
-                >
-                  <div class="flex items-center gap-4 mb-6">
-                    <img
-                      src="https://randomuser.me/api/portraits/women/12.jpg"
-                      class="w-16 h-16 rounded-full object-cover"
-                    />
-
-                    <div>
-                      <h3 class="font-bold text-2xl text-slate-900">
-                        Maria George
-                      </h3>
-
-                      <p class="text-slate-500">Homemaker</p>
-                    </div>
-                  </div>
-
-                  <p class="text-[#FF7900] text-2xl mb-5">★★★★★</p>
-
-                  <p class="text-slate-600 leading-relaxed text-lg">
-                    “I finally started believing in myself again after years.”
-                  </p>
-                </div>
-              </div>
-            </section>
-          </div>
-        </section>
-      </div>
-    </section>
-
-    <!-- ====================================== -->
-    <!-- STATS SECTION -->
-    <!-- ====================================== -->
-
-    <section class="pb-24 bg-white relative overflow-hidden">
-      <!-- BLURS -->
-
-      <div
-        class="blur-circle w-[450px] h-[450px] bg-[#FFE642] bottom-[-180px] left-[-100px] opacity-20"
-      ></div>
-
-      <div class="max-w-7xl mx-auto px-6 relative z-10">
-        <!-- TOP -->
-
-        <div class="text-center max-w-4xl mx-auto mb-16">
-          <p
-            class="uppercase tracking-[0.3em] text-[#FF7900] text-sm font-semibold mb-5"
-          >
-            Community Impact
-          </p>
-
-          <h2
-            class="text-5xl lg:text-6xl font-bold leading-tight text-slate-900 mb-8"
-          >
-            Trusted By
-            <span class="primary-text"> Thousands </span>
-          </h2>
-
-          <p class="text-xl text-slate-600 leading-relaxed">
-            Participants from different backgrounds have transformed their
-            confidence, emotional wellbeing, leadership, and clarity through
-            these premium experiences.
-          </p>
-        </div>
-
-        <!-- STATS GRID -->
-
-        <section class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <!-- ITEM -->
-
-          <div
-            class="glass-card premium-border rounded-[35px] p-10 text-center hover-glow"
-          >
-            <div
-              class="w-20 h-20 rounded-full bg-[#FF7900]/10 flex items-center justify-center text-4xl mx-auto mb-6"
-            >
-              👥
-            </div>
-
-            <h2 class="text-6xl font-bold primary-text mb-4">10K+</h2>
-
-            <p class="text-slate-600 text-lg">Participants Impacted</p>
-          </div>
-
-          <!-- ITEM -->
-
-          <div
-            class="glass-card premium-border rounded-[35px] p-10 text-center hover-glow"
-          >
-            <div
-              class="w-20 h-20 rounded-full bg-[#FF7900]/10 flex items-center justify-center text-4xl mx-auto mb-6"
-            >
-              ⭐
-            </div>
-
-            <h2 class="text-6xl font-bold primary-text mb-4">4.9★</h2>
-
-            <p class="text-slate-600 text-lg">Average Rating</p>
-          </div>
-
-          <!-- ITEM -->
-
-          <div
-            class="glass-card premium-border rounded-[35px] p-10 text-center hover-glow"
-          >
-            <div
-              class="w-20 h-20 rounded-full bg-[#FF7900]/10 flex items-center justify-center text-4xl mx-auto mb-6"
-            >
-              🎯
-            </div>
-
-            <h2 class="text-6xl font-bold primary-text mb-4">250+</h2>
-
-            <p class="text-slate-600 text-lg">Programs Conducted</p>
-          </div>
-
-          <!-- ITEM -->
-
-          <div
-            class="glass-card premium-border rounded-[35px] p-10 text-center hover-glow"
-          >
-            <div
-              class="w-20 h-20 rounded-full bg-[#FF7900]/10 flex items-center justify-center text-4xl mx-auto mb-6"
-            >
-              ❤️
-            </div>
-
-            <h2 class="text-6xl font-bold primary-text mb-4">92%</h2>
-
-            <p class="text-slate-600 text-lg">Recommended By Participants</p>
-          </div>
-        </section>
-      </div>
-    </section>
-
-    <!-- ====================================== -->
-    <!-- CTA SECTION -->
-    <!-- ====================================== -->
-
-    <section class="pb-28 bg-white relative overflow-hidden">
-      <!-- BLURS -->
-
-      <div
-        class="blur-circle w-[550px] h-[550px] bg-[#FFBF00] bottom-[-220px] right-[-150px] opacity-20"
-      ></div>
-
-      <div class="max-w-6xl mx-auto px-6 relative z-10">
-        <div
-          class="relative overflow-hidden rounded-[50px] p-16 lg:p-24 bg-gradient-to-br from-[#FFBF00] to-[#FF7900] text-white text-center"
-        >
-          <!-- INNER BLURS -->
-
-          <div
-            class="absolute top-[-120px] left-[-120px] w-[350px] h-[350px] rounded-full bg-white/10 blur-3xl"
-          ></div>
-
-          <div
-            class="absolute bottom-[-140px] right-[-120px] w-[350px] h-[350px] rounded-full bg-[#FFE642]/20 blur-3xl"
-          ></div>
-
-          <div class="relative z-10">
-            <!-- TAG -->
-
-            <div
-              class="inline-flex items-center gap-3 bg-white/10 backdrop-blur-xl px-5 py-3 rounded-full mb-8 border border-white/10"
-            >
-              <div class="w-2 h-2 rounded-full bg-white"></div>
-
-              <p class="uppercase tracking-[4px] text-xs font-semibold">
-                Start Your Transformation
-              </p>
-            </div>
-
-            <!-- TITLE -->
-
-            <h2 class="text-5xl lg:text-7xl font-bold leading-[1.05] mb-8">
-              Your Success Story Could Be Next
-            </h2>
-
-            <!-- DESCRIPTION -->
-
-            <p
-              class="text-xl leading-relaxed text-white/90 max-w-3xl mx-auto mb-12"
-            >
-              Join thousands of participants who transformed their confidence,
-              emotional wellbeing, leadership, and life journey through premium
-              mentorship experiences.
+      <div class="story-grid"><article class="story-card">
+  <div class="story-card-top"><span class="story-number">01</span><span class="story-category">Student Counselling</span></div>
+  <div class="quote-mark" aria-hidden="true">“</div>
+  <blockquote>I used to feel nervous while speaking in front of others. Now I enjoy participating in class and making new friends. I learned that making mistakes is okay and that confidence grows with practice.</blockquote>
+  <div class="story-divider"></div>
+  <div class="story-person"><div class="person-mark" aria-hidden="true">01</div><div><h3>Aarav | Age 12</h3><p>Student Counselling</p></div></div>
+</article>
+<article class="story-card">
+  <div class="story-card-top"><span class="story-number">02</span><span class="story-category">Parent Reflection</span></div>
+  <div class="quote-mark" aria-hidden="true">“</div>
+  <blockquote>The teenage years were becoming increasingly difficult for our family. Through Roots to Wings™, our son developed better emotional awareness, improved communication and became more focused on his goals. Our relationship at home has become much healthier.</blockquote>
+  <div class="story-divider"></div>
+  <div class="story-person"><div class="person-mark" aria-hidden="true">02</div><div><h3>Parent of a 16-Year-Old</h3><p>Roots to Wings™ Programme</p></div></div>
+</article>
+<article class="story-card">
+  <div class="story-card-top"><span class="story-number">03</span><span class="story-category">Academic Confidence</span></div>
+  <div class="quote-mark" aria-hidden="true">“</div>
+  <blockquote>This programme helped my daughter understand herself better. She is now more organised, less anxious about academics and has a clearer vision for her future. Appreciate the practical and scientific approach used throughout the sessions.</blockquote>
+  <div class="story-divider"></div>
+  <div class="story-person"><div class="person-mark" aria-hidden="true">03</div><div><h3>Parent of a Class XI Student</h3><p>Roots to Wings™ Programme</p></div></div>
+</article>
+<article class="story-card">
+  <div class="story-card-top"><span class="story-number">04</span><span class="story-category">Workplace Wellbeing</span></div>
+  <div class="quote-mark" aria-hidden="true">“</div>
+  <blockquote>The stress management workshop was practical, engaging and immediately applicable. Employees appreciated the simple techniques for managing pressure, improving focus and maintaining emotional wellbeing. The session received excellent feedback across departments.</blockquote>
+  <div class="story-divider"></div>
+  <div class="story-person"><div class="person-mark" aria-hidden="true">04</div><div><h3>HR Manager | IT Company, Bengaluru</h3><p>Stress Management Workshop</p></div></div>
+</article>
+<article class="story-card">
+  <div class="story-card-top"><span class="story-number">05</span><span class="story-category">Personal Experience</span></div>
+  <div class="quote-mark" aria-hidden="true">“</div>
+  <blockquote>I walked into the session feeling mentally exhausted and left with practical tools that I could start using immediately. The breathing exercises, mindfulness techniques and psychological insights have genuinely helped me manage workplace stress more effectively.</blockquote>
+  <div class="story-divider"></div>
+  <div class="story-person"><div class="person-mark" aria-hidden="true">05</div><div><h3>Senior Software Engineer</h3><p>Stress Management Workshop</p></div></div>
+</article>
+<article class="story-card">
+  <div class="story-card-top"><span class="story-number">06</span><span class="story-category">Inclusive Workplace</span></div>
+  <div class="quote-mark" aria-hidden="true">“</div>
+  <blockquote>The workshop struck the perfect balance between legal compliance and workplace sensitivity. Employees left with a clear understanding of respectful workplace behaviour, prevention of harassment and the importance of creating an inclusive culture.</blockquote>
+  <div class="story-divider"></div>
+  <div class="story-person"><div class="person-mark" aria-hidden="true">06</div><div><h3>Learning & Development Manager</h3><p>POSH Awareness Workshop</p></div></div>
+</article></div>
+      <p class="privacy-note"><span aria-hidden="true">✦</span> Every journey is unique. To protect client privacy and uphold professional ethics, identifying details should be shared only with permission or anonymised where appropriate.</p>
+    </div>
+  </section>
+  <section class="closing-cta">
+    <div class="cta-decoration" aria-hidden="true">✳</div>
+    <div class="testimonials-container cta-inner">
+      <div class="eyebrow eyebrow-light"><span class="eyebrow-line"></span> YOUR JOURNEY, YOUR PACE</div>
+      <h2>There’s space for <em>your story, too.</em></h2>
+      <p>If you’re exploring support for yourself, your family or your organisation, let’s begin with a conversation about what you need.</p>
+      <button class="button-light" type="button" data-open-booking>Book a Clarity Call <span aria-hidden="true">→</span></button>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+      <!-- Decorative background -->
+      <div class="footer-glow footer-glow-one"></div>
+      <div class="footer-glow footer-glow-two"></div>
+
+      <div class="footer-leaf footer-leaf-top">⌁</div>
+      <div class="footer-leaf footer-leaf-bottom">⌁</div>
+
+      <div class="footer-container">
+        <!-- Main Footer -->
+        <div class="footer-main">
+          <!-- Brand -->
+          <div class="footer-brand">
+            <a href="index.html" class="footer-logo">
+              <img src="assets/images/logo.png" alt="THE MANOMANTRA" />
+            </a>
+
+            <p class="brand-description">
+              A space to understand yourself, grow with awareness, and create a
+              life of greater meaning and serenity.
             </p>
 
-            <!-- BUTTONS -->
+            <a href="about.html" class="brand-link">
+              Discover THE MANOMANTRA
+              <span>→</span>
+            </a>
+          </div>
 
-            <div class="flex flex-wrap justify-center gap-5">
-              <button
-                onclick="openCallPanel()"
-                class="bg-white text-[#FF7900] px-10 py-5 rounded-full uppercase tracking-[3px] text-sm font-semibold hover:scale-105 transition duration-300"
-              >
-                Book A Call
-              </button>
+          <!-- Explore -->
+          <div class="footer-column">
+            <span class="footer-label">EXPLORE</span>
 
-              <a
-                href="programs.html"
-                class="border border-white/20 bg-white/10 backdrop-blur-xl px-10 py-5 rounded-full uppercase tracking-[3px] text-sm font-semibold hover:bg-white hover:text-[#FF7900] transition duration-300"
-              >
-                Explore Programs
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="service.html">Who We Support</a></li>
+              <li><a href="programs.html">Programmes</a></li>
+              <li><a href="programs.html">Your Journey</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Information -->
+          <div class="footer-column">
+            <span class="footer-label">INFORMATION</span>
+
+            <ul>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Use</a></li>
+              <li><a href="#">Cookie Policy</a></li>
+              <li><a href="contact.html">FAQs</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div class="footer-column footer-contact">
+            <span class="footer-label">CONNECT</span>
+
+            <a href="tel:+917204378573" class="contact-item">
+              <span class="contact-icon">⌕</span>
+              <span>+91 7204378573</span>
+            </a>
+
+            <a href="mailto:amcoachsalini@gmail.com" class="contact-item">
+              <span class="contact-icon">@</span>
+              <span>amcoachsalini@gmail.com</span>
+            </a>
+
+            <p class="address">
+              THE MANOMANTRA<br />
+              Balaji Layout, Chokkanahalli,<br />
+              Bangalore, Karnataka, 560064
+            </p>
+          </div>
+        </div>
+
+        <!-- Brand Statement -->
+        <div class="footer-statement">
+          <span class="statement-line"></span>
+
+          <p>
+            Psychology <span>•</span> Coaching <span>•</span>
+            Conscious Learning
+          </p>
+
+          <span class="statement-line"></span>
+        </div>
+
+        <!-- Bottom -->
+        <div class="footer-bottom">
+          <div class="copyright">
+            © <span id="currentYear"></span>
+            THE MANOMANTRA. All rights reserved.
+          </div>
+
+          <div class="social-section">
+            <span>FOLLOW THE JOURNEY</span>
+
+            <div class="social-links">
+              <a href="#" aria-label="Instagram" class="social-link">
+                <span>i</span>
+              </a>
+
+              <a href="#" aria-label="Facebook" class="social-link">
+                <span>f</span>
+              </a>
+
+              <a href="#" aria-label="LinkedIn" class="social-link">
+                <span>in</span>
               </a>
             </div>
           </div>
         </div>
       </div>
-    </section>
-
-<!-- ====================================== -->
-<!-- FOOTER SECTION -->
-<!-- ====================================== -->
-
-<section class="bg-[#111111] py-24 relative overflow-hidden text-white">
-
-  <!-- BLURS -->
-
-  <div class="blur-circle w-[500px] h-[500px] bg-[#FF7900] top-[-220px] right-[-120px] opacity-10"></div>
-
-  <div class="blur-circle w-[400px] h-[400px] bg-[#FFBF00] bottom-[-180px] left-[-120px] opacity-10"></div>
-
-  <div class="max-w-7xl mx-auto px-6 relative z-10">
-
-    <!-- TOP GRID -->
-
-    <section class="grid md:grid-cols-2 lg:grid-cols-4 gap-14 pb-16 border-b border-white/10">
-
-      <!-- BRAND -->
-
-      <div>
-
-        <h2 class="text-4xl font-bold mb-6 primary-text">
-          MyPresento
-        </h2>
-
-        <p class="text-white/70 leading-relaxed mb-8 text-lg">
-
-          Premium transformational coaching experiences designed for confidence, emotional healing, leadership growth, and life transformation.
-
-        </p>
-
-        <!-- STATS -->
-
-        <div class="flex items-center gap-8 mb-8">
-
-          <div>
-
-            <h3 class="text-3xl font-bold text-white">
-              10K+
-            </h3>
-
-            <p class="text-white/50 text-sm">
-              Participants
-            </p>
-
-          </div>
-
-          <div>
-
-            <h3 class="text-3xl font-bold text-white">
-              4.9★
-            </h3>
-
-            <p class="text-white/50 text-sm">
-              Average Rating
-            </p>
-
-          </div>
-
-        </div>
-
-        <!-- SOCIALS -->
-
-        <div class="flex items-center gap-4">
-
-          <a
-            href="#"
-            class="w-12 h-12 rounded-full bg-white/10 hover:bg-[#FF7900] transition duration-300 flex items-center justify-center text-lg"
-          >
-            f
-          </a>
-
-          <a
-            href="#"
-            class="w-12 h-12 rounded-full bg-white/10 hover:bg-[#FF7900] transition duration-300 flex items-center justify-center text-lg"
-          >
-            in
-          </a>
-
-          <a
-            href="#"
-            class="w-12 h-12 rounded-full bg-white/10 hover:bg-[#FF7900] transition duration-300 flex items-center justify-center text-lg"
-          >
-            ig
-          </a>
-
-          <a
-            href="#"
-            class="w-12 h-12 rounded-full bg-white/10 hover:bg-[#FF7900] transition duration-300 flex items-center justify-center text-lg"
-          >
-            yt
-          </a>
-
-        </div>
-
-      </div>
-
-      <!-- QUICK LINKS -->
-
-      <div>
-
-        <h3 class="text-2xl font-bold mb-6">
-          Quick Links
-        </h3>
-
-        <ul class="space-y-4 text-white/70 text-lg">
-
-          <li>
-            <a href="index.html" class="hover:text-white transition duration-300">
-              Home
-            </a>
-          </li>
-
-          <li>
-            <a href="about.html" class="hover:text-white transition duration-300">
-              About
-            </a>
-          </li>
-
-          <li>
-            <a href="services.html" class="hover:text-white transition duration-300">
-              Services
-            </a>
-          </li>
-
-          <li>
-            <a href="programs.html" class="hover:text-white transition duration-300">
-              Programs
-            </a>
-          </li>
-
-          <li>
-            <a href="testimonials.html" class="hover:text-white transition duration-300">
-              Testimonials
-            </a>
-          </li>
-
-          <li>
-            <a href="contact.html" class="hover:text-white transition duration-300">
-              Contact
-            </a>
-          </li>
-
-        </ul>
-
-      </div>
-
-      <!-- PROGRAMS -->
-
-      <div>
-
-        <h3 class="text-2xl font-bold mb-6">
-          Popular Programs
-        </h3>
-
-        <ul class="space-y-4 text-white/70 text-lg">
-
-          <li class="hover:text-white transition duration-300 cursor-pointer">
-            Break The LOOP Challenge
-          </li>
-
-          <li class="hover:text-white transition duration-300 cursor-pointer">
-            Leadership Ascension
-          </li>
-
-          <li class="hover:text-white transition duration-300 cursor-pointer">
-            Neuro Peace Restoration
-          </li>
-
-          <li class="hover:text-white transition duration-300 cursor-pointer">
-            Emotional Healing Workshop
-          </li>
-
-          <li class="hover:text-white transition duration-300 cursor-pointer">
-            Private Mentorship
-          </li>
-
-        </ul>
-
-      </div>
-
-      <!-- CONTACT -->
-
-      <div>
-
-        <h3 class="text-2xl font-bold mb-6">
-          Contact
-        </h3>
-
-        <div class="space-y-5 text-white/70 text-lg mb-8">
-
-          <div class="flex items-start gap-4">
-
-            <span class="text-[#FF7900] text-xl">
-              📧
-            </span>
-
-            <div>
-
-              <p class="text-white">
-                hello@mypresento.com
-              </p>
-
-              <p class="text-white/50 text-sm">
-                Email Support
-              </p>
-
-            </div>
-
-          </div>
-
-          <div class="flex items-start gap-4">
-
-            <span class="text-[#FF7900] text-xl">
-              📞
-            </span>
-
-            <div>
-
-              <p class="text-white">
-                +91 9876543210
-              </p>
-
-              <p class="text-white/50 text-sm">
-                WhatsApp Support
-              </p>
-
-            </div>
-
-          </div>
-
-          <div class="flex items-start gap-4">
-
-            <span class="text-[#FF7900] text-xl">
-              📍
-            </span>
-
-            <div>
-
-              <p class="text-white">
-                Kochi, Kerala, India
-              </p>
-
-              <p class="text-white/50 text-sm">
-                Offline & Online Programs
-              </p>
-
-            </div>
-
-          </div>
-
-        </div>
-
-        <!-- BUTTON -->
-
-        <button
-          onclick="openCallPanel()"
-          class="premium-btn text-white px-8 py-4 rounded-full font-semibold"
-        >
-          Book A Session
-        </button>
-
-      </div>
-
-    </section>
-
-    <!-- NEWSLETTER -->
-
-    <section class="py-12 border-b border-white/10">
-
-      <div class="flex flex-col lg:flex-row items-center justify-between gap-10">
-
-        <div class="max-w-2xl">
-
-          <p class="uppercase tracking-[0.3em] text-[#FF7900] text-sm font-semibold mb-4">
-            Stay Connected
-          </p>
-
-          <h3 class="text-4xl font-bold mb-4">
-            Get Updates About New Programs
-          </h3>
-
-          <p class="text-white/60 leading-relaxed">
-
-            Join our community and receive transformational insights, mentorship updates, and workshop announcements directly in your inbox.
-
-          </p>
-
-        </div>
-
-        <!-- FORM -->
-
-        <form class="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
-
-          <input
-            type="email"
-            placeholder="Enter your email"
-            class="bg-white/10 border border-white/10 rounded-full px-6 py-4 outline-none text-white placeholder:text-white/40 min-w-[300px]"
-          />
-
-          <button
-            type="submit"
-            class="premium-btn text-white px-8 py-4 rounded-full font-semibold whitespace-nowrap"
-          >
-            Subscribe
-          </button>
-
-        </form>
-
-      </div>
-
-    </section>
-
-    <!-- BOTTOM -->
-
-    <section class="pt-10 flex flex-col lg:flex-row items-center justify-between gap-5 text-white/40 text-sm">
-
-      <p>
-        © 2026 MyPresento. All rights reserved.
-      </p>
-
-      <div class="flex flex-wrap items-center justify-center gap-8">
-
-        <a href="#" class="hover:text-white transition duration-300">
-          Privacy Policy
-        </a>
-
-        <a href="#" class="hover:text-white transition duration-300">
-          Terms & Conditions
-        </a>
-
-        <a href="#" class="hover:text-white transition duration-300">
-          Refund Policy
-        </a>
-
-        <a href="#" class="hover:text-white transition duration-300">
-          Cookie Policy
-        </a>
-
-      </div>
-
-    </section>
-
-  </div>
-
-</section>
-
+    </footer>
+<script src="assets/js/header.js"></script>
+<script src="assets/js/footer.js"></script>
 </body>
-
-</html>
-
-<script>
-
-  const callPanel = document.getElementById('callPanel');
-
-  const callOverlay = document.getElementById('callOverlay');
-
-  const bookCallForm = document.getElementById('bookCallForm');
-
-  const callSuccessMessage =
-    document.getElementById('callSuccessMessage');
-
-  // OPEN PANEL
-
-  function openCallPanel(){
-
-    callPanel.classList.add('active');
-    callOverlay.classList.add('active');
-
-    document.body.style.overflow = 'hidden';
-
-  }
-
-  // CLOSE PANEL
-
-  function closeCallPanel(){
-
-    callPanel.classList.remove('active');
-    callOverlay.classList.remove('active');
-
-    document.body.style.overflow = 'auto';
-
-  }
-
-  // OUTSIDE CLICK
-
-  callOverlay.addEventListener('click', closeCallPanel);
-
-  // FORM SUCCESS
-
-  bookCallForm.addEventListener('submit', function(e){
-
-    e.preventDefault();
-
-    callSuccessMessage.classList.remove('hidden');
-
-    bookCallForm.reset();
-
-  });
-
-</script>
-    <!-- ====================================== -->
-    <!-- TESTIMONIAL SLIDER JAVASCRIPT -->
-    <!-- ====================================== -->
-
-    <script>
-      const slider = document.getElementById("testimonialSlider");
-
-      const nextBtn = document.getElementById("nextReview");
-
-      const prevBtn = document.getElementById("prevReview");
-
-      let currentSlide = 0;
-
-      const totalSlides = 2;
-
-      function updateSlider() {
-        slider.style.transform = `translateX(-${currentSlide * 100}%)`;
-      }
-
-      // NEXT
-
-      nextBtn.addEventListener("click", () => {
-        currentSlide++;
-
-        if (currentSlide >= totalSlides) {
-          currentSlide = 0;
-        }
-
-        updateSlider();
-      });
-
-      // PREVIOUS
-
-      prevBtn.addEventListener("click", () => {
-        currentSlide--;
-
-        if (currentSlide < 0) {
-          currentSlide = totalSlides - 1;
-        }
-
-        updateSlider();
-      });
-
-      // AUTO SLIDE
-
-      setInterval(() => {
-        currentSlide++;
-
-        if (currentSlide >= totalSlides) {
-          currentSlide = 0;
-        }
-
-        updateSlider();
-      }, 5000);
-    </script>
-  </body>
 </html>

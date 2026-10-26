@@ -1,0 +1,424 @@
+/* The Manomantra — Testimonials page */
+:root {
+  --tm-cream: #fbf7ef;
+  --tm-cream-deep: #f1e8d8;
+  --tm-white: #fffefa;
+  --tm-green: #1d5b38;
+  --tm-green-dark: #123d27;
+  --tm-green-soft: #e7f0e4;
+  --tm-brown: #4e2d1c;
+  --tm-gold: #e7a900;
+  --tm-text: #2e2119;
+  --tm-muted: #6e6b64;
+  --tm-line: rgba(78, 45, 28, 0.13);
+  --serif: Georgia, "Times New Roman", serif;
+
+  --sans: "DM Sans", Arial, sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+body {
+  margin: 0;
+  background: var(--tm-cream);
+  color: var(--tm-text);
+  font-family: "DM Sans", sans-serif;
+  overflow-x: hidden;
+}
+a {
+  color: inherit;
+}
+.testimonials-container {
+  width: min(1180px, calc(100% - 48px));
+  margin-inline: auto;
+}
+.testimonials-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 100px 0 64px;
+  background: linear-gradient(135deg, #fbf7ef 0%, #f3ead9 57%, #e8eee3 100%);
+}
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 900px;
+}
+.hero-orb {
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  filter: blur(2px);
+  pointer-events: none;
+}
+.hero-orb-one {
+  width: 280px;
+  height: 280px;
+  right: -80px;
+  top: 40px;
+  background: rgba(231, 169, 0, 0.11);
+}
+.hero-orb-two {
+  width: 230px;
+  height: 230px;
+  left: -90px;
+  bottom: -30px;
+  background: rgba(29, 91, 56, 0.1);
+}
+.eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: var(--tm-green);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.1px;
+  text-transform: uppercase;
+}
+.eyebrow-line {
+  width: 30px;
+  height: 1px;
+  background: var(--tm-gold);
+  display: inline-block;
+}
+.testimonials-hero h1,
+.section-intro h2,
+.cta-inner h2 {
+  font-family: var(--serif);
+  font-weight: 700;
+  letter-spacing: -1.2px;
+}
+.testimonials-hero h1 {
+  font-size: clamp(42px, 6vw, 72px);
+  line-height: 1.13;
+  margin: 24px 0 22px;
+}
+.testimonials-hero h1 em,
+.section-intro h2 em,
+.cta-inner h2 em {
+  font-weight: 700;
+  color: var(--tm-green);
+  letter-spacing: -5px;
+}
+.hero-copy {
+  max-width: 680px;
+  margin: 0 auto;
+  color: var(--tm-muted);
+  font-size: 17px;
+  line-height: 1.85;
+}
+.button-primary,
+.button-light {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  text-decoration: none;
+  border: 0;
+  border-radius: 3px;
+  padding: 15px 22px;
+  font:
+    600 14px "DM Sans",
+    sans-serif;
+  cursor: pointer;
+  transition:
+    transform 0.25s,
+    box-shadow 0.25s;
+}
+.button-primary {
+  margin-top: 28px;
+  color: white;
+  background: var(--tm-green);
+  box-shadow: 0 12px 28px rgba(29, 91, 56, 0.15);
+}
+.button-primary:hover,
+.button-light:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 30px rgba(18, 61, 39, 0.18);
+}
+.hero-signature {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 54px;
+  color: #857b6c;
+}
+.hero-signature span {
+  width: 42px;
+  height: 1px;
+  background: #d8c7a5;
+}
+.hero-signature p {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 14px;
+  margin: 0;
+}
+.stories-section {
+  padding: 90px 0 94px;
+  background: var(--tm-white);
+}
+.section-intro {
+  max-width: 700px;
+  text-align: center;
+  margin: 0 auto 48px;
+}
+.section-intro h2 {
+  font-size: clamp(34px, 4.4vw, 51px);
+  line-height: 1.2;
+  margin: 18px 0;
+}
+.section-intro > p {
+  max-width: 640px;
+  margin: 0 auto;
+  color: var(--tm-muted);
+  line-height: 1.8;
+  font-size: 15px;
+}
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+.story-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 390px;
+  padding: 27px 26px 25px;
+  background: #fff;
+  border: 1px solid var(--tm-line);
+  border-radius: 5px;
+  box-shadow: 0 8px 26px rgba(57, 37, 26, 0.035);
+  transition:
+    transform 0.25s,
+    box-shadow 0.25s,
+    border-color 0.25s;
+}
+.story-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 38px rgba(57, 37, 26, 0.08);
+  border-color: rgba(231, 169, 0, 0.45);
+}
+.story-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.story-number {
+  display: grid;
+  place-items: center;
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+  background: var(--tm-green-soft);
+  color: var(--tm-green);
+  font-size: 11px;
+  font-weight: 700;
+}
+.story-category {
+  font-size: 10px;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+  color: #8a765a;
+  font-weight: 700;
+  text-align: right;
+}
+.quote-mark {
+  font-family: var(--serif);
+  color: var(--tm-gold);
+  font-size: 62px;
+  line-height: 0.9;
+  margin-top: 20px;
+  height: 42px;
+}
+.story-card blockquote {
+  margin: 8px 0 24px;
+  color: #51483f;
+  font-size: 14px;
+  line-height: 1.85;
+  flex: 1;
+}
+.story-divider {
+  height: 1px;
+  background: var(--tm-line);
+  margin-bottom: 19px;
+}
+.story-person {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.person-mark {
+  display: grid;
+  place-items: center;
+  flex: 0 0 38px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f1e5c8, #e5eee1);
+  color: var(--tm-green);
+  font-family: var(--serif);
+  font-size: 15px;
+}
+.story-person h3 {
+  margin: 0 0 4px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--tm-brown);
+}
+.story-person p {
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--tm-muted);
+}
+.privacy-note {
+  max-width: 900px;
+  margin: 38px auto 0;
+  padding: 17px 20px;
+  background: #f8f4eb;
+  border-left: 2px solid var(--tm-gold);
+  color: #756b5c;
+  font-size: 12px;
+  line-height: 1.8;
+}
+.privacy-note span {
+  color: #b17f00;
+  margin-right: 7px;
+}
+.closing-cta {
+  position: relative;
+  overflow: hidden;
+  background: var(--tm-green-dark);
+  color: white;
+  padding: 76px 0 82px;
+  text-align: center;
+}
+.cta-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+}
+.cta-decoration {
+  position: absolute;
+  right: 7%;
+  top: -56px;
+  color: rgba(255, 255, 255, 0.055);
+  font-size: 260px;
+  line-height: 1;
+}
+.eyebrow-light {
+  color: #e9d8ad;
+}
+.eyebrow-light .eyebrow-line {
+  background: #e7b841;
+}
+.cta-inner h2 {
+  font-size: clamp(36px, 4.5vw, 55px);
+  line-height: 1.2;
+  margin: 20px 0;
+}
+.cta-inner h2 em {
+  color: #f0d99b;
+}
+.cta-inner > p {
+  max-width: 620px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 15px;
+  line-height: 1.85;
+}
+.button-light {
+  margin-top: 28px;
+  background: #f2d99b;
+  color: var(--tm-green-dark);
+}
+@media (max-width: 900px) {
+  .story-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .story-card {
+    min-height: 360px;
+  }
+  .testimonials-hero {
+    padding-top: 80px;
+  }
+  .stories-section {
+    padding: 72px 0;
+  }
+}
+@media (max-width: 600px) {
+  .testimonials-container {
+    width: min(100% - 34px, 1180px);
+  }
+  .testimonials-hero {
+    padding: 65px 0 45px;
+  }
+  .testimonials-hero h1 {
+    font-size: clamp(38px, 10vw, 52px);
+    letter-spacing: -0.7px;
+  }
+  .hero-copy {
+    font-size: 15px;
+    line-height: 1.75;
+  }
+  .hero-signature {
+    gap: 9px;
+    margin-top: 38px;
+  }
+  .hero-signature span {
+    width: 20px;
+  }
+  .hero-signature p {
+    font-size: 12px;
+  }
+  .stories-section {
+    padding: 58px 0 62px;
+  }
+  .section-intro {
+    margin-bottom: 32px;
+  }
+  .section-intro h2 {
+    font-size: 35px;
+  }
+  .story-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .story-card {
+    min-height: 0;
+    padding: 23px 22px;
+  }
+  .story-card blockquote {
+    font-size: 14px;
+  }
+  .privacy-note {
+    margin-top: 25px;
+    padding: 15px;
+  }
+  .closing-cta {
+    padding: 60px 0 66px;
+  }
+  .cta-inner h2 {
+    font-size: 38px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+}

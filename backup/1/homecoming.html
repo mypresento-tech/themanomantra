@@ -1,0 +1,931 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HOMEcoming™ | The Manomantra</title>
+    <meta
+      name="description"
+      content="HOMEcoming™ is a self-reconnection journey for women exploring emotional wellbeing, self-worth, boundaries, personal values and conscious living."
+    />
+    <meta name="theme-color" content="#fffaf0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/header.css" />
+    <link rel="stylesheet" href="assets/css/footer.css" />
+    <link rel="stylesheet" href="assets/css/homecoming.css" />
+  </head>
+  <body>
+    <header class="site-header" id="siteHeader">
+      <div class="container nav-wrap">
+        <a href="index.html" class="brand" aria-label="The Manomantra Home"
+          ><img src="assets/images/logo.png" alt="The Manomantra logo"
+        /></a>
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Open menu"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
+        <nav class="main-nav" id="mainNav">
+          <a href="index.html">Home</a><a href="about.html">About</a
+          ><a href="service.html">Services</a
+          ><a href="programs.html" class="active">Programs</a
+          ><a href="testimonials.html">Testimonials</a
+          ><a href="contact.html">Contact</a>
+          <a class="btn nav-cta" href="contact.html#contact"
+            ><span class="calendar-icon">▣</span> Book a Session</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <main id="programmeContent" hidden>
+      <section class="pd-hero">
+        <div class="pd-container">
+          <div class="pd-breadcrumb">
+            <a href="index.html">Home</a><span>›</span
+            ><a href="programs.html">Programmes</a><span>›</span
+            ><span id="breadcrumbTitle">Programme Details</span>
+          </div>
+          <div class="pd-hero-grid">
+            <div>
+              <div class="pd-eyebrow" id="programmeCategory">
+                THE MANOMANTRA PROGRAMME
+              </div>
+              <h1 id="programmeTitle">A more conscious way forward</h1>
+              <p class="pd-lead" id="programmeIntro"></p>
+              <div class="pd-tags">
+                <span class="pd-tag" id="programmeAudience"></span
+                ><span class="pd-tag" id="programmeMode"></span>
+              </div>
+              <div class="pd-actions">
+                <button
+                  type="button"
+                  class="pd-btn pd-btn-primary"
+                  data-open-booking
+                >
+                  Book Your Seat Now <span aria-hidden="true">→</span></button
+                ><a class="pd-btn pd-btn-secondary" href="programs.html"
+                  >Explore All Programmes</a
+                >
+              </div>
+            </div>
+            <div class="pd-visual">
+              <img
+                id="programmeImage"
+                src="assets/images/relationships-alchemy.jpeg"
+                alt="Programme visual"
+              />
+              <div class="pd-image-note">
+                <span id="programmeTagline">A thoughtful next step</span
+                ><span>THE MANOMANTRA</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="pd-section pd-section-white">
+        <div class="pd-container pd-two-col">
+          <div class="pd-copy-block">
+            <p class="pd-kicker">A CLOSER LOOK</p>
+            <h2 id="aboutHeading">A journey shaped around real life</h2>
+            <p id="aboutCopy"></p>
+            <p id="aboutCopyTwo"></p>
+            <div class="pd-highlight" id="programmeQuote"></div>
+          </div>
+          <div class="pd-copy-block">
+            <p class="pd-kicker">WHO IT IS FOR</p>
+            <h2>Designed with your stage of life in mind.</h2>
+            <p id="audienceCopy"></p>
+            <ul class="pd-check-list" id="audienceList"></ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="pd-section pd-section-soft">
+        <div class="pd-container">
+          <div class="pd-section-head">
+            <p class="pd-kicker">WHAT YOU CAN EXPLORE</p>
+            <h2>Space to understand, practise and grow.</h2>
+            <p>
+              Each experience is designed to encourage reflection, meaningful
+              conversations and practical steps you can carry into everyday
+              life. The exact focus is tailored to the programme and the people
+              taking part.
+            </p>
+          </div>
+          <div class="pd-card-grid" id="focusCards"></div>
+        </div>
+      </section>
+
+      <section class="pd-section pd-section-white">
+        <div class="pd-container">
+          <div class="pd-section-head">
+            <p class="pd-kicker">YOUR EXPERIENCE</p>
+            <h2>A supportive journey, one step at a time.</h2>
+            <p>
+              The programme structure and delivery are discussed with you before
+              you begin, so expectations are clear and the experience fits its
+              intended audience.
+            </p>
+          </div>
+          <div class="pd-steps" id="journeySteps"></div>
+        </div>
+      </section>
+
+      <section class="pd-section pd-section-soft" id="programme-faq">
+        <div class="pd-container">
+          <div class="pd-section-head">
+            <p class="pd-kicker">GOOD TO KNOW</p>
+            <h2>Frequently asked questions</h2>
+            <p>
+              Have a question that is not covered here? Reach out and we will
+              help you understand whether this experience is the right fit.
+            </p>
+          </div>
+          <div class="pd-faq">
+            <details>
+              <summary>
+                How do I find out about the next available batch?
+              </summary>
+              <p>
+                Open the “Book Your Seat Now” panel to share your details and
+                proceed to the approved payment link. Confirm the current batch
+                dates and availability with The Manomantra.
+              </p>
+            </details>
+            <details>
+              <summary>Is the programme online or in person?</summary>
+              <p>
+                The usual delivery format is shown near the programme title. The
+                exact arrangements, location and schedule can be confirmed
+                during your enquiry.
+              </p>
+            </details>
+            <details>
+              <summary>How do I register?</summary>
+              <p>
+                Click “Book Your Seat Now”, complete the registration-interest
+                form and continue to the approved Razorpay payment link once the
+                current intake is confirmed.
+              </p>
+            </details>
+            <details>
+              <summary>Will the programme be personalised?</summary>
+              <p>
+                Personalisation depends on the programme. Some experiences are
+                guided journeys, while workshops and organisational programmes
+                may be adapted to the group's needs.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="pd-cta">
+        <div class="pd-container pd-cta-inner">
+          <div>
+            <p class="pd-kicker" style="color: #efd9a1">YOUR NEXT STEP</p>
+            <h2>Make space to reconnect with yourself.</h2>
+            <p id="ctaCopy">
+              Let’s start with a conversation. Ask a question, share what you
+              are hoping to explore, and learn about the next available
+              opportunity.
+            </p>
+          </div>
+          <div class="pd-actions">
+            <button
+              type="button"
+              class="pd-btn pd-btn-primary"
+              data-open-booking
+            >
+              Book Your Seat Now <span aria-hidden="true">→</span></button
+            ><a class="pd-btn pd-btn-secondary" href="programs.html"
+              >View All Programmes</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <section class="pd-not-found" id="notFound" hidden>
+      <p class="pd-kicker">THE MANOMANTRA PROGRAMMES</p>
+      <h1>Let’s find the right experience for you.</h1>
+      <p>Choose a programme from the full list to view its details.</p>
+      <a href="programs.html">Explore all programmes →</a>
+    </section>
+
+    <div class="booking-overlay" id="bookingOverlay" hidden></div>
+    <aside
+      class="booking-drawer"
+      id="bookingDrawer"
+      aria-labelledby="bookingTitle"
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div class="booking-drawer-head">
+        <div>
+          <p class="pd-kicker">THE MANOMANTRA</p>
+          <h2 id="bookingTitle">Reserve Your Seat</h2>
+        </div>
+        <button
+          class="booking-close"
+          id="bookingClose"
+          type="button"
+          aria-label="Close registration panel"
+        >
+          ×
+        </button>
+      </div>
+      <p class="booking-intro">
+        Share your details to register your interest in
+        <strong>HOMEcoming™</strong>. Please confirm the current programme
+        schedule and fee with the team.
+      </p>
+      <form id="bookingForm">
+        <input type="hidden" name="programme" value="HOMEcoming™" />
+        <div class="booking-field">
+          <label for="bookingName">Full Name <span>*</span></label
+          ><input
+            id="bookingName"
+            name="fullName"
+            autocomplete="name"
+            required
+            placeholder="Enter your full name"
+          />
+        </div>
+        <div class="booking-field">
+          <label for="bookingEmail">Email ID <span>*</span></label
+          ><input
+            id="bookingEmail"
+            name="email"
+            type="email"
+            autocomplete="email"
+            required
+            placeholder="Enter your email address"
+          />
+        </div>
+        <div class="booking-field">
+          <label for="bookingWhatsapp">WhatsApp Number <span>*</span></label
+          ><input
+            id="bookingWhatsapp"
+            name="whatsapp"
+            type="tel"
+            autocomplete="tel"
+            required
+            placeholder="Include country code"
+          />
+        </div>
+        <fieldset class="booking-field booking-fieldset">
+          <legend>
+            Are you already a member of The Manomantra? <span>*</span>
+          </legend>
+          <label class="booking-radio"
+            ><input type="radio" name="memberStatus" value="Yes" required />
+            Yes, I am a member</label
+          ><label class="booking-radio"
+            ><input type="radio" name="memberStatus" value="No" /> No, I am new
+            to The Manomantra</label
+          >
+        </fieldset>
+        <div class="booking-field">
+          <label for="bookingLocation">Location / Country</label
+          ><input
+            id="bookingLocation"
+            name="location"
+            autocomplete="country-name"
+            placeholder="e.g. Bengaluru, India"
+          />
+        </div>
+        <div class="booking-field">
+          <label for="bookingMode">Preferred Mode</label
+          ><select id="bookingMode" name="preferredMode">
+            <option value="Online">Online</option>
+            <option value="Offline">Offline</option>
+            <option value="Either / Please advise">
+              Either / Please advise
+            </option>
+          </select>
+        </div>
+        <div class="booking-field">
+          <label for="bookingMessage"
+            >Any questions or special requirements?</label
+          ><textarea
+            id="bookingMessage"
+            name="message"
+            rows="3"
+            placeholder="Optional"
+          ></textarea>
+        </div>
+        <p class="booking-privacy">
+          Your details will be used to respond to your programme registration
+          enquiry. Do not enter sensitive personal information here.
+        </p>
+        <button class="pd-btn pd-btn-primary booking-submit" type="submit">
+          Proceed to Payment <span aria-hidden="true">→</span>
+        </button>
+        <p class="booking-payment-note">
+          You will continue to the programme’s Razorpay payment page. Payment is
+          only finalised on Razorpay.
+        </p>
+        <p
+          class="booking-status"
+          id="bookingStatus"
+          role="status"
+          aria-live="polite"
+        ></p>
+      </form>
+    </aside>
+
+    <footer class="site-footer">
+      <div class="footer-glow footer-glow-one"></div>
+      <div class="footer-glow footer-glow-two"></div>
+      <div class="footer-leaf footer-leaf-top">⌁</div>
+      <div class="footer-leaf footer-leaf-bottom">⌁</div>
+      <div class="footer-container">
+        <div class="footer-main">
+          <div class="footer-brand">
+            <a href="index.html" class="footer-logo"
+              ><img src="assets/images/logo.png" alt="The Manomantra"
+            /></a>
+            <p class="brand-description">
+              A space to understand yourself, grow with awareness, and create a
+              life of greater meaning and serenity.
+            </p>
+            <a href="about.html" class="brand-link"
+              >Discover The Manomantra <span>→</span></a
+            >
+          </div>
+          <div class="footer-column">
+            <span class="footer-label">EXPLORE</span>
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="service.html">Services</a></li>
+              <li><a href="programs.html">Programmes</a></li>
+              <li><a href="testimonials.html">Testimonials</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <span class="footer-label">INFORMATION</span>
+            <ul>
+              <li><a href="privacy-policy.html">Privacy Policy</a></li>
+              <li><a href="terms.html">Terms of Use</a></li>
+              <li><a href="contact.html#faq">FAQs</a></li>
+            </ul>
+          </div>
+          <div class="footer-column footer-contact">
+            <span class="footer-label">CONNECT</span
+            ><a href="tel:+917204378573" class="contact-item"
+              ><span class="contact-icon">⌕</span><span>+91 7204378573</span></a
+            ><a href="mailto:connect@themanomantra.com" class="contact-item"
+              ><span class="contact-icon">@</span
+              ><span>connect@themanomantra.com</span></a
+            >
+            <p class="address">
+              The Manomantra<br />Balaji Layout, Chokkanahalli,<br />Bangalore,
+              Karnataka, 560064
+            </p>
+          </div>
+        </div>
+        <div class="footer-statement">
+          <span class="statement-line"></span>
+          <p>
+            Psychology <span>•</span> Coaching <span>•</span> Conscious Learning
+          </p>
+          <span class="statement-line"></span>
+        </div>
+        <div class="footer-bottom">
+          <div class="copyright">
+            © <span id="currentYear"></span> The Manomantra. All rights
+            reserved.
+          </div>
+          <div class="social-section">
+            <span>FOLLOW THE JOURNEY</span>
+            <div class="social-links">
+              <a href="#" aria-label="Instagram" class="social-link"
+                ><span>i</span></a
+              ><a href="#" aria-label="Facebook" class="social-link"
+                ><span>f</span></a
+              ><a href="#" aria-label="LinkedIn" class="social-link"
+                ><span>in</span></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const programmeData = {
+        "roots-to-wings": {
+          title: "Roots to Wings™",
+          category: "TEENAGERS · IDENTITY & EMOTIONAL MASTERY",
+          image: "assets/images/thumbnail-root-to-wings-logo.jpeg",
+          alt: "Roots to Wings programme for teenagers",
+          audience: "Teenagers aged 14–18",
+          mode: "Online & Offline",
+          tagline: "Greater awareness. Bolder tomorrows.",
+          intro:
+            "A Gen Z growth journey for identity, emotional mastery, confidence, relationships, resilience and future direction.",
+          about:
+            "Roots to Wings™ supports teenagers as they navigate identity, emotions, academic pressure, friendships, digital life, decision-making and questions about their future. It creates space for young people to better understand themselves and build skills that support the transition towards adulthood.",
+          aboutTwo:
+            "Through reflection, guided conversations and practical learning, participants can strengthen self-awareness, emotional regulation, communication, resilience and responsible independence. The exact schedule and format are confirmed with families before participation.",
+          quote:
+            "Strong roots help young people explore the world with greater confidence.",
+          audienceCopy:
+            "Designed for teenagers aged 14–18 who are navigating changing emotions, friendships, academic expectations, digital life and choices about their future.",
+          points: [
+            "Build self-awareness and a stronger sense of identity",
+            "Understand and regulate emotions",
+            "Strengthen confidence and communication",
+            "Navigate friendships and digital-life choices",
+            "Develop resilience and responsible independence",
+            "Explore goals, values and future direction",
+          ],
+          focus: [
+            "Identity & self-awareness",
+            "Emotional mastery",
+            "Future readiness",
+          ],
+          steps: [
+            "Understand yourself and your current stage",
+            "Practise skills for emotions, relationships and decisions",
+            "Move forward with greater clarity and responsibility",
+          ],
+        },
+        "roots-to-wings": {
+          title: "Roots to Wings™",
+          category: "TEENAGERS · IDENTITY & EMOTIONAL MASTERY",
+          image: "assets/images/thumbnail-root-to-wings-logo.jpeg",
+          alt: "Roots to Wings programme",
+          audience: "Teenagers aged 14–18",
+          mode: "Online & Offline",
+          tagline: "Greater awareness. Bolder tomorrows.",
+          intro:
+            "A Gen Z growth journey for identity, emotional mastery, confidence, relationships, resilience and future direction.",
+          about:
+            "Roots to Wings offers teenagers room to understand who they are, what matters to them and how they want to move into the next stage of life.",
+          aboutTwo:
+            "Through reflection, discussion and practical exercises, participants can explore emotions, relationships, self-confidence, resilience and choices about their future in a respectful and supportive setting.",
+          quote:
+            "Growing up is not about having every answer. It is about learning to understand yourself.",
+          audienceCopy:
+            "Designed for teenagers navigating change, friendships, expectations, identity and decisions about what comes next.",
+          points: [
+            "Explore identity, values and strengths",
+            "Understand emotions and reactions",
+            "Practise confident communication",
+            "Build resilience and healthy relationships",
+            "Reflect on goals and future direction",
+            "Strengthen decision-making awareness",
+          ],
+          focus: [
+            "Identity & strengths",
+            "Emotional skills",
+            "Relationships & resilience",
+          ],
+          steps: [
+            "Notice patterns and strengths",
+            "Practise new ways of responding",
+            "Build a personal next-step plan",
+          ],
+        },
+        "generation-bridge": {
+          title: "Generation Bridge™",
+          category: "PARENTS · UNDERSTANDING GEN Z & STRONGER CONNECTION",
+          image: "assets/images/thumbnail-generation-bridge.jpeg",
+          alt: "Generation Bridge programme for parents",
+          audience: "Parents of Gen Z teenagers and young adults",
+          mode: "Online · Institutional Parent Programme",
+          tagline: "Understand their world. Strengthen your connection.",
+          intro:
+            "A parent-focused programme to understand Gen Z, improve communication and build a more connected relationship through the changing teenage and young-adult years.",
+          about:
+            "Generation Bridge™ helps parents explore the experiences and pressures shaping Gen Z, including digital life, autonomy, friendships, academic and career concerns, and changing expectations within families. It also invites parents to notice their own emotional triggers and communication patterns.",
+          aboutTwo:
+            "Through reflection and practical learning, parents can explore ways to communicate with greater understanding, set thoughtful boundaries, support growing independence and repair connection after difficult moments. Programme schedules and delivery details can be confirmed with The Manomantra team.",
+          quote: "Connection grows when curiosity makes room for conversation.",
+          audienceCopy:
+            "Designed for parents of Gen Z teenagers and young adults who want to understand their child’s perspective while maintaining healthy boundaries and family connection.",
+          points: [
+            "Understand Gen Z experiences and perspectives",
+            "Explore communication across generations",
+            "Recognise parental triggers and emotional reactions",
+            "Navigate digital life, autonomy and boundaries",
+            "Discuss academic and career-related concerns",
+            "Practise relationship repair and more connected conversations",
+          ],
+          focus: [
+            "Understanding Gen Z",
+            "Communication & boundaries",
+            "Connection & relationship repair",
+          ],
+          steps: [
+            "Explore the generational gap and your family context",
+            "Practise communication and boundary-setting approaches",
+            "Choose practical ways to strengthen connection at home",
+          ],
+        },
+        "design-your-life": {
+          title: "Design Your Life™",
+          category: "YOUNG ADULTS · PURPOSE & LIFE DESIGN",
+          image: "assets/images/thumbnail-design-your-life.jpeg",
+          alt: "Design Your Life programme",
+          audience: "Young adults and emerging professionals",
+          mode: "Online · Selected Offline Experiences",
+          tagline: "Know yourself. Shape your future.",
+          intro:
+            "A purpose and life-design programme for young adults seeking clarity, confidence, career direction and conscious growth.",
+          about:
+            "Design Your Life™ helps young adults understand who they are, what matters to them and how they want to shape their future. Participants explore identity, strengths, values, purpose, career direction, relationships, wellbeing and personal leadership.",
+          aboutTwo:
+            "The journey converts self-discovery into a practical vision and an aligned action plan for life and work. Programme schedules and specific delivery details can be confirmed with The Manomantra team.",
+          quote:
+            "Understand what matters to you, then shape your next steps with intention.",
+          audienceCopy:
+            "Designed for young adults and emerging professionals seeking clarity about their direction, purpose, career and personal growth.",
+          points: [
+            "Explore identity, strengths and values",
+            "Clarify purpose and life direction",
+            "Reflect on career possibilities and priorities",
+            "Consider relationships, wellbeing and personal leadership",
+            "Develop a practical vision for life and work",
+            "Translate self-discovery into aligned action",
+          ],
+          focus: [
+            "Self-discovery",
+            "Purpose & direction",
+            "Vision & aligned action",
+          ],
+          steps: [
+            "Explore who you are and what matters to you",
+            "Shape your vision for life and work",
+            "Create an aligned action plan",
+          ],
+        },
+        homecoming: {
+          title: "HOMEcoming™",
+          category: "WOMEN · SELF-RECONNECTION & CONSCIOUS LIVING",
+          image: "assets/images/thumbnail-home-coming.jpeg",
+          alt: "HOMEcoming programme",
+          audience: "Women",
+          mode: "Online & Selected Offline",
+          tagline: "Come home to who you truly are.",
+          intro:
+            "Coming Home to Yourself — a journey of self-reconnection, emotional wellbeing and conscious living.",
+          about:
+            "HOMEcoming invites women to make space for their own inner experience, reconnect with what matters, and notice the patterns that shape how they live, relate and care for themselves.",
+          aboutTwo:
+            "The experience encourages gentle reflection, self-understanding and intentional everyday practices. It is a space for learning and personal growth, not a substitute for individual medical or mental-health care.",
+          quote:
+            "You are allowed to meet yourself with the same care you so freely offer others.",
+          audienceCopy:
+            "For women who want to reconnect with themselves, create more room for their needs and values, and approach daily life with greater awareness.",
+          points: [
+            "Reconnect with personal values and needs",
+            "Notice familiar emotional patterns",
+            "Make space for reflection and self-care",
+            "Explore boundaries and relationships",
+            "Practise conscious everyday choices",
+            "Create a gentler personal growth rhythm",
+          ],
+          focus: [
+            "Self-reconnection",
+            "Emotional awareness",
+            "Conscious living",
+          ],
+          steps: [
+            "Pause and listen inward",
+            "Explore patterns with compassion",
+            "Choose practices that support you",
+          ],
+        },
+        "vision-activation": {
+          title: "Vision Activation™",
+          category: "MASTERCLASS · VISION & PURPOSEFUL ACTION",
+          image: "assets/images/vision-activation.jpeg",
+          alt: "Vision Activation experience",
+          audience: "Individuals",
+          mode: "Masterclass / Journey",
+          tagline: "See it clearly. Begin intentionally.",
+          intro:
+            "A focused experience designed to bring clarity to your vision and turn intention into purposeful action.",
+          about:
+            "Vision Activation supports you in moving from a broad idea of what you want towards a clearer picture of what matters and why.",
+          aboutTwo:
+            "The experience connects reflection with practical planning, helping you identify priorities, define meaningful milestones and choose actions that are realistic for your current circumstances.",
+          quote:
+            "A meaningful vision becomes more useful when it guides the next action.",
+          audienceCopy:
+            "For individuals who want to refresh their direction, reconnect with a goal or turn an intention into a practical plan.",
+          points: [
+            "Clarify what you want to move towards",
+            "Connect goals with personal values",
+            "Identify priorities and possible obstacles",
+            "Break a vision into manageable milestones",
+            "Choose a first practical action",
+            "Create a simple review rhythm",
+          ],
+          focus: ["Vision & values", "Goal clarity", "Purposeful action"],
+          steps: [
+            "Name the vision",
+            "Shape it into milestones",
+            "Take the first aligned action",
+          ],
+        },
+        heartcode: {
+          title: "HeartCode™",
+          category: "RELATIONSHIPS · COMMUNICATION & EMOTIONAL NEEDS",
+          image: "assets/images/heartcode.jpeg",
+          alt: "HeartCode programme",
+          audience: "Individuals & Families",
+          mode: "Online & Workshops",
+          tagline: "Understand deeper. Connect better.",
+          intro:
+            "A relationship-communication programme for understanding how love, care and emotional needs are expressed and received.",
+          about:
+            "HeartCode explores the ways people communicate care, interpret one another’s behaviour and respond when emotional needs are not understood.",
+          aboutTwo:
+            "With guided reflection and practical communication exercises, participants can build awareness of differences, make requests more clearly and listen with greater curiosity.",
+          quote:
+            "Connection grows when we become curious about what the other person is trying to express.",
+          audienceCopy:
+            "For individuals and families who want to better understand communication styles, needs and the everyday moments that shape connection.",
+          points: [
+            "Explore how care is expressed and received",
+            "Recognise different communication preferences",
+            "Practise listening without rushing to respond",
+            "Express needs more clearly",
+            "Navigate misunderstandings with curiosity",
+            "Strengthen everyday connection",
+          ],
+          focus: [
+            "Communication patterns",
+            "Emotional needs",
+            "Everyday connection",
+          ],
+          steps: [
+            "Notice how you communicate",
+            "Practise understanding each other",
+            "Apply small changes in daily conversations",
+          ],
+        },
+        "advanced-relationship-mastery": {
+          title: "Advanced Relationship Mastery™",
+          category: "RELATIONSHIP MASTERY · DEEPER CONNECTION",
+          image: "assets/images/advanced-relationship-mastery.jpeg",
+          alt: "Advanced Relationship Mastery programme",
+          audience: "Primarily Married Women",
+          mode: "Guided Online Programme",
+          tagline: "Connection begins with understanding.",
+          intro:
+            "An in-depth journey around emotional connection, communication, boundaries, attraction, intimacy and conscious partnership.",
+          about:
+            "Advanced Relationship Mastery offers space to examine the patterns, expectations and communication habits that influence close relationships.",
+          aboutTwo:
+            "The guided journey focuses on self-awareness, clearer boundaries, emotional connection and conscious choices in partnership. The programme details and fit can be discussed before enrolment.",
+          quote:
+            "A stronger relationship begins with understanding yourself as well as the relationship.",
+          audienceCopy:
+            "Designed primarily for married women who want to understand relationship dynamics more deeply and explore healthier ways of communicating and connecting.",
+          points: [
+            "Understand recurring relationship patterns",
+            "Explore emotional needs and expectations",
+            "Practise clear, respectful communication",
+            "Reflect on boundaries and mutual respect",
+            "Explore closeness, attraction and intimacy",
+            "Make more conscious partnership choices",
+          ],
+          focus: [
+            "Emotional connection",
+            "Boundaries & communication",
+            "Conscious partnership",
+          ],
+          steps: [
+            "Understand the patterns",
+            "Practise new conversations and boundaries",
+            "Integrate insights into daily relationship choices",
+          ],
+        },
+        "relationships-alchemy": {
+          title: "Relationships Alchemy™",
+          category: "CONSCIOUS RELATIONSHIPS · COUPLES & INDIVIDUALS",
+          image: "assets/images/relationships-alchemy.jpeg",
+          alt: "Relationships Alchemy programme",
+          audience: "Couples & Individuals",
+          mode: "Online & Couple Workshops",
+          tagline: "From patterns to conscious partnership.",
+          intro:
+            "A conscious relationship journey exploring patterns, needs, communication, conflict cycles, values, commitment, intimacy and shared vision.",
+          about:
+            "Relationships Alchemy creates a structured space to explore how relationship patterns develop, what happens during conflict and how each person experiences connection.",
+          aboutTwo:
+            "Through guided reflection and communication practices, participants can build a clearer understanding of needs, values, boundaries and the kind of partnership they want to nurture.",
+          quote:
+            "The goal is not to avoid every difference, but to meet differences with greater awareness.",
+          audienceCopy:
+            "For couples and individuals who want to understand relationship dynamics and make more conscious choices about communication, connection and shared direction.",
+          points: [
+            "Notice repeated interaction and conflict cycles",
+            "Explore needs, values and expectations",
+            "Practise listening and repair conversations",
+            "Reflect on commitment and boundaries",
+            "Explore intimacy and emotional connection",
+            "Build a shared or personal relationship vision",
+          ],
+          focus: [
+            "Relationship patterns",
+            "Conflict & repair",
+            "Shared vision",
+          ],
+          steps: [
+            "Map the current patterns",
+            "Practise clearer communication",
+            "Choose intentional ways forward",
+          ],
+        },
+        "executive-leadership": {
+          title: "Executive Leadership & Workplace Wellbeing",
+          category: "ORGANISATIONS · LEADERSHIP & WORKPLACE WELLBEING",
+          image: "assets/images/executive-leadership.jpeg",
+          alt: "Executive Leadership and Workplace Wellbeing programme",
+          audience: "Professionals & Leaders",
+          mode: "Workshops · Leadership Journeys",
+          tagline:
+            "Strong minds. Conscious leadership. Sustainable performance.",
+          intro:
+            "Neuroscience-informed development supporting focus, emotional regulation, communication, leadership presence and sustainable performance.",
+          about:
+            "Executive Leadership & Workplace Wellbeing supports professionals and organisations in strengthening the human skills that influence leadership, collaboration and performance.",
+          aboutTwo:
+            "Programmes can be shaped around organisational priorities, team context and intended outcomes. Workshop themes, delivery format and engagement scope are discussed during an initial conversation.",
+          quote:
+            "Sustainable performance is built through capable people, thoughtful systems and conscious leadership.",
+          audienceCopy:
+            "For leaders, managers, teams and organisations seeking practical development in communication, emotional awareness, focus and workplace wellbeing.",
+          points: [
+            "Strengthen emotional awareness and regulation",
+            "Improve focus and intentional decision-making",
+            "Develop communication and feedback skills",
+            "Build leadership presence and trust",
+            "Support collaboration and team wellbeing",
+            "Align workshops with organisational goals",
+          ],
+          focus: [
+            "Leadership presence",
+            "Emotional intelligence",
+            "Workplace wellbeing",
+          ],
+          steps: [
+            "Discuss organisational needs",
+            "Shape a relevant workshop or journey",
+            "Review learning and practical application",
+          ],
+        },
+      };
+
+      const params = new URLSearchParams(window.location.search);
+      const slug = (params.get("program") || "homecoming").toLowerCase().trim();
+      const data = programmeData[slug];
+      const content = document.getElementById("programmeContent");
+      const notFound = document.getElementById("notFound");
+
+      if (data) {
+        content.hidden = false;
+        document.title = `${data.title.replace("™", "").trim()} | The Manomantra`;
+        document.querySelector('meta[name="description"]').content = data.intro;
+        document.getElementById("breadcrumbTitle").textContent = data.title;
+        document.getElementById("programmeCategory").textContent =
+          data.category;
+        document.getElementById("programmeTitle").innerHTML =
+          data.title.replace("™", "<em>™</em>");
+        document.getElementById("programmeIntro").textContent = data.intro;
+        document.getElementById("programmeAudience").textContent =
+          `For: ${data.audience}`;
+        document.getElementById("programmeMode").textContent = data.mode;
+        document.getElementById("programmeTagline").textContent = data.tagline;
+        const image = document.getElementById("programmeImage");
+        image.src = data.image;
+        image.alt = data.alt;
+        image.onerror = () => {
+          image.style.display = "none";
+        };
+        document.getElementById("aboutCopy").textContent = data.about;
+        document.getElementById("aboutCopyTwo").textContent = data.aboutTwo;
+        document.getElementById("programmeQuote").textContent = data.quote;
+        document.getElementById("audienceCopy").textContent = data.audienceCopy;
+        document.getElementById("ctaCopy").textContent =
+          `Want to learn more about ${data.title.replace("™", "")}? Ask about the next available opportunity, programme format and registration steps.`;
+        const list = document.getElementById("audienceList");
+        data.points.forEach((point) => {
+          const li = document.createElement("li");
+          li.textContent = point;
+          list.appendChild(li);
+        });
+        const cardContainer = document.getElementById("focusCards");
+        const icons = ["✧", "◌", "↗"];
+        data.focus.forEach((focus, i) => {
+          const article = document.createElement("article");
+          article.className = "pd-info-card";
+          const icon = document.createElement("div");
+          icon.className = "pd-card-icon";
+          icon.textContent = icons[i % icons.length];
+          const h = document.createElement("h3");
+          h.textContent = focus;
+          const p = document.createElement("p");
+          p.textContent = [
+            "Build awareness and understanding that can support more intentional choices.",
+            "Explore the topic through guided reflection, discussion and practical exercises.",
+            "Identify useful ideas to practise and carry into everyday life.",
+          ][i % 3];
+          article.append(icon, h, p);
+          cardContainer.appendChild(article);
+        });
+        const stepContainer = document.getElementById("journeySteps");
+        data.steps.forEach((step, i) => {
+          const article = document.createElement("article");
+          article.className = "pd-step";
+          const h = document.createElement("h3");
+          h.textContent = step;
+          const p = document.createElement("p");
+          p.textContent = [
+            "Begin by exploring your context, questions and current experience.",
+            "Use guided reflection and practical exercises to build understanding.",
+            "Choose realistic actions or insights to take into your everyday life.",
+          ][i];
+          article.append(h, p);
+          stepContainer.appendChild(article);
+        });
+      } else {
+        notFound.hidden = false;
+      }
+
+      // HOMEcoming™ registration panel. Replace the placeholder below with the approved Razorpay payment URL before launch.
+      const RAZORPAY_PAYMENT_URL =
+        "https://rzp.io/l/REPLACE_WITH_APPROVED_LINK";
+      const bookingDrawer = document.getElementById("bookingDrawer");
+      const bookingOverlay = document.getElementById("bookingOverlay");
+      const bookingForm = document.getElementById("bookingForm");
+      const bookingStatus = document.getElementById("bookingStatus");
+      let bookingPreviousFocus = null;
+      function openBookingPanel() {
+        bookingPreviousFocus = document.activeElement;
+        bookingOverlay.hidden = false;
+        bookingDrawer.classList.add("is-open");
+        bookingDrawer.setAttribute("aria-hidden", "false");
+        document.body.classList.add("booking-open");
+        document.getElementById("bookingClose").focus();
+      }
+      function closeBookingPanel() {
+        bookingDrawer.classList.remove("is-open");
+        bookingDrawer.setAttribute("aria-hidden", "true");
+        bookingOverlay.hidden = true;
+        document.body.classList.remove("booking-open");
+        if (bookingPreviousFocus) bookingPreviousFocus.focus();
+      }
+      document
+        .querySelectorAll("[data-open-booking]")
+        .forEach((btn) => btn.addEventListener("click", openBookingPanel));
+      document
+        .getElementById("bookingClose")
+        .addEventListener("click", closeBookingPanel);
+      bookingOverlay.addEventListener("click", closeBookingPanel);
+      document.addEventListener("keydown", (event) => {
+        if (
+          event.key === "Escape" &&
+          bookingDrawer.classList.contains("is-open")
+        )
+          closeBookingPanel();
+      });
+      bookingForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        if (!bookingForm.reportValidity()) return;
+        if (RAZORPAY_PAYMENT_URL.includes("REPLACE_WITH_APPROVED_LINK")) {
+          bookingStatus.textContent =
+            "Registration form is ready. Add the approved Razorpay payment URL in the HTML before enabling payment.";
+          return;
+        }
+        // Opens Razorpay in a new tab; this static page does not transmit form entries to a server.
+        window.open(RAZORPAY_PAYMENT_URL, "_blank", "noopener,noreferrer");
+        bookingStatus.textContent =
+          "Razorpay opened in a new tab. Please complete payment there.";
+      });
+
+      document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+    </script>
+    <script src="assets/js/header.js"></script>
+    <script src="assets/js/footer.js"></script>
+  </body>
+</html>

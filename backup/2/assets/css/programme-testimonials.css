@@ -1,0 +1,375 @@
+/* Shared participant feedback section for The Manomantra programme pages */
+.pd-testimonials {
+  padding: clamp(3.5rem, 7vw, 6rem) 0;
+  background: #fffaf0;
+  color: #555;
+}
+.pd-testimonials .pd-container {
+  width: min(1120px, calc(100% - 2.5rem));
+  margin-inline: auto;
+}
+.pd-testimonials .pd-section-head {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 2.2rem;
+}
+.pd-testimonials .pd-kicker {
+  color: #9d7415;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin: 0 0 0.8rem;
+}
+.pd-testimonials h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #3f3528;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.15;
+  margin: 0 0 1rem;
+}
+.pd-testimonials .pd-feedback-intro {
+  line-height: 1.8;
+  margin: 0 auto;
+  color: #68625a;
+}
+.pd-feedback-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+.pd-feedback-card {
+  background: #fff;
+  border: 1px solid #eadfc9;
+  border-radius: 18px;
+  padding: 1.4rem;
+  box-shadow: 0 8px 28px rgba(77, 58, 25, 0.045);
+}
+.pd-feedback-stars {
+  color: #b88a1b;
+  letter-spacing: 0.15em;
+  font-size: 1.2rem;
+  margin-bottom: 0.7rem;
+}
+.pd-feedback-card h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #493d2d;
+  font-size: 1.2rem;
+  margin: 0 0 0.55rem;
+}
+.pd-feedback-card p {
+  line-height: 1.7;
+  margin: 0;
+  color: #6c665e;
+  font-size: 0.95rem;
+}
+.pd-feedback-note {
+  font-size: 0.78rem !important;
+  margin-top: 0.85rem !important;
+  color: #8a8174 !important;
+}
+.pd-recommendation-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin: 1.4rem auto 0;
+  padding: 1rem 1.25rem;
+  border: 1px solid #e5d4ae;
+  border-radius: 14px;
+  max-width: 760px;
+  background: #fffdf8;
+  text-align: center;
+}
+.pd-recommendation-strip strong {
+  color: #765812;
+}
+.pd-feedback-cta {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+.pd-feedback-cta a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.2rem;
+  border-radius: 999px;
+  background: #9d7415;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  transition: background 0.2s ease;
+}
+.pd-feedback-cta a:hover {
+  background: #79570c;
+}
+@media (max-width: 760px) {
+  .pd-feedback-grid {
+    grid-template-columns: 1fr;
+  }
+  .pd-feedback-card {
+    padding: 1.2rem;
+  }
+  .pd-testimonials .pd-container {
+    width: min(100% - 1.5rem, 1120px);
+  }
+}
+
+/* Optional programme introduction video */
+.pd-video-section {
+  padding: clamp(42px, 6vw, 76px) 20px;
+  background: #fffaf0;
+}
+.pd-video-inner {
+  width: min(100%, 980px);
+  margin: 0 auto;
+  text-align: center;
+}
+.pd-video-eyebrow {
+  margin: 0 0 10px;
+  color: #9d7415;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.pd-video-title {
+  margin: 0 auto 12px;
+  color: #352b1d;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(1.7rem, 3vw, 2.5rem);
+  line-height: 1.2;
+}
+.pd-video-description {
+  max-width: 680px;
+  margin: 0 auto 26px;
+  color: #555;
+  line-height: 1.75;
+}
+.pd-video-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 18px;
+  background: #e9dfcd;
+  box-shadow: 0 16px 42px rgba(53, 43, 29, 0.12);
+}
+.pd-video-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+@media (max-width: 600px) {
+  .pd-video-section {
+    padding: 38px 16px;
+  }
+  .pd-video-frame {
+    border-radius: 12px;
+  }
+}
+
+/* Programme banner social proof */
+.pd-social-proof {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 22px 0 26px;
+  align-items: stretch;
+}
+.pd-proof-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border: 1px solid rgba(184, 138, 27, 0.24);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.72);
+  color: #5b4734;
+  min-height: 54px;
+}
+.pd-proof-item[hidden] {
+  display: none !important;
+}
+.pd-proof-stars {
+  color: #b88a1b;
+  letter-spacing: 0.08em;
+  font-size: 1.05rem;
+  white-space: nowrap;
+}
+.pd-proof-number {
+  font-weight: 800;
+  color: #765812;
+  font-size: 1.08rem;
+  line-height: 1.2;
+}
+.pd-proof-caption {
+  font-size: 0.78rem;
+  line-height: 1.3;
+  color: #746b63;
+}
+
+/* Horizontally scrollable participant review carousel */
+.pd-review-section {
+  padding: clamp(48px, 7vw, 84px) 0;
+  background: #fff;
+}
+.pd-review-container {
+  width: min(1120px, calc(100% - 2.5rem));
+  margin: 0 auto;
+}
+.pd-review-head {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 28px;
+}
+.pd-review-head .pd-kicker {
+  color: #9d7415;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin: 0 0 0.8rem;
+}
+.pd-review-head h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #3f3528;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.15;
+  margin: 0 0 1rem;
+}
+.pd-review-head p {
+  color: #68625a;
+  line-height: 1.8;
+  margin: 0;
+}
+.pd-review-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin: 0 0 12px;
+}
+.pd-review-arrow {
+  width: 42px;
+  height: 42px;
+  border: 1px solid #e5d4ae;
+  border-radius: 50%;
+  background: #fffaf0;
+  color: #765812;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+.pd-review-arrow:hover {
+  background: #f5e8c8;
+}
+.pd-review-track {
+  display: grid;
+  grid-auto-columns: minmax(280px, calc((100% - 32px) / 3));
+  grid-auto-flow: column;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 4px 2px 18px;
+  overscroll-behavior-inline: contain;
+  scrollbar-color: #c5a35a #f5eddb;
+  scrollbar-width: thin;
+}
+.pd-review-card {
+  scroll-snap-align: start;
+  background: #fffaf0;
+  border: 1px solid #eadfc9;
+  border-radius: 18px;
+  padding: 24px;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 28px rgba(77, 58, 25, 0.045);
+}
+.pd-review-card .review-stars {
+  color: #b88a1b;
+  letter-spacing: 0.1em;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+}
+.pd-review-card blockquote {
+  margin: 0;
+  color: #5d554b;
+  font-size: 0.96rem;
+  line-height: 1.8;
+  flex: 1;
+}
+.pd-review-card .review-meta {
+  border-top: 1px solid #e9dcc4;
+  margin-top: 18px;
+  padding-top: 14px;
+}
+.pd-review-card .review-name {
+  margin: 0;
+  color: #493d2d;
+  font-weight: 700;
+  font-size: 0.92rem;
+}
+.pd-review-card .review-programme {
+  margin: 3px 0 0;
+  color: #817668;
+  font-size: 0.78rem;
+}
+.pd-review-empty {
+  padding: 24px;
+  border: 1px dashed #d9c79f;
+  border-radius: 16px;
+  text-align: center;
+  color: #746b63;
+  background: #fffdf8;
+}
+.pd-review-more {
+  text-align: center;
+  margin-top: 24px;
+}
+.pd-review-more a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 22px;
+  border-radius: 999px;
+  background: var(--green-dark);
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+}
+.pd-review-more a:hover {
+  background: #79570c;
+}
+@media (max-width: 900px) {
+  .pd-review-track {
+    grid-auto-columns: minmax(260px, calc((100% - 16px) / 2));
+  }
+}
+@media (max-width: 600px) {
+  .pd-social-proof {
+    gap: 8px;
+  }
+  .pd-proof-item {
+    flex: 1 1 100%;
+    justify-content: center;
+  }
+  .pd-review-container {
+    width: min(100% - 1.5rem, 1120px);
+  }
+  .pd-review-track {
+    grid-auto-columns: minmax(84%, 84%);
+  }
+  .pd-review-card {
+    padding: 20px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pd-review-track {
+    scroll-behavior: auto;
+  }
+}

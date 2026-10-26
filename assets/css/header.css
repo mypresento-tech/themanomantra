@@ -217,6 +217,35 @@ a {
     padding 0.3s ease;
 }
 
+/* Header Book a Session button */
+.main-nav > a.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  align-self: center;
+
+  padding: 13px 21px;
+  min-height: 46px;
+  height: auto;
+
+  border-radius: 13px;
+  line-height: 1.4;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+/* Prevent navigation underline on CTA */
+.main-nav > a.nav-cta::after {
+  display: none;
+}
+
+/* Keep CTA compact while scrolling */
+.site-header.scrolled .main-nav > a.nav-cta {
+  padding: 13px 21px;
+  min-height: 46px;
+}
+
 .site-header.scrolled .main-nav > a {
   padding: 25px 0 22px;
 }
