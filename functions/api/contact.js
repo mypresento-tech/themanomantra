@@ -1,8 +1,3 @@
-/**
- * Cloudflare Pages Function: POST /api/contact
- * Required Cloudflare Pages secret: RESEND_API_KEY
- */
-
 const DEMO_RECIPIENTS = [
   "amcoachsalini@gmail.com",
   "confidencecoachsalini@gmail.com",
