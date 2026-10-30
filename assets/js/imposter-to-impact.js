@@ -2,7 +2,7 @@
         "imposter-to-impact": {
           title: "Imposter to Impact™",
           category: "MASTERCLASSES · ACTIVATION JOURNEYS",
-          image: "assets/images/thumbnail-imposter-to-impact.jpeg",
+          image: "assets/images/programme-posters/imposter-to-impact-poster-thumbnail.jpeg",
           alt: "Imposter to Impact guided experience",
           audience: "People interested in exploring the themes of Imposter to Impact and choosing intentional next steps",
           mode: "Guided experience · Format confirmed with the team",

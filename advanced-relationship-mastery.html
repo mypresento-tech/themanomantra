@@ -39,14 +39,21 @@
           <span></span><span></span><span></span>
         </button>
         <nav class="main-nav" id="mainNav">
-          <a href="index.html">Home</a><a href="about.html">About</a
-          ><a href="service.html">Services</a
-          ><a href="programs.html" class="active">Programs</a
-          ><a href="testimonials.html">Testimonials</a
-          ><a href="contact.html">Contact</a>
-          <a class="btn nav-cta" href="contact.html#contact"
-            ><span class="calendar-icon">▣</span> Book a Session</a
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="service.html">Services</a>
+          <a href="programs.html" class="active">Programs</a>
+          <a href="testimonials.html">Testimonials</a>
+          <a href="contact.html">Contact</a>
+          <a
+            href="https://wa.me/917204378573"
+            class="btn btn-primary nav-cta"
+            type="button"
+            data-open-booking
+            target="_blank"
           >
+            <span class="calendar-icon">▣</span> Let’s Begin Your Journey
+          </a>
         </nav>
       </div>
     </header>
@@ -114,7 +121,7 @@
             <div class="pd-visual">
               <img
                 id="programmeImage"
-                src="assets/images/advanced-relationship-mastery.jpeg"
+                src="assets/images/programme-posters/advanced-relationship-mastery-poster-thumbnail.jpeg"
                 alt="Programme visual"
               />
               <div class="pd-image-note">
@@ -720,48 +727,69 @@
     <script src="assets/js/footer.js"></script>
     <script src="assets/js/programme-video.js" defer></script>
     <script src="assets/js/programme-reviews.js" defer></script>
-  
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const forms = [...document.querySelectorAll("form#bookingForm, form#registrationForm")];
-  forms.forEach((form) => {
-    if (form.dataset.apiBound === "true") return;
-    form.dataset.apiBound = "true";
-    form.addEventListener("submit", async (event) => {
-      event.preventDefault();
-      if (!form.reportValidity()) return;
-      const button = form.querySelector('button[type="submit"],input[type="submit"]');
-      const original = button ? (button.textContent || button.value) : "";
-      if (button) { button.disabled = true; if (button.tagName === "INPUT") button.value = "Sending…"; else button.textContent = "Sending…"; }
-      let status = form.querySelector("[role='status']");
-      if (!status) {
-        status = document.createElement("p");
-        status.setAttribute("role", "status");
-        status.setAttribute("aria-live", "polite");
-        status.style.marginTop = "1rem";
-        form.appendChild(status);
-      }
-      status.textContent = "Sending your enquiry securely…";
-      const data = Object.fromEntries(new FormData(form).entries());
-      data.pageType = "programme";
-      data.programme = data.programme || document.querySelector("h1")?.textContent?.trim() || document.title;
-      try {
-        const response = await fetch("/api/contact", {
-          method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data)
-        });
-        const result = await response.json().catch(() => ({}));
-        if (!response.ok || !result.success) throw new Error(result.error || "Submission failed");
-        status.textContent = "Thank you for your enquiry. It has been submitted. THE MANOMANTRA will contact you regarding the appropriate next step.";
-        form.reset();
-      } catch {
-        status.textContent = "We couldn’t send your enquiry just now. Please contact THE MANOMANTRA on WhatsApp at +91 7204378573.";
-      } finally {
-        if (button) { button.disabled = false; if (button.tagName === "INPUT") button.value = original; else button.textContent = original; }
-      }
-    });
-  });
-});
-</script>
 
-</body>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const forms = [
+          ...document.querySelectorAll(
+            "form#bookingForm, form#registrationForm",
+          ),
+        ];
+        forms.forEach((form) => {
+          if (form.dataset.apiBound === "true") return;
+          form.dataset.apiBound = "true";
+          form.addEventListener("submit", async (event) => {
+            event.preventDefault();
+            if (!form.reportValidity()) return;
+            const button = form.querySelector(
+              'button[type="submit"],input[type="submit"]',
+            );
+            const original = button ? button.textContent || button.value : "";
+            if (button) {
+              button.disabled = true;
+              if (button.tagName === "INPUT") button.value = "Sending…";
+              else button.textContent = "Sending…";
+            }
+            let status = form.querySelector("[role='status']");
+            if (!status) {
+              status = document.createElement("p");
+              status.setAttribute("role", "status");
+              status.setAttribute("aria-live", "polite");
+              status.style.marginTop = "1rem";
+              form.appendChild(status);
+            }
+            status.textContent = "Sending your enquiry securely…";
+            const data = Object.fromEntries(new FormData(form).entries());
+            data.pageType = "programme";
+            data.programme =
+              data.programme ||
+              document.querySelector("h1")?.textContent?.trim() ||
+              document.title;
+            try {
+              const response = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data),
+              });
+              const result = await response.json().catch(() => ({}));
+              if (!response.ok || !result.success)
+                throw new Error(result.error || "Submission failed");
+              status.textContent =
+                "Thank you for your enquiry. It has been submitted. THE MANOMANTRA will contact you regarding the appropriate next step.";
+              form.reset();
+            } catch {
+              status.textContent =
+                "We couldn’t send your enquiry just now. Please contact THE MANOMANTRA on WhatsApp at +91 7204378573.";
+            } finally {
+              if (button) {
+                button.disabled = false;
+                if (button.tagName === "INPUT") button.value = original;
+                else button.textContent = original;
+              }
+            }
+          });
+        });
+      });
+    </script>
+  </body>
 </html>

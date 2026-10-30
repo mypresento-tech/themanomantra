@@ -1,0 +1,1612 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Programmes | THE MANOMANTRA</title>
+
+    <meta
+      name="description"
+      content="Explore thoughtfully designed programmes by THE MANOMANTRA for children, teenagers, young adults, parents, women, couples and professionals."
+    />
+
+    <!-- =====================================================
+         FONTS
+    ====================================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- =====================================================
+         COMMON CSS
+    ====================================================== -->
+
+    <link rel="stylesheet" href="assets/css/header.css" />
+    <link rel="stylesheet" href="assets/css/footer.css" />
+
+    <!-- PAGE CSS -->
+
+    <link rel="stylesheet" href="assets/css/programs.css" />
+    <link rel="stylesheet" href="assets/css/programme-social-proof.css" />
+  </head>
+
+  <body>
+    <!-- ================================
+       HEADER
+  ================================= -->
+    <header class="site-header" id="siteHeader">
+      <div class="container nav-wrap">
+        <a href="#home" class="brand" aria-label="THE MANOMANTRA Home">
+          <img src="assets/images/logo.png" alt="THE MANOMANTRA logo" />
+        </a>
+
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Open menu"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
+
+        <nav class="main-nav" id="mainNav">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="#services">Services</a>
+          <a href="programs.html" class="active">Programs</a>
+          <a href="#testimonials">Testimonials</a>
+          <a href="#contact">Contact</a>
+          <button
+            class="btn nav-cta btn-book-a-session"
+            type="button"
+            data-open-booking
+          >
+            <span class="calendar-icon">▣</span> Let’s Begin Your Journey
+          </button>
+        </nav>
+      </div>
+    </header>
+    <!-- =========================================================
+     MAIN
+========================================================== -->
+
+    <main>
+      <!-- =========================================================
+     HERO
+========================================================== -->
+
+      <section class="programs-hero">
+        <div class="container">
+          <div class="programs-hero-content">
+            <div class="section-eyebrow">THE MANOMANTRA PROGRAMMES</div>
+
+            <h1>
+              Experiences for
+              <br />
+
+              <em>Every Stage of Life.</em>
+            </h1>
+
+            <p class="programs-hero-text">
+              Every stage of life brings its own questions, transitions and
+              possibilities. THE MANOMANTRA offers thoughtfully designed
+              programmes combining psychology, coaching, reflection, creativity
+              and practical action.
+            </p>
+
+            <div class="programs-hero-actions">
+              <a href="#programmes" class="btn-primary"> Explore Programmes </a>
+
+              <a href="contact.html" class="btn-text">
+                Begin with a Clarity Call
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+     INTRODUCTION
+========================================================== -->
+
+      <section class="programs-intro">
+        <div class="container">
+          <div class="programs-intro-grid">
+            <div>
+              <div class="section-eyebrow">THE MANOMANTRA WAY™</div>
+
+              <h2>
+                Grow with Awareness.
+                <br />
+
+                Live with <em>Purpose.</em>
+              </h2>
+            </div>
+
+            <div class="programs-intro-content">
+              <p>
+                Our programmes bring together psychology, coaching, mindfulness,
+                reflective learning and practical action.
+              </p>
+
+              <p>
+                Each experience is designed to help individuals understand
+                themselves more deeply, navigate life's transitions and move
+                towards meaningful growth.
+              </p>
+
+              <div class="journey-flow">
+                <span> Awareness </span>
+
+                <i>→</i>
+
+                <span> Purpose </span>
+
+                <i>→</i>
+
+                <span> Serenity </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+     PROGRAMMES
+========================================================= -->
+
+      <section
+        class="programmes-section programmes-catalogue-revised"
+        id="programmes"
+      >
+        <style>
+          .programmes-catalogue-revised {
+            padding-bottom: clamp(3rem, 7vw, 6rem);
+          }
+          .programmes-catalogue-revised .catalogue-category {
+            margin-top: clamp(2.5rem, 5vw, 4rem);
+          }
+          .programmes-catalogue-revised .category-heading {
+            margin-bottom: 1.4rem;
+          }
+          .programmes-catalogue-revised .programme-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            align-items: stretch;
+          }
+          .programmes-catalogue-revised .premium-program-card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+          }
+          .programmes-catalogue-revised .program-image-wrap {
+            height: auto;
+            background: #fffdfa;
+          }
+          .programmes-catalogue-revised .program-image {
+            object-fit: contain;
+            background: #f4eee4;
+          }
+          .programmes-catalogue-revised .image-overlay {
+            display: none;
+          }
+          .programmes-catalogue-revised .program-card-content {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+          }
+          .programmes-catalogue-revised .program-card-content > p {
+            line-height: 1.7;
+          }
+          .programmes-catalogue-revised .program-meta {
+            margin-top: auto;
+          }
+          .programmes-catalogue-revised .catalogue-placeholder {
+            display: grid;
+            place-items: center;
+            margin: 12px;
+            padding: 1.5rem;
+            border-radius: 22px;
+            background: linear-gradient(135deg, #f4e8d4, #e4d1b3);
+            color: #624b31;
+            text-align: center;
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: clamp(1.35rem, 2.5vw, 2rem);
+          }
+          .programmes-catalogue-revised .catalogue-placeholder small {
+            display: block;
+            margin-top: 0.65rem;
+            font-family: "DM Sans", sans-serif;
+            font-size: 0.68rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+          }
+          .programmes-catalogue-revised .career-guidance-feature {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+          }
+          .programmes-catalogue-revised
+            .career-guidance-feature
+            .program-image-wrap {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 0.75rem;
+          }
+          .programmes-catalogue-revised
+            .career-guidance-feature
+            .program-image {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+          }
+          @media (max-width: 760px) {
+            .programmes-catalogue-revised .career-guidance-feature {
+              grid-template-columns: 1fr;
+            }
+          }
+          .programmes-catalogue-revised .catalogue-enquire {
+            display: inline-flex;
+            gap: 0.5rem;
+            align-items: center;
+            margin-top: 1.1rem;
+            color: #1d5b38;
+            font-weight: 700;
+            text-decoration: none;
+          }
+          .programmes-catalogue-revised .catalogue-enquire:hover {
+            text-decoration: underline;
+          }
+          @media (max-width: 760px) {
+            .programmes-catalogue-revised .programme-grid {
+              grid-template-columns: 1fr;
+              gap: 1.2rem;
+            }
+            .programmes-catalogue-revised .program-image-wrap,
+            .programmes-catalogue-revised .catalogue-placeholder {
+              aspect-ratio: 4 / 3;
+            }
+          }
+        </style>
+        <div class="container">
+          <div class="programmes-intro">
+            <div class="programmes-intro-left">
+              <div class="programme-section-number"><span>01</span><i></i></div>
+              <div>
+                <span class="programmes-eyebrow"
+                  >THE FULL PROGRAMME CATALOGUE</span
+                >
+                <h2>Programmes designed<br />for <em>your journey.</em></h2>
+              </div>
+            </div>
+            <div class="programmes-intro-right">
+              <p>
+                Explore the complete programme catalogue across children and
+                young people, relationships and women, professional growth,
+                wellbeing and later life.
+              </p>
+              <span class="intro-note">Learn · Reflect · Grow · Flourish</span>
+            </div>
+          </div>
+
+          <div class="catalogue-category">
+            <div class="category-heading">
+              <div class="category-heading-left">
+                <span class="category-number">01</span>
+                <div>
+                  <span class="category-eyebrow"
+                    >CHILDREN &amp; YOUNG PEOPLE</span
+                  >
+                  <h3>Strong Roots. <em>Brave Wings.</em></h3>
+                </div>
+              </div>
+            </div>
+            <div class="programme-grid">
+              <article class="premium-program-card">
+                <div class="program-image-wrap">
+                  <img
+                    src="assets/images/programme-posters/shining-stars-poster.jpeg"
+                    alt="Shining Stars™ original programme poster"
+                    class="program-image"
+                    loading="lazy"
+                  />
+                  <div class="program-audience">
+                    CHILDREN &amp; YOUNG PEOPLE
+                  </div>
+                </div>
+                <div class="program-card-content">
+                  <div class="program-title-line">
+                    <span class="program-mini-label"
+                      >CHILDREN &amp; YOUNG PEOPLE</span
+                    >
+                    <span class="program-arrow-top" aria-hidden="true">↗</span>
+                  </div>
+                  <h4>Shining Stars™</h4>
+                  <p>
+                    A programme for children to explore strengths, confidence
+                    and personal growth.
+                  </p>
+                  <div class="program-meta">
+                    <span><b>Category</b>CHILDREN &amp; YOUNG PEOPLE</span>
+                    <span><b>Availability</b>Enquire for current details</span>
+                  </div>
+                  <a
+                    class="catalogue-enquire"
+                    href="shining-stars.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Enquire about this programme
+                    <span aria-hidden="true">→</span></a
+                  >
+                </div>
+              </article>
+
+              <article class="premium-program-card">
+                <div class="program-image-wrap">
+                  <img
+                    src="assets/images/programme-posters/confident-roots-poster.jpeg"
+                    alt="Confident Roots™ original programme poster"
+                    class="program-image"
+                    loading="lazy"
+                  />
+                  <div class="program-audience">
+                    CHILDREN &amp; YOUNG PEOPLE
+                  </div>
+                </div>
+                <div class="program-card-content">
+                  <div class="program-title-line">
+                    <span class="program-mini-label"
+                      >CHILDREN &amp; YOUNG PEOPLE</span
+                    >
+                    <span class="program-arrow-top" aria-hidden="true">↗</span>
+                  </div>
+                  <h4>Confident Roots™</h4>
+                  <p>
+                    A developmental programme focused on confidence, emotional
+                    awareness and everyday life skills.
+                  </p>
+                  <div class="program-meta">
+                    <span><b>Category</b>CHILDREN &amp; YOUNG PEOPLE</span>
+                    <span><b>Availability</b>Enquire for current details</span>
+                  </div>
+                  <a
+                    class="catalogue-enquire"
+                    href="confident-roots.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Enquire about this programme
+                    <span aria-hidden="true">→</span></a
+                  >
+                </div>
+              </article>
+
+              <article class="premium-program-card">
+                <div class="program-image-wrap">
+                  <img
+                    src="assets/images/programme-posters/roots-to-wings-poster.jpeg"
+                    alt="Roots to Wings™ original programme poster"
+                    class="program-image"
+                    loading="lazy"
+                  />
+                  <div class="program-audience">
+                    CHILDREN &amp; YOUNG PEOPLE
+                  </div>
+                </div>
+                <div class="program-card-content">
+                  <div class="program-title-line">
+                    <span class="program-mini-label"
+                      >CHILDREN &amp; YOUNG PEOPLE</span
+                    >
+                    <span class="program-arrow-top" aria-hidden="true">↗</span>
+                  </div>
+                  <h4>Roots to Wings™</h4>
+                  <p>
+                    A growth journey supporting young people as they build
+                    foundations for the next stage of life.
+                  </p>
+                  <div class="program-meta">
+                    <span><b>Category</b>CHILDREN &amp; YOUNG PEOPLE</span>
+                    <span><b>Availability</b>Enquire for current details</span>
+                  </div>
+                  <a
+                    class="catalogue-enquire"
+                    href="roots-to-wings.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Enquire about this programme
+                    <span aria-hidden="true">→</span></a
+                  >
+                </div>
+              </article>
+
+              <article class="premium-program-card">
+                <div class="program-image-wrap">
+                  <img
+                    src="assets/images/programme-posters/design-your-life-poster.jpeg"
+                    alt="Design Your Life™ original programme poster"
+                    class="program-image"
+                    loading="lazy"
+                  />
+                  <div class="program-audience">YOUNG PEOPLE</div>
+                </div>
+                <div class="program-card-content">
+                  <div class="program-title-line">
+                    <span class="program-mini-label"
+                      >CHILDREN &amp; YOUNG PEOPLE</span
+                    >
+                    <span class="program-arrow-top" aria-hidden="true">↗</span>
+                  </div>
+                  <h4>Design Your Life™</h4>
+                  <p>
+                    A programme for young people to reflect on direction, goals
+                    and future possibilities.
+                  </p>
+                  <div class="program-meta">
+                    <span><b>Category</b>CHILDREN &amp; YOUNG PEOPLE</span>
+                    <span><b>Availability</b>Enquire for current details</span>
+                  </div>
+                  <a
+                    class="catalogue-enquire"
+                    href="design-your-life.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Enquire about this programme
+                    <span aria-hidden="true">→</span></a
+                  >
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="catalogue-category">
+            <div class="category-heading">
+              <div class="category-heading-left">
+                <span class="category-number">02</span>
+                <div>
+                  <span class="category-eyebrow"
+                    >PARENTING, RELATIONSHIPS &amp; WOMEN</span
+                  >
+                  <h3>Stronger Bonds. <em>Deeper Understanding.</em></h3>
+                </div>
+              </div>
+            </div>
+            <div class="programme-grid">
+              <article class="premium-program-card">
+                <div class="program-image-wrap">
+                  <img
+                    src="assets/images/programme-posters/generation-bridge-poster.jpeg"
+                    alt="Generation Bridge™ original programme poster"
+                    class="program-image"
+                    loading="lazy"
+                  />
+                  <div class="program-audience">FAMILIES &amp; GENERATIONS</div>
+                </div>
+                <div class="program-card-content">
+                  <div class="program-title-line">
+                    <span class="program-mini-label"
+                      >PARENTING, RELATIONSHIPS &amp; WOMEN</span
+                    >
+                    <span class="program-arrow-top" aria-hidden="true">↗</span>
+                  </div>
+                  <h4>Generation Bridge™</h4>
+                  <p>
+                    A programme exploring connection and understanding across
+                    generations.
+                  </p>
+                  <div class="program-meta">
+                    <span
+                      ><b>Category</b>PARENTING, RELATIONSHIPS &amp; WOMEN</span
+                    >
+                    <span><b>Availability</b>Enquire for current details</span>
+                  </div>
+                  <a
+                    class="catalogue-enquire"
+                    href="generation-bridge.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Enquire about this programme
+                    <span aria-hidden="true">→</span></a
+                  >
+                </div>
+              </article>
+
+              <article class="premium-program-card">
+                <div class="program-image-wrap">
+                  <img
+                    src="assets/images/programme-posters/homecoming-poster.jpeg"
+                    alt="HOMEcoming™ original programme poster"
+                    class="program-image"
+                    loading="lazy"
+                  />
+                  <div class="program-audience">WOMEN</div>
+                </div>
+                <div class="program-card-content">
+                  <div class="program-title-line">
+                    <span class="program-mini-label"
+                      >PARENTING, RELATIONSHIPS &amp; WOMEN</span
+                    >
+                    <span class="program-arrow-top" aria-hidden="true">↗</span>
+                  </div>
+                  <h4>HOMEcoming™</h4>
+                  <p>
+                    A reflective journey for women centred on reconnecting with
+                    self and personal needs.
+                  </p>
+                  <div class="program-meta">
+                    <span
+                      ><b>Category</b>PARENTING, RELATIONSHIPS &amp; WOMEN</span
+                    >
+                    <span><b>Availability</b>Enquire for current details</span>
+                  </div>
+                  <a
+                    class="catalogue-enquire"
+                    href="homecoming.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Enquire about this programme
+                    <span aria-hidden="true">→</span></a
+                  >
+                </div>
+              </article>
+             
+
+              <article class="premium-program-card">
+                <div class="program-image-wrap">
+                  <img
+                    src="assets/images/programme-posters/heartcode-poster.jpeg"
+                    alt="HeartCode™ original programme poster"
+                    class="program-image"
+                    loading="lazy"
+                  />
+                  <div class="program-audience">RELATIONSHIPS</div>
+                </div>
+                <div class="program-card-content">
+                  <div class="program-title-line">
+                    <span class="program-mini-label"
+                      >PARENTING, RELATIONSHIPS &amp; WOMEN</span
+                    >
+                    <span class="program-arrow-top" aria-hidden="true">↗</span>
+                  </div>
+                  <h4>HeartCode™</h4>
+                  <p>
+                    A programme focused on understanding relationship patterns
+                    and strengthening connection.
+                  </p>
+                  <div class="program-meta">
+                    <span
+                      ><b>Category</b>PARENTING, RELATIONSHIPS &amp; WOMEN</span
+                    >
+                    <span><b>Availability</b>Enquire for current details</span>
+                  </div>
+                  <a
+                    class="catalogue-enquire"
+                    href="heartcode.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Enquire about this programme
+                    <span aria-hidden="true">→</span></a
+                  >
+                </div>
+              </article>
+
+              <article class="premium-program-card">
+                <div class="program-image-wrap">
+                  <img
+                    src="assets/images/programme-posters/advanced-relationship-mastery-poster.jpeg"
+                    alt="Advanced Relationship Mastery™ original programme poster"
+                    class="program-image"
+                    loading="lazy"
+                  />
+                  <div class="program-audience">RELATIONSHIPS</div>
+                </div>
+                <div class="program-card-content">
+                  <div class="program-title-line">
+                    <span class="program-mini-label"
+                      >PARENTING, RELATIONSHIPS &amp; WOMEN</span
+                    >
+                    <span class="program-arrow-top" aria-hidden="true">↗</span>
+                  </div>
+                  <h4>Advanced Relationship Mastery™</h4>
+                  <p>
+                    A deeper learning journey for relationship awareness and
+                    communication.
+                  </p>
+                  <div class="program-meta">
+                    <span
+                      ><b>Category</b>PARENTING, RELATIONSHIPS &amp; WOMEN</span
+                    >
+                    <span><b>Availability</b>Enquire for current details</span>
+                  </div>
+                  <a
+                    class="catalogue-enquire"
+                    href="advanced-relationship-mastery.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Enquire about this programme
+                    <span aria-hidden="true">→</span></a
+                  >
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div
+            class="catalogue-category career-guidance-intro"
+            id="career-guidance-development"
+          >
+            <div class="category-heading">
+              <div class="category-heading-left">
+                <span class="category-number">03</span>
+                <div>
+                  <span class="category-eyebrow"
+                    >CAREER GUIDANCE &amp; DEVELOPMENT</span
+                  >
+                  <h3>
+                    Explore Possibilities. <em>Choose Your Direction.</em>
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <article class="premium-program-card career-guidance-feature">
+              <div class="program-image-wrap">
+                <img
+                  src="assets/images/programme-posters/career-guidance-development-poster.jpeg"
+                  alt="Career Guidance &amp; Development programme overview poster"
+                  class="program-image"
+                  loading="lazy"
+                />
+              </div>
+              <div class="program-card-content">
+                <h4>Career Guidance &amp; Development</h4>
+                <p>
+                  An umbrella pathway for exploring career options,
+                  understanding personal strengths and considering informed
+                  educational or professional choices.
+                </p>
+                <div class="program-meta">
+                  <span><b>Category</b>CAREER GUIDANCE &amp; DEVELOPMENT</span>
+                  <span><b>Availability</b>Enquire for current details</span>
+                </div>
+                <a
+                  class="catalogue-enquire"
+                  href="career-guidance-development.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Enquire about career guidance
+                  <span aria-hidden="true">→</span></a
+                >
+              </div>
+            </article>
+          </div>
+
+          <div class="catalogue-category">
+            <div class="category-heading">
+              <div class="category-heading-left">
+                <span class="category-number">03</span>
+                <div>
+                  <span class="category-eyebrow"
+                    >CLARITY, CAREER &amp; PROFESSIONAL GROWTH</span
+                  >
+                  <h3>Find Direction. <em>Move with Purpose.</em></h3>
+                </div>
+              </div>
+            </div>
+            <div class="programme-grid">
+              <article class="premium-program-card">
+                <div class="program-image-wrap">
+                  <img
+                    src="assets/images/programme-posters/the-clarity-shift-poster.jpeg"
+                    alt="THE CLARITY SHIFT™ original programme poster"
+                    class="program-image"
+                    loading="lazy"
+                  />
+                  <div class="program-audience">
+                    CLARITY &amp; PERSONAL GROWTH
+                  </div>
+                </div>
+                <div class="program-card-content">
+                  <div class="program-title-line">
+                    <span class="program-mini-label"
+                      >CLARITY, CAREER &amp; PROFESSIONAL GROWTH</span
+                    >
+                    <span class="program-arrow-top" aria-hidden="true">↗</span>
+                  </div>
+                  <h4>THE CLARITY SHIFT™</h4>
+                  <p>
+                    A guided programme for exploring clarity, priorities and
+                    next steps.
+                  </p>
+                  <div class="program-meta">
+                    <span
+                      ><b>Category</b>CLARITY, CAREER &amp; PROFESSIONAL
+                      GROWTH</span
+                    >
+                    <span><b>Availability</b>Enquire for current details</span>
+                  </div>
+                  <a
+                    class="catalogue-enquire"
+                    href="clarity-shift.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Enquire about this programme
+                    <span aria-hidden="true">→</span></a
+                  >
+                </div>
+              </article>
+
+              <article class="premium-program-card">
+                <div class="program-image-wrap">
+                  <img
+                    src="assets/images/programme-posters/career-compass-basic-poster.jpeg"
+                    alt="Career Compass™ original programme poster"
+                    class="program-image"
+                    loading="lazy"
+                  />
+                  <div class="program-audience">CAREER DEVELOPMENT</div>
+                </div>
+                <div class="program-card-content">
+                  <div class="program-title-line">
+                    <span class="program-mini-label"
+                      >CLARITY, CAREER &amp; PROFESSIONAL GROWTH</span
+                    >
+                    <span class="program-arrow-top" aria-hidden="true">↗</span>
+                  </div>
+                  <h4>Career Compass™</h4>
+                  <p>
+                    A career-focused programme to explore direction, strengths
+                    and possible pathways.
+                  </p>
+                  <div class="program-meta">
+                    <span
+                      ><b>Category</b>CLARITY, CAREER &amp; PROFESSIONAL
+                      GROWTH</span
+                    >
+                    <span><b>Availability</b>Enquire for current details</span>
+                  </div>
+                  <a class="catalogue-enquire" href="career-compass.html"
+                    >View programme details <span aria-hidden="true">→</span></a
+                  >
+                </div>
+              </article>
+
+              <article class="premium-program-card">
+                <div class="program-image-wrap">
+                  <img
+                    src="assets/images/programme-posters/career-compass-advanced-poster.jpeg"
+                    alt="Career Compass Advanced programme poster"
+                    class="program-image"
+                    loading="lazy"
+                  />
+                  <div class="program-audience">CAREER DEVELOPMENT</div>
+                </div>
+                <div class="program-card-content">
+                  <div class="program-title-line">
+                    <span class="program-mini-label"
+                      >CAREER GUIDANCE &amp; DEVELOPMENT</span
+                    >
+                    <span class="program-arrow-top" aria-hidden="true">↗</span>
+                  </div>
+                  <h4>Career Compass Advanced</h4>
+                  <p>
+                    An advanced career-exploration option. Enquire to understand
+                    its focus, suitability and current availability.
+                  </p>
+                  <div class="program-meta">
+                    <span
+                      ><b>Category</b>CAREER GUIDANCE &amp; DEVELOPMENT</span
+                    >
+                    <span><b>Availability</b>Enquire for current details</span>
+                  </div>
+                  <a
+                    class="catalogue-enquire"
+                    href="career-compass-advanced.html"
+                    >View programme details <span aria-hidden="true">→</span></a
+                  >
+                </div>
+              </article>
+
+              <article class="premium-program-card">
+                <div class="program-image-wrap">
+                  <img
+                    src="assets/images/programme-posters/career-crossroads-poster.jpeg"
+                    alt="Career Crossroads programme poster"
+                    class="program-image"
+                    loading="lazy"
+                  />
+                  <div class="program-audience">CAREER TRANSITIONS</div>
+                </div>
+                <div class="program-card-content">
+                  <div class="program-title-line">
+                    <span class="program-mini-label"
+                      >CAREER GUIDANCE &amp; DEVELOPMENT</span
+                    >
+                    <span class="program-arrow-top" aria-hidden="true">↗</span>
+                  </div>
+                  <h4>Career Crossroads</h4>
+                  <p>
+                    A guided space to explore career crossroads and consider
+                    possible next steps. Enquire for programme details.
+                  </p>
+                  <div class="program-meta">
+                    <span
+                      ><b>Category</b>CAREER GUIDANCE &amp; DEVELOPMENT</span
+                    >
+                    <span><b>Availability</b>Enquire for current details</span>
+                  </div>
+                  <a class="catalogue-enquire" href="career-crossroads.html"
+                    >View programme details <span aria-hidden="true">→</span></a
+                  >
+                </div>
+              </article>
+              <article class="premium-program-card">
+                <div class="program-image-wrap">
+                  <img
+                    src="assets/images/programme-posters/vision-board-workshop-poster.jpeg"
+                    alt="Vision Board Workshop programme poster"
+                    class="program-image"
+                    loading="lazy"
+                  />
+                  <div class="program-audience">
+                    GOALS &amp; PERSONAL DIRECTION
+                  </div>
+                </div>
+                <div class="program-card-content">
+                  <div class="program-title-line">
+                    <span class="program-mini-label"
+                      >VISION &amp; GOAL SETTING</span
+                    >
+                    <span class="program-arrow-top" aria-hidden="true">↗</span>
+                  </div>
+                  <h4>Vision Board Workshop</h4>
+                  <p>
+                    A workshop to reflect on personal priorities and organise
+                    goals visually. Enquire for format and availability.
+                  </p>
+                  <div class="program-meta">
+                    <span><b>Category</b>VISION &amp; GOAL SETTING</span>
+                    <span><b>Availability</b>Enquire for current details</span>
+                  </div>
+                  <a class="catalogue-enquire" href="vision-board-workshop.html"
+                    >View programme details <span aria-hidden="true">→</span></a
+                  >
+                </div>
+              </article>
+
+              <article class="premium-program-card">
+                <div class="catalogue-placeholder">
+                  <div>
+                    Vision to Victory™<small
+                      >CLARITY, CAREER &amp; PROFESSIONAL GROWTH</small
+                    >
+                  </div>
+                </div>
+                <div class="program-card-content">
+                  <div class="program-title-line">
+                    <span class="program-mini-label"
+                      >CLARITY, CAREER &amp; PROFESSIONAL GROWTH</span
+                    >
+                    <span class="program-arrow-top" aria-hidden="true">↗</span>
+                  </div>
+                  <h4>Vision to Victory™</h4>
+                  <p>
+                    A programme focused on turning a vision into purposeful next
+                    steps. Enquire for details.
+                  </p>
+                  <div class="program-meta">
+                    <span
+                      ><b>Category</b>CLARITY, CAREER &amp; PROFESSIONAL
+                      GROWTH</span
+                    >
+                    <span><b>Availability</b>Enquire for current details</span>
+                  </div>
+                  <a
+                    class="catalogue-enquire"
+                    href="vision-to-victory.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Enquire about this programme
+                    <span aria-hidden="true">→</span></a
+                  >
+                </div>
+              </article>
+
+              <article class="premium-program-card">
+                <div class="program-image-wrap">
+                  <img
+                    src="assets/images/programme-posters/imposter-to-impact-poster.jpeg"
+                    alt="Imposter to Impact™ original programme poster"
+                    class="program-image"
+                    loading="lazy"
+                  />
+                  <div class="program-audience">PROFESSIONAL GROWTH</div>
+                </div>
+                <div class="program-card-content">
+                  <div class="program-title-line">
+                    <span class="program-mini-label"
+                      >CLARITY, CAREER &amp; PROFESSIONAL GROWTH</span
+                    >
+                    <span class="program-arrow-top" aria-hidden="true">↗</span>
+                  </div>
+                  <h4>Imposter to Impact™</h4>
+                  <p>
+                    A programme for professionals exploring self-belief,
+                    confidence and meaningful contribution.
+                  </p>
+                  <div class="program-meta">
+                    <span
+                      ><b>Category</b>CLARITY, CAREER &amp; PROFESSIONAL
+                      GROWTH</span
+                    >
+                    <span><b>Availability</b>Enquire for current details</span>
+                  </div>
+                  <a
+                    class="catalogue-enquire"
+                    href="imposter-to-impact.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Enquire about this programme
+                    <span aria-hidden="true">→</span></a
+                  >
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="catalogue-category">
+            <div class="category-heading">
+              <div class="category-heading-left">
+                <span class="category-number">04</span>
+                <div>
+                  <span class="category-eyebrow"
+                    >WELLBEING, HABITS &amp; LATER LIFE</span
+                  >
+                  <h3>Create Space for <em>What Matters.</em></h3>
+                </div>
+              </div>
+            </div>
+            <div class="programme-grid">
+              <article class="premium-program-card">
+                <div class="program-image-wrap">
+                  <img
+                    src="assets/images/programme-posters/time-by-design-poster.jpeg"
+                    alt="Time by Design™ original programme poster"
+                    class="program-image"
+                    loading="lazy"
+                  />
+                  <div class="program-audience">TIME &amp; HABITS</div>
+                </div>
+                <div class="program-card-content">
+                  <div class="program-title-line">
+                    <span class="program-mini-label"
+                      >WELLBEING, HABITS &amp; LATER LIFE</span
+                    >
+                    <span class="program-arrow-top" aria-hidden="true">↗</span>
+                  </div>
+                  <h4>Time by Design™</h4>
+                  <p>
+                    A programme for reflecting on time, priorities and everyday
+                    habits.
+                  </p>
+                  <div class="program-meta">
+                    <span
+                      ><b>Category</b>WELLBEING, HABITS &amp; LATER LIFE</span
+                    >
+                    <span><b>Availability</b>Enquire for current details</span>
+                  </div>
+                  <a
+                    class="catalogue-enquire"
+                    href="time-by-design.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Enquire about this programme
+                    <span aria-hidden="true">→</span></a
+                  >
+                </div>
+              </article>
+
+              <article class="premium-program-card">
+                <div class="program-image-wrap">
+                  <img
+                    src="assets/images/programme-posters/mind-reboot-poster.jpeg"
+                    alt="Mind Reboot™ original programme poster"
+                    class="program-image"
+                    loading="lazy"
+                  />
+                  <div class="program-audience">WELLBEING</div>
+                </div>
+                <div class="program-card-content">
+                  <div class="program-title-line">
+                    <span class="program-mini-label"
+                      >WELLBEING, HABITS &amp; LATER LIFE</span
+                    >
+                    <span class="program-arrow-top" aria-hidden="true">↗</span>
+                  </div>
+                  <h4>Mind Reboot™</h4>
+                  <p>
+                    A programme focused on reflection, mental reset practices
+                    and wellbeing habits.
+                  </p>
+                  <div class="program-meta">
+                    <span
+                      ><b>Category</b>WELLBEING, HABITS &amp; LATER LIFE</span
+                    >
+                    <span><b>Availability</b>Enquire for current details</span>
+                  </div>
+                  <a
+                    class="catalogue-enquire"
+                    href="mind-reboot.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Enquire about this programme
+                    <span aria-hidden="true">→</span></a
+                  >
+                </div>
+              </article>
+
+              <article class="premium-program-card">
+                <div class="catalogue-placeholder">
+                  <div>
+                    Rise &amp; Thrive™<small
+                      >WELLBEING, HABITS &amp; LATER LIFE</small
+                    >
+                  </div>
+                </div>
+                <div class="program-card-content">
+                  <div class="program-title-line">
+                    <span class="program-mini-label"
+                      >WELLBEING, HABITS &amp; LATER LIFE</span
+                    >
+                    <span class="program-arrow-top" aria-hidden="true">↗</span>
+                  </div>
+                  <h4>Rise &amp; Thrive™</h4>
+                  <p>
+                    A personal-growth programme. Enquire for details about its
+                    format and current availability.
+                  </p>
+                  <div class="program-meta">
+                    <span
+                      ><b>Category</b>WELLBEING, HABITS &amp; LATER LIFE</span
+                    >
+                    <span><b>Availability</b>Enquire for current details</span>
+                  </div>
+                  <a
+                    class="catalogue-enquire"
+                    href="rise-and-thrive.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Enquire about this programme
+                    <span aria-hidden="true">→</span></a
+                  >
+                </div>
+              </article>
+
+              <article class="premium-program-card">
+                <div class="program-image-wrap">
+                  <img
+                    src="assets/images/programme-posters/golden-horizons-poster.jpeg"
+                    alt="Golden Horizons™ original programme poster"
+                    class="program-image"
+                    loading="lazy"
+                  />
+
+                  <div class="program-audience">LATER-LIFE WELLBEING</div>
+                </div>
+                <div class="program-card-content">
+                  <div class="program-title-line">
+                    <span class="program-mini-label"
+                      >WELLBEING, HABITS &amp; LATER LIFE</span
+                    >
+                    <span class="program-arrow-top" aria-hidden="true">↗</span>
+                  </div>
+                  <h4>Golden Horizons™</h4>
+                  <p>
+                    A programme exploring wellbeing, meaning and possibilities
+                    in later life.
+                  </p>
+                  <div class="program-meta">
+                    <span
+                      ><b>Category</b>WELLBEING, HABITS &amp; LATER LIFE</span
+                    >
+                    <span><b>Availability</b>Enquire for current details</span>
+                  </div>
+                  <a
+                    class="catalogue-enquire"
+                    href="golden-horizons.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Enquire about this programme
+                    <span aria-hidden="true">→</span></a
+                  >
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+     MASTERCLASSES & ACTIVATION JOURNEYS
+========================================================== -->
+
+      <section class="masterclass-section" id="masterclasses">
+        <div class="container">
+          <div class="section-heading">
+            <div class="section-eyebrow">SHORTER EXPERIENCES</div>
+
+            <h2>
+              Start with a
+              <br />
+
+              <em>focused experience.</em>
+            </h2>
+
+            <p>
+              Masterclasses and Activation Journeys offer focused opportunities
+              for reflection, practice and meaningful movement before stepping
+              into a deeper programme.
+            </p>
+          </div>
+
+          <!-- MASTERCLASS GRID -->
+
+          <div class="masterclass-grid">
+            <article class="masterclass-card">
+              <span class="masterclass-number"> 00 </span>
+              <span class="masterclass-type"> WORKSHOP </span>
+              <h3>
+                <a href="vision-board-workshop.html"
+                  >Vision Board<br />Workshop</a
+                >
+              </h3>
+              <a
+                class="masterclass-explore-link"
+                href="contact.html#contact"
+                aria-label="Enquire about Vision Board Workshop"
+                >Enquire <span>→</span></a
+              >
+              <div class="masterclass-shape"></div>
+            </article>
+
+            <article class="masterclass-card">
+              <span class="masterclass-number"> 01 </span>
+
+              <span class="masterclass-type"> MASTERCLASS </span>
+
+              <h3>
+                <a href="vision-activation.html"
+                  >Vision
+                  <br />
+                  Activation™</a
+                >
+              </h3>
+              <a
+                class="masterclass-explore-link"
+                href="vision-activation.html"
+                aria-label="Explore programme"
+                >Explore programme <span>→</span></a
+              >
+
+              <div class="masterclass-shape"></div>
+            </article>
+
+            <article class="masterclass-card">
+              <span class="masterclass-number"> 02 </span>
+
+              <span class="masterclass-type"> MASTERCLASS </span>
+
+              <h3>
+                <a href="design-your-future.html"
+                  >Design
+                  <br />
+                  Your Future™</a
+                >
+              </h3>
+              <a
+                class="masterclass-explore-link"
+                href="design-your-future.html"
+                aria-label="Explore programme"
+                >Explore programme <span>→</span></a
+              >
+
+              <div class="masterclass-shape"></div>
+            </article>
+
+            <article class="masterclass-card">
+              <span class="masterclass-number"> 03 </span>
+
+              <span class="masterclass-type"> MASTERCLASS </span>
+
+              <h3>
+                <a href="homecoming-within.html"
+                  >HOMEcoming
+                  <br />
+                  Within™</a
+                >
+              </h3>
+              <a
+                class="masterclass-explore-link"
+                href="homecoming-within.html"
+                aria-label="Explore programme"
+                >Explore programme <span>→</span></a
+              >
+
+              <div class="masterclass-shape"></div>
+            </article>
+
+            <article class="masterclass-card">
+              <span class="masterclass-number"> 04 </span>
+
+              <span class="masterclass-type"> MASTERCLASS </span>
+
+              <h3>
+                <a href="family-connection.html"
+                  >Family
+                  <br />
+                  Connection™</a
+                >
+              </h3>
+              <a
+                class="masterclass-explore-link"
+                href="family-connection.html"
+                aria-label="Explore programme"
+                >Explore programme <span>→</span></a
+              >
+
+              <div class="masterclass-shape"></div>
+            </article>
+
+            <article class="masterclass-card">
+              <span class="masterclass-number"> 05 </span>
+
+              <span class="masterclass-type"> MASTERCLASS </span>
+
+              <h3>
+                <a href="rise-and-thrive.html"
+                  >Rise
+                  <br />
+                  & Thrive™</a
+                >
+              </h3>
+              <a
+                class="masterclass-explore-link"
+                href="rise-and-thrive.html"
+                aria-label="Explore programme"
+                >Explore programme <span>→</span></a
+              >
+
+              <div class="masterclass-shape"></div>
+            </article>
+
+            <article class="masterclass-card">
+              <span class="masterclass-number"> 06 </span>
+
+              <span class="masterclass-type"> MASTERCLASS </span>
+
+              <h3>
+                <a href="imposter-to-impact.html"
+                  >Imposter
+                  <br />
+                  to Impact™</a
+                >
+              </h3>
+              <a
+                class="masterclass-explore-link"
+                href="imposter-to-impact.html"
+                aria-label="Explore programme"
+                >Explore programme <span>→</span></a
+              >
+
+              <div class="masterclass-shape"></div>
+            </article>
+
+            <article class="masterclass-card">
+              <span class="masterclass-number"> 07 </span>
+
+              <span class="masterclass-type"> ACTIVATION JOURNEY </span>
+
+              <h3>
+                21-Day
+                <br />
+                Activation
+              </h3>
+              <a
+                class="masterclass-explore-link"
+                href="21-day-activation.html"
+                aria-label="Explore programme"
+                >Explore programme <span>→</span></a
+              >
+              <div class="masterclass-shape"></div>
+            </article>
+
+            <article class="masterclass-card">
+              <span class="masterclass-number">09</span>
+              <span class="masterclass-type">THINKING SKILLS</span>
+              <h3><a href="mindlens.html">MindLens™</a></h3>
+
+              <a class="masterclass-explore-link" href="mindlens.html"
+                >Explore programme <span>→</span></a
+              >
+
+              <div class="masterclass-shape"></div>
+            </article>
+
+            <article class="masterclass-card masterclass-card-dark">
+              <span class="masterclass-number"> 08 </span>
+
+              <span class="masterclass-type"> PRACTICE RHYTHM </span>
+
+              <h3>
+                Learn.
+                <br />
+                Reflect.
+                <br />
+                Rewire.
+              </h3>
+
+              <div class="masterclass-shape"></div>
+            </article>
+          </div>
+
+          <!-- PRACTICE RHYTHM -->
+
+          <div class="practice-rhythm">
+            <span>Learn</span>
+
+            <i>→</i>
+
+            <span>Reflect</span>
+
+            <i>→</i>
+
+            <span>Release</span>
+
+            <i>→</i>
+
+            <span>Rewire</span>
+
+            <i>→</i>
+
+            <span>Act</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+     HOW TO CHOOSE
+========================================================== -->
+
+      <section class="choose-program-section">
+        <div class="container">
+          <div class="choose-program-grid">
+            <div class="choose-program-content">
+              <div class="section-eyebrow">NOT SURE WHERE TO BEGIN?</div>
+
+              <h2>
+                You don't have to
+                <br />
+
+                <em>figure it out alone.</em>
+              </h2>
+
+              <p>
+                Not sure which service or programme is right for you? Share a
+                little about what you are seeking, and let us help you identify
+                the most suitable pathway.
+              </p>
+
+              <a href="contact.html" class="btn-primary">
+                Book a Clarity Call
+              </a>
+            </div>
+
+            <div class="choose-program-steps">
+              <div class="choose-step">
+                <span> 01 </span>
+
+                <div>
+                  <h3>Share Where You Are</h3>
+
+                  <p>
+                    Tell us a little about what you are navigating right now.
+                  </p>
+                </div>
+              </div>
+
+              <div class="choose-step">
+                <span> 02 </span>
+
+                <div>
+                  <h3>Discover Your Path</h3>
+
+                  <p>
+                    Together, identify the experience that best fits your needs.
+                  </p>
+                </div>
+              </div>
+
+              <div class="choose-step">
+                <span> 03 </span>
+
+                <div>
+                  <h3>Take the Next Step</h3>
+
+                  <p>
+                    Begin with the programme, service or experience that feels
+                    right for you.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+     FINAL CTA
+========================================================== -->
+
+      <section class="programs-final-cta">
+        <div class="container">
+          <div class="programs-final-cta-inner">
+            <div class="section-eyebrow">BEGIN YOUR JOURNEY</div>
+
+            <h2>
+              Begin with a
+              <br />
+
+              <em>Clarity Call.</em>
+            </h2>
+
+            <p>
+              Not sure which service or programme is right for you? Share a
+              little about what you are seeking, and let us help you identify
+              the most suitable pathway.
+            </p>
+
+            <a href="contact.html" class="btn-light">
+              Book a Clarity Call
+              <span>→</span>
+            </a>
+
+            <small>
+              The complimentary clarity call is a brief discovery conversation,
+              not a counselling session.
+            </small>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- =========================================================
+     FOOTER
+========================================================== -->
+
+    <footer class="site-footer">
+      <!-- Decorative background -->
+      <div class="footer-glow footer-glow-one"></div>
+      <div class="footer-glow footer-glow-two"></div>
+
+      <div class="footer-leaf footer-leaf-top">⌁</div>
+      <div class="footer-leaf footer-leaf-bottom">⌁</div>
+
+      <div class="footer-container">
+        <!-- Main Footer -->
+        <div class="footer-main">
+          <!-- Brand -->
+          <div class="footer-brand">
+            <a href="#" class="footer-logo">
+              <img src="assets/images/logo.png" alt="THE MANOMANTRA" />
+            </a>
+
+            <p class="brand-description">
+              A space to understand yourself, grow with awareness, and create a
+              life of greater meaning and serenity.
+            </p>
+
+            <a href="#about" class="brand-link">
+              Discover THE MANOMANTRA
+              <span>→</span>
+            </a>
+          </div>
+
+          <!-- Explore -->
+          <div class="footer-column">
+            <span class="footer-label">EXPLORE</span>
+
+            <ul>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#support">Who We Support</a></li>
+              <li><a href="#programs">Programmes</a></li>
+              <li><a href="#journey">Your Journey</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Information -->
+          <div class="footer-column">
+            <span class="footer-label">INFORMATION</span>
+
+            <ul>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Use</a></li>
+              <li><a href="#">Cookie Policy</a></li>
+              <li><a href="#faq">FAQs</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div class="footer-column footer-contact">
+            <span class="footer-label">CONNECT</span>
+
+            <a href="tel:+917204378573" class="contact-item">
+              <span class="contact-icon">⌕</span>
+              <span>+91 7204378573</span>
+            </a>
+
+            <a href="mailto:amcoachsalini@gmail.com" class="contact-item">
+              <span class="contact-icon">@</span>
+              <span>amcoachsalini@gmail.com</span>
+            </a>
+
+            <p class="address">
+              THE MANOMANTRA<br />
+              Balaji Layout, Chokkanahalli,<br />
+              Bangalore, Karnataka, 560064
+            </p>
+          </div>
+        </div>
+
+        <!-- Brand Statement -->
+        <div class="footer-statement">
+          <span class="statement-line"></span>
+
+          <p>
+            Psychology <span>•</span> Coaching <span>•</span>
+            Conscious Learning
+          </p>
+
+          <span class="statement-line"></span>
+        </div>
+
+        <!-- Bottom -->
+        <div class="footer-bottom">
+          <div class="copyright">
+            © <span id="currentYear"></span>
+            THE MANOMANTRA. All rights reserved.
+          </div>
+
+          <div class="social-section">
+            <span>FOLLOW THE JOURNEY</span>
+
+            <div class="social-links">
+              <a href="#" aria-label="Instagram" class="social-link">
+                <span>i</span>
+              </a>
+
+              <a href="#" aria-label="Facebook" class="social-link">
+                <span>f</span>
+              </a>
+
+              <a href="#" aria-label="LinkedIn" class="social-link">
+                <span>in</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets/js/header.js"></script>
+    <script src="assets/js/footer.js"></script>
+    <script src="assets/js/programs.js"></script>
+  </body>
+</html>

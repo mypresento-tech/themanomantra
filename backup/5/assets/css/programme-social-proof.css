@@ -1,0 +1,76 @@
+/* Shared Manomantra rating and recommendation styling */
+.pd-social-proof {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 12px;
+  width: fit-content;
+  max-width: 100%;
+  margin: 24px 0 30px;
+  padding: 10px;
+  border: 1px solid rgba(184, 138, 27, .22);
+  border-radius: 24px;
+  background: #fffdf8;
+  box-shadow: 0 10px 28px rgba(65, 43, 23, .07);
+}
+.pd-social-proof .pd-proof-item {
+  display: flex;
+  flex: 1 1 210px;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  min-height: 68px;
+  padding: 13px 16px;
+  border: 1px solid transparent;
+  border-radius: 16px;
+}
+.pd-social-proof [data-rating-item] {
+  background: #fff1cc;
+  border-color: #f0d99b;
+}
+.pd-social-proof [data-recommendations-item] {
+  background: #eaf4e8;
+  border-color: #cfe2c9;
+}
+.pd-proof-stars {
+  color: #b88a1b;
+  letter-spacing: 2px;
+  font-size: 23px;
+  line-height: 1;
+  white-space: nowrap;
+}
+.pd-proof-people { font-size: 23px; line-height: 1; }
+.pd-proof-copy { display: flex; flex-direction: column; line-height: 1.35; }
+.pd-proof-number { color: #492d1c; font-size: 17px; font-weight: 700; }
+.pd-proof-caption { color: #746b63; font-size: 12px; }
+.pd-proof-divider { display: none; }
+.pd-social-proof [hidden] { display: none !important; }
+
+.program-social-proof {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin: 17px 0 18px;
+}
+.program-proof-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  padding: 10px 11px;
+  border: 1px solid transparent;
+  border-radius: 13px;
+  line-height: 1.3;
+}
+.program-proof-rating { background: #fff1cc; border-color: #f0d99b; }
+.program-proof-recommend { background: #eaf4e8; border-color: #cfe2c9; }
+.program-proof-stars { color: #b88a1b; font-size: 15px; letter-spacing: 1px; white-space: nowrap; }
+.program-proof-icon { font-size: 17px; flex: 0 0 auto; }
+.program-proof-text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.program-proof-main { color: #492d1c; font-size: 12px; font-weight: 700; }
+.program-proof-sub { color: #746b63; font-size: 10px; }
+@media (max-width: 600px) {
+  .pd-social-proof { width: 100%; gap: 8px; padding: 8px; border-radius: 20px; }
+  .pd-social-proof .pd-proof-item { flex-basis: 100%; }
+  .program-social-proof { grid-template-columns: 1fr; }
+}

@@ -3,7 +3,7 @@ const programmeData = {
   "advanced-relationship-mastery": {
     title: "Advanced Relationship Mastery™",
     category: "RELATIONSHIPS · COMMUNICATION · CONSCIOUS PARTNERSHIP",
-    image: "assets/images/advanced-relationship-mastery.jpeg",
+    image: "assets/images/programme-posters/advanced-relationship-mastery-poster-thumbnail.jpeg",
     alt: "Advanced Relationship Mastery programme",
     audience: "Primarily for married women",
     mode: "Guided Online Programme",

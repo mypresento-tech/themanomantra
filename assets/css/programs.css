@@ -26,7 +26,7 @@
   --programs-text: #243b50;
   --programs-muted: #64738a;
   --programs-ink: #2e2119;
-
+  --gold: #e9a900;
   --programs-border: rgba(75, 36, 17, 0.12);
 
   --programs-shadow: 0 18px 50px rgba(49, 33, 20, 0.08);
@@ -3047,11 +3047,37 @@ p {
   }
 }
 
-
 /* Programme page links: clear, accessible navigation to individual pages */
-.masterclass-card h3 a { color: inherit; text-decoration: none; }
-.masterclass-card h3 a:hover { color: var(--brown); }
-.masterclass-explore-link { position: relative; z-index: 2; display: inline-flex; align-items: center; gap: 8px; margin-top: 14px; color: var(--brown); font-size: 13px; font-weight: 700; text-decoration: none; }
-.masterclass-explore-link span { transition: transform .2s ease; }
-.masterclass-explore-link:hover span { transform: translateX(4px); }
-.masterclass-description { position: relative; z-index: 2; margin-top: 10px; color: var(--muted); font-size: 13px; line-height: 1.7; }
+.masterclass-card h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+.masterclass-card h3 a:hover {
+  color: var(--brown);
+}
+.masterclass-explore-link {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  color: var(--brown);
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.masterclass-explore-link span {
+  transition: transform 0.2s ease;
+}
+.masterclass-explore-link:hover span {
+  transform: translateX(4px);
+}
+.masterclass-description {
+  position: relative;
+  z-index: 2;
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}

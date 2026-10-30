@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Relationships Alchemy™ | The Manomantra</title>
+    <title>Relationships Alchemy™ | THE MANOMANTRA</title>
     <meta
       name="description"
       content="Relationships Alchemy™ helps couples and individuals preparing for committed partnership understand relationship patterns, communicate with awareness and build a shared vision."
@@ -24,8 +24,8 @@
   <body>
     <header class="site-header" id="siteHeader">
       <div class="container nav-wrap">
-        <a href="index.html" class="brand" aria-label="The Manomantra Home"
-          ><img src="assets/images/logo.png" alt="The Manomantra logo"
+        <a href="index.html" class="brand" aria-label="THE MANOMANTRA Home"
+          ><img src="assets/images/logo.png" alt="THE MANOMANTRA logo"
         /></a>
         <button
           class="menu-toggle"
@@ -354,7 +354,7 @@
             </h2>
             <p class="pd-feedback-intro">
               Every person’s journey is unique. We value honest reflections from
-              people who have taken part in The Manomantra’s programmes.
+              people who have taken part in THE MANOMANTRA’s programmes.
               Verified, permission-approved stories will be shared here as they
               become available.
             </p>
@@ -440,7 +440,7 @@
               <p>
                 Open the “Book Your Seat Now” panel to share your details and
                 proceed to the approved payment link. Confirm the current batch
-                dates and availability with The Manomantra.
+                dates and availability with THE MANOMANTRA.
               </p>
             </details>
             <details>
@@ -568,14 +568,14 @@
         </div>
         <fieldset class="booking-field booking-fieldset">
           <legend>
-            Are you already a member of The Manomantra? <span>*</span>
+            Are you already a member of THE MANOMANTRA? <span>*</span>
           </legend>
           <label class="booking-radio"
             ><input type="radio" name="memberStatus" value="Yes" required />
             Yes, I am a member</label
           ><label class="booking-radio"
             ><input type="radio" name="memberStatus" value="No" /> No, I am new
-            to The Manomantra</label
+            to THE MANOMANTRA</label
           >
         </fieldset>
         <div class="booking-field">
@@ -636,14 +636,14 @@
         <div class="footer-main">
           <div class="footer-brand">
             <a href="index.html" class="footer-logo"
-              ><img src="assets/images/logo.png" alt="The Manomantra"
+              ><img src="assets/images/logo.png" alt="THE MANOMANTRA"
             /></a>
             <p class="brand-description">
               A space to understand yourself, grow with awareness, and create a
               life of greater meaning and serenity.
             </p>
             <a href="about.html" class="brand-link"
-              >Discover The Manomantra <span>→</span></a
+              >Discover THE MANOMANTRA <span>→</span></a
             >
           </div>
           <div class="footer-column">
@@ -668,12 +668,12 @@
             <span class="footer-label">CONNECT</span
             ><a href="tel:+917204378573" class="contact-item"
               ><span class="contact-icon">⌕</span><span>+91 7204378573</span></a
-            ><a href="mailto:connect@themanomantra.com" class="contact-item"
+            ><a href="mailto:amcoachsalini@gmail.com" class="contact-item"
               ><span class="contact-icon">@</span
-              ><span>connect@themanomantra.com</span></a
+              ><span>amcoachsalini@gmail.com</span></a
             >
             <p class="address">
-              The Manomantra<br />Balaji Layout, Chokkanahalli,<br />Bangalore,
+              THE MANOMANTRA<br />Balaji Layout, Chokkanahalli,<br />Bangalore,
               Karnataka, 560064
             </p>
           </div>
@@ -687,7 +687,7 @@
         </div>
         <div class="footer-bottom">
           <div class="copyright">
-            © <span id="currentYear"></span> The Manomantra. All rights
+            © <span id="currentYear"></span> THE MANOMANTRA. All rights
             reserved.
           </div>
           <div class="social-section">
@@ -711,5 +711,48 @@
     <script src="assets/js/footer.js"></script>
     <script src="assets/js/programme-video.js" defer></script>
     <script src="assets/js/programme-reviews.js" defer></script>
-  </body>
+  
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const forms = [...document.querySelectorAll("form#bookingForm, form#registrationForm")];
+  forms.forEach((form) => {
+    if (form.dataset.apiBound === "true") return;
+    form.dataset.apiBound = "true";
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      if (!form.reportValidity()) return;
+      const button = form.querySelector('button[type="submit"],input[type="submit"]');
+      const original = button ? (button.textContent || button.value) : "";
+      if (button) { button.disabled = true; if (button.tagName === "INPUT") button.value = "Sending…"; else button.textContent = "Sending…"; }
+      let status = form.querySelector("[role='status']");
+      if (!status) {
+        status = document.createElement("p");
+        status.setAttribute("role", "status");
+        status.setAttribute("aria-live", "polite");
+        status.style.marginTop = "1rem";
+        form.appendChild(status);
+      }
+      status.textContent = "Sending your enquiry securely…";
+      const data = Object.fromEntries(new FormData(form).entries());
+      data.pageType = "programme";
+      data.programme = data.programme || document.querySelector("h1")?.textContent?.trim() || document.title;
+      try {
+        const response = await fetch("/api/contact", {
+          method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data)
+        });
+        const result = await response.json().catch(() => ({}));
+        if (!response.ok || !result.success) throw new Error(result.error || "Submission failed");
+        status.textContent = "Thank you for your enquiry. It has been submitted. THE MANOMANTRA will contact you regarding the appropriate next step.";
+        form.reset();
+      } catch {
+        status.textContent = "We couldn’t send your enquiry just now. Please contact THE MANOMANTRA on WhatsApp at +91 7204378573.";
+      } finally {
+        if (button) { button.disabled = false; if (button.tagName === "INPUT") button.value = original; else button.textContent = original; }
+      }
+    });
+  });
+});
+</script>
+
+</body>
 </html>

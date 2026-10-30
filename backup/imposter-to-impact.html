@@ -4,9 +4,9 @@
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>
-   Imposter to Impact&trade; | The Manomantra
+   Imposter to Impact&trade; | THE MANOMANTRA
   </title>
-  <meta content="Imposter to Impact&trade; is part of The Manomantra&rsquo;s Masterclasses and Activation Journeys. Confirm the programme focus and details with the team." name="description"/>
+  <meta content="Imposter to Impact&trade; is part of THE MANOMANTRA&rsquo;s Masterclasses and Activation Journeys. Confirm the programme focus and details with the team." name="description"/>
   <meta content="#fffaf0" name="theme-color"/>
   <link href="https://fonts.googleapis.com" rel="preconnect"/>
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -21,8 +21,8 @@
  <body>
   <header class="site-header" id="siteHeader">
    <div class="container nav-wrap">
-    <a aria-label="The Manomantra Home" class="brand" href="index.html">
-     <img alt="The Manomantra logo" src="assets/images/logo.png"/>
+    <a aria-label="THE MANOMANTRA Home" class="brand" href="index.html">
+     <img alt="THE MANOMANTRA logo" src="assets/images/logo.png"/>
     </a>
     <button aria-expanded="false" aria-label="Open menu" class="menu-toggle" id="menuToggle">
      <span>
@@ -412,7 +412,7 @@
       </h2>
       <p class="pd-feedback-intro">
        Every person&rsquo;s journey is unique. We value honest reflections from
-              people who have taken part in The Manomantra&rsquo;s programmes.
+              people who have taken part in THE MANOMANTRA&rsquo;s programmes.
               Verified, permission-approved stories will be shared here as they
               become available.
       </p>
@@ -509,7 +509,7 @@
        <p>
         Open the &ldquo;Book Your Seat Now&rdquo; panel to share your details and
                 proceed to the approved payment link. Confirm the current batch
-                dates and availability with The Manomantra.
+                dates and availability with THE MANOMANTRA.
        </p>
       </details>
       <details>
@@ -643,7 +643,7 @@
     </div>
     <fieldset class="booking-field booking-fieldset">
      <legend>
-      Are you already a member of The Manomantra?
+      Are you already a member of THE MANOMANTRA?
       <span>
        *
       </span>
@@ -655,7 +655,7 @@
      <label class="booking-radio">
       <input name="memberStatus" type="radio" value="No"/>
       No, I am new
-            to The Manomantra
+            to THE MANOMANTRA
      </label>
     </fieldset>
     <div class="booking-field">
@@ -719,14 +719,14 @@
     <div class="footer-main">
      <div class="footer-brand">
       <a class="footer-logo" href="index.html">
-       <img alt="The Manomantra" src="assets/images/logo.png"/>
+       <img alt="THE MANOMANTRA" src="assets/images/logo.png"/>
       </a>
       <p class="brand-description">
        A space to understand yourself, grow with awareness, and create a
               life of greater meaning and serenity.
       </p>
       <a class="brand-link" href="about.html">
-       Discover The Manomantra
+       Discover THE MANOMANTRA
        <span>
         &rarr;
        </span>
@@ -798,16 +798,16 @@
         +91 7204378573
        </span>
       </a>
-      <a class="contact-item" href="mailto:connect@themanomantra.com">
+      <a class="contact-item" href="mailto:amcoachsalini@gmail.com">
        <span class="contact-icon">
         @
        </span>
        <span>
-        connect@themanomantra.com
+        amcoachsalini@gmail.com
        </span>
       </a>
       <p class="address">
-       The Manomantra
+       THE MANOMANTRA
        <br/>
        Balaji Layout, Chokkanahalli,
        <br/>
@@ -838,7 +838,7 @@
       &copy;
       <span id="currentYear">
       </span>
-      The Manomantra. All rights
+      THE MANOMANTRA. All rights
             reserved.
      </div>
      <div class="social-section">
@@ -876,6 +876,49 @@
   </script>
   <script defer="" src="assets/js/programme-reviews.js">
   </script>
- </body>
+ 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const forms = [...document.querySelectorAll("form#bookingForm, form#registrationForm")];
+  forms.forEach((form) => {
+    if (form.dataset.apiBound === "true") return;
+    form.dataset.apiBound = "true";
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      if (!form.reportValidity()) return;
+      const button = form.querySelector('button[type="submit"],input[type="submit"]');
+      const original = button ? (button.textContent || button.value) : "";
+      if (button) { button.disabled = true; if (button.tagName === "INPUT") button.value = "Sending…"; else button.textContent = "Sending…"; }
+      let status = form.querySelector("[role='status']");
+      if (!status) {
+        status = document.createElement("p");
+        status.setAttribute("role", "status");
+        status.setAttribute("aria-live", "polite");
+        status.style.marginTop = "1rem";
+        form.appendChild(status);
+      }
+      status.textContent = "Sending your enquiry securely…";
+      const data = Object.fromEntries(new FormData(form).entries());
+      data.pageType = "programme";
+      data.programme = data.programme || document.querySelector("h1")?.textContent?.trim() || document.title;
+      try {
+        const response = await fetch("/api/contact", {
+          method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data)
+        });
+        const result = await response.json().catch(() => ({}));
+        if (!response.ok || !result.success) throw new Error(result.error || "Submission failed");
+        status.textContent = "Thank you for your enquiry. It has been submitted. THE MANOMANTRA will contact you regarding the appropriate next step.";
+        form.reset();
+      } catch {
+        status.textContent = "We couldn’t send your enquiry just now. Please contact THE MANOMANTRA on WhatsApp at +91 7204378573.";
+      } finally {
+        if (button) { button.disabled = false; if (button.tagName === "INPUT") button.value = original; else button.textContent = original; }
+      }
+    });
+  });
+});
+</script>
+
+</body>
 </html>
 

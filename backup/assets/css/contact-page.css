@@ -10,6 +10,7 @@
   --contact-shadow: 0 20px 55px rgba(65, 43, 23, 0.08);
   --serif: Georgia, "Times New Roman", serif;
   --sans: "DM Sans", Arial, sans-serif;
+  --gold: #e9a900;
 }
 * {
   box-sizing: border-box;

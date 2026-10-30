@@ -117,3 +117,6 @@ bookingForm.addEventListener("submit", event => {
 });
 const currentYear = document.getElementById("currentYear");
 if (currentYear) currentYear.textContent = new Date().getFullYear();
+
+
+// PAYMENT LINK NOT CONFIGURED: do not redirect to any gateway until an approved programme-specific payment URL and open intake are confirmed.

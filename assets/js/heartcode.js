@@ -3,7 +3,7 @@ const programmeData = {
   "heartcode": {
     title: "HeartCode™",
     category: "RELATIONSHIPS · COMMUNICATION · EMOTIONAL AWARENESS",
-    image: "assets/images/heartcode.jpeg",
+    image: "assets/images/programme-posters/heartcode-poster-portrait.jpeg",
     alt: "HeartCode relationship communication programme",
     audience: "Individuals, couples, parents and families",
     mode: "Online and Workshops",
